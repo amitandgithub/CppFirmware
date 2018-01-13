@@ -1,0 +1,11 @@
+
+*.o
+*.xcl
+*.pbi
+*.sim
+*.pbd
+*.browse
+*.linf
+*.wsdt
+*.bat
+*.ps1
