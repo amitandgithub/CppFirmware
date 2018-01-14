@@ -36,7 +36,7 @@ HwButton::HwButton(PORT Port, u16 Pin, InterruptManager::ISR aISR,IntOnWhichEdge
 {
 	m_Events                = 0UL;
 	m_CurrentState          = HwButton::IdleState;
-	m_HighEdgeDetectedTime = 0UL;
+	m_HighEdgeDetectedTime  = 0UL;
 	m_PreviousInputPinState = false;
 	m_EdgeDetected          = false;
 	m_SysTickTimer          = nullptr;
@@ -81,7 +81,6 @@ void HwButton::RunStateMachine()
 		 }
 		 break;
 	}
-
 	case HwButton::ReleasedState:
 	{
 

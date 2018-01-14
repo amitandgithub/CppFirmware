@@ -2,9 +2,10 @@
 
 #include "stm32f10x.h"
 #include "Led.hpp"
+#include "SysTickTimer.hpp"
 
 
-Led::Led(PORT Port, u16 Pin):Bsp::GpioOutput(Port, Pin)
+Led::Led(PORT Port, u16 Pin) : Bsp::GpioOutput(Port, Pin)
 {
 
 	HwInit();
@@ -12,14 +13,12 @@ Led::Led(PORT Port, u16 Pin):Bsp::GpioOutput(Port, Pin)
 
 void Led::On(void)
 {
-	//GPIO_WriteBit(GPIOC, GPIO_Pin_13,Bit_RESET);
 	SetOutput();
 	Led_State = ON;
 }
 
 void Led::Off(void)
 {
-	//GPIO_WriteBit(GPIOC, GPIO_Pin_13,Bit_SET);
 	ClearOutput();
 	Led_State = OFF;
 }
@@ -39,6 +38,17 @@ void Led::Blink(unsigned int on,unsigned int off)
 	ToggleOutput();
 }
 
+void Led::MultiBlink(unsigned int Blinks)
+{
+    for(volatile uint32_t i = 0; i< Blinks; i++ )
+    {
+        On();
+        Bsp::SysTickTimer::DelayTicks(200);
+        Off();
+        Bsp::SysTickTimer::DelayTicks(200);
+        On();
 
+    }
+}
 
 

@@ -13,7 +13,8 @@
 #include "stm32f10x_gpio.h"
 #include "Peripheral.hpp"
 
-namespace Bsp{
+namespace Bsp
+{
 
 class Gpio : public Peripheral
 {
@@ -21,23 +22,23 @@ public:
 	typedef GPIO_TypeDef*     PORT;
 	typedef GPIOMode_TypeDef  MODE;
 	typedef GPIOSpeed_TypeDef SPEED;
-        typedef enum
+    typedef enum
 	{
-	    EXTI_Trigger_Rising = 0x08,
-	    EXTI_Trigger_Falling = 0x0C,
+	    EXTI_Trigger_Rising         = 0x08,
+	    EXTI_Trigger_Falling        = 0x0C,
 	    EXTI_Trigger_Rising_Falling = 0x10
 	}IntOnWhichEdge;
 
 	typedef enum
 	{
-	  EXTI_Mode_Interrupt = 0x00,
-	  EXTI_Mode_Event = 0x04
+        EXTI_Mode_Interrupt = 0x00,
+        EXTI_Mode_Event     = 0x04
 	}EXTIMode;
 
 protected:
 	Gpio(void):Peripheral(){};
 	~Gpio(void){};
-	virtual bool HwInit() = 0;
+	//virtual bool HwInit() = 0;
 private:
 
 };

@@ -9,7 +9,7 @@
 #include "stm32f10x_i2c.h"
 
 namespace Bsp {
-  
+
 I2CDriver::I2CDriver(I2CInstance_t I2CInstance, I2CIsr_t aI2CIsr, I2CMode_t aI2CMode, I2CBaudRate_t aI2CBaudRate )
 {
 	m_I2CInstance = I2CInstance;
@@ -49,7 +49,7 @@ uint8_t I2CDriver::ScanDevice(uint8_t SlaveAddress)
   Timed (! I2C_CheckEvent(m_I2Cx , I2C_EVENT_MASTER_MODE_SELECT));
   // Send Address EV5
   I2C_Send7bitAddress(m_I2Cx , SlaveAddress ,	I2C_Direction_Transmitter);
-  Timed (! I2C_CheckEvent(m_I2Cx , I2C_EVENT_MASTER_TRANSMITTER_MODE_SELECTED));  
+  Timed (! I2C_CheckEvent(m_I2Cx , I2C_EVENT_MASTER_TRANSMITTER_MODE_SELECTED));
   return 0;
  errReturn:
   return 1;
@@ -59,106 +59,61 @@ bool I2CDriver::HwInit()
 {
 	I2C_InitTypeDef I2cConfig;
 	GPIO_InitTypeDef GPIO_InitStructure;
-	ClockManager* pClockManager  = GetClockManager();
-        
+
 	if( m_I2CInstance == I2C1_B6_B7)
 	{
-            m_I2Cx = I2C1;
-            pClockManager->PeripheralClockEnable(ClockManager::APB1Periph_I2C1);
-            pClockManager->PeripheralClockEnable(ClockManager::APB2Periph_GPIOB);
+        m_I2Cx = I2C1;
+        HwClockEnable(Bsp::Peripheral::APB1Periph_I2C1);
+        HwClockEnable(Bsp::Peripheral::APB2Periph_GPIOB);
 
-            /* Enable I2C1 clock */
-            RCC_APB1PeriphClockCmd( RCC_APB1Periph_I2C1, ENABLE );
+        /* Configure I2C SCL and SDA as Alternate Output Push Pull configuration */
+        GPIO_InitStructure.GPIO_Pin = GPIO_Pin_6 | GPIO_Pin_7;
 
-            /* Enable GPIOB clock */
-            RCC_APB2PeriphClockCmd( RCC_APB2Periph_GPIOB, ENABLE );
-
-            /* Configure I2C SCL and SDA as Alternate Output Push Pull configuration */
-            GPIO_InitStructure.GPIO_Pin = GPIO_Pin_6 | GPIO_Pin_7;
-            GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-            GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_OD;
-            GPIO_Init( GPIOB, &GPIO_InitStructure );
-            
-            //GPIO_PinRemapConfig(GPIO_Remap_I2C1, ENABLE);
-
-            /* I2C1 Reset */
-            RCC_APB1PeriphResetCmd(RCC_APB1Periph_I2C1 , ENABLE);
-            RCC_APB1PeriphResetCmd(RCC_APB1Periph_I2C1 , DISABLE);
-
-            I2cConfig.I2C_Ack = I2C_Ack_Enable;
-            I2cConfig.I2C_Mode = I2C_Mode_I2C;
-            I2cConfig.I2C_AcknowledgedAddress = I2C_AcknowledgedAddress_7bit;
-            I2cConfig.I2C_DutyCycle = I2C_DutyCycle_2;
-            I2cConfig.I2C_ClockSpeed = m_I2CBaudRate;
-            I2cConfig.I2C_OwnAddress1 = 0x50;
+        /* I2C1 Reset */
+        RCC_APB1PeriphResetCmd(RCC_APB1Periph_I2C1 , ENABLE);
+        RCC_APB1PeriphResetCmd(RCC_APB1Periph_I2C1 , DISABLE);
 	}
 	else if( m_I2CInstance == I2C1_B8_B9)
 	{
-		m_I2Cx = I2C1;
-                pClockManager->PeripheralClockEnable(ClockManager::APB1Periph_I2C1);
-                pClockManager->PeripheralClockEnable(ClockManager::APB2Periph_GPIOB);
+        m_I2Cx = I2C1;
+        HwClockEnable(Bsp::Peripheral::APB1Periph_I2C1);
+        HwClockEnable(Bsp::Peripheral::APB2Periph_GPIOB);
 
-                /* Enable I2C1 clock */
-                RCC_APB1PeriphClockCmd( RCC_APB1Periph_I2C1, ENABLE );
+        /* Configure I2C SCL and SDA as Alternate Output Push Pull configuration */
+        GPIO_InitStructure.GPIO_Pin = GPIO_Pin_8 | GPIO_Pin_9;
 
-                /* Enable GPIOB clock */
-                RCC_APB2PeriphClockCmd( RCC_APB2Periph_GPIOB, ENABLE );
-
-                /* Configure I2C SCL and SDA as Alternate Output Push Pull configuration */
-                GPIO_InitStructure.GPIO_Pin = GPIO_Pin_8 | GPIO_Pin_9;
-                GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-                GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_OD;
-                GPIO_Init( GPIOB, &GPIO_InitStructure );
-                
-                //GPIO_PinRemapConfig(GPIO_Remap_I2C1, ENABLE);
-
-                /* I2C1 Reset */
-                RCC_APB1PeriphResetCmd(RCC_APB1Periph_I2C1 , ENABLE);
-                RCC_APB1PeriphResetCmd(RCC_APB1Periph_I2C1 , DISABLE);
-
-                I2cConfig.I2C_Ack = I2C_Ack_Enable;
-                I2cConfig.I2C_Mode = I2C_Mode_I2C;
-                I2cConfig.I2C_AcknowledgedAddress = I2C_AcknowledgedAddress_7bit;
-                I2cConfig.I2C_DutyCycle = I2C_DutyCycle_2;
-                I2cConfig.I2C_ClockSpeed = m_I2CBaudRate;
-                I2cConfig.I2C_OwnAddress1 = 0x50;
+        /* I2C1 Reset */
+        RCC_APB1PeriphResetCmd(RCC_APB1Periph_I2C1 , ENABLE);
+        RCC_APB1PeriphResetCmd(RCC_APB1Periph_I2C1 , DISABLE);
 	}
-        else if( m_I2CInstance == I2C2_B11_B12)
+    else if( m_I2CInstance == I2C2_B10_B11)
 	{
-		m_I2Cx = I2C2;
-                pClockManager->PeripheralClockEnable(ClockManager::APB1Periph_I2C2);
-                pClockManager->PeripheralClockEnable(ClockManager::APB2Periph_GPIOB);
+        m_I2Cx = I2C2;
+        HwClockEnable(Bsp::Peripheral::APB1Periph_I2C2);
+        HwClockEnable(Bsp::Peripheral::APB2Periph_GPIOB);
 
-                /* Enable I2C2 clock */
-                RCC_APB2PeriphClockCmd( RCC_APB1Periph_I2C2, ENABLE );
+        /* Configure I2C SCL and SDA as Alternate Output Push Pull configuration */
+        GPIO_InitStructure.GPIO_Pin = GPIO_Pin_10 | GPIO_Pin_11;
 
-                /* Enable GPIOB clock */
-                RCC_APB2PeriphClockCmd( RCC_APB2Periph_GPIOB, ENABLE );
-
-                /* Configure I2C SCL and SDA as Alternate Output Push Pull configuration */
-                GPIO_InitStructure.GPIO_Pin = GPIO_Pin_8 | GPIO_Pin_9;
-                GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-                GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_OD;
-                GPIO_Init( GPIOB, &GPIO_InitStructure );
-                
-               // GPIO_PinRemapConfig(GPIO_Remap_I2C1, ENABLE);
-
-                /* I2C2 Reset */
-                RCC_APB1PeriphResetCmd(RCC_APB1Periph_I2C2 , ENABLE);
-                RCC_APB1PeriphResetCmd(RCC_APB1Periph_I2C2 , DISABLE);
-
-                I2cConfig.I2C_Ack = I2C_Ack_Enable;
-                I2cConfig.I2C_Mode = I2C_Mode_I2C;
-                I2cConfig.I2C_AcknowledgedAddress = I2C_AcknowledgedAddress_7bit;
-                I2cConfig.I2C_DutyCycle = I2C_DutyCycle_2;
-                I2cConfig.I2C_ClockSpeed = m_I2CBaudRate;
-                I2cConfig.I2C_OwnAddress1 = 0x50;
+        /* I2C2 Reset */
+        RCC_APB1PeriphResetCmd(RCC_APB1Periph_I2C2 , ENABLE);
+        RCC_APB1PeriphResetCmd(RCC_APB1Periph_I2C2 , DISABLE);
 	}
 
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_OD;
+    GPIO_Init( GPIOB, &GPIO_InitStructure );
+
+    I2cConfig.I2C_Ack = I2C_Ack_Enable;
+    I2cConfig.I2C_Mode = I2C_Mode_I2C;
+    I2cConfig.I2C_AcknowledgedAddress = I2C_AcknowledgedAddress_7bit;
+    I2cConfig.I2C_DutyCycle = I2C_DutyCycle_2;
+    I2cConfig.I2C_ClockSpeed = m_I2CBaudRate;
+    I2cConfig.I2C_OwnAddress1 = 0x50;
 
 	I2C_Init(m_I2Cx,&I2cConfig);
 	I2C_Cmd(m_I2Cx,ENABLE);
-      return 1;
+    return 1;
 
 }
 

@@ -33,7 +33,7 @@ bool SysTickTimer::HwInit(u32 SysTickFreq)
 
 }
 
-void SysTickTimer::DelayTicks (u32 Ticks)
+void SysTickTimer::DelayTicks(u32 Ticks)
 {
   u32 start, end;
   start = GetTicks();

@@ -12,7 +12,8 @@
 #include "stm32f10x_gpio.h"
 #include "Gpio.hpp"
 
-namespace Bsp{
+namespace Bsp
+{
 
 class GpioOutput: public Gpio
 {
@@ -29,6 +30,7 @@ public:
 	virtual bool HwInit();
 	inline void SetOutput(void){GPIO_WriteBit(m_Port, m_Pin,(BitAction)1);}
 	inline void ClearOutput(void){GPIO_WriteBit(m_Port, m_Pin, (BitAction)0);}
+    inline void Write(bool Value){ Value ? GPIO_WriteBit(m_Port, m_Pin,(BitAction)1) : GPIO_WriteBit(m_Port, m_Pin,(BitAction)0);}
 	void ToggleOutput(void);
 	inline uint8_t ReadOutputValue(void){ return GPIO_ReadOutputDataBit(m_Port, m_Pin); }
 private:
@@ -36,8 +38,8 @@ private:
 	PORT  m_Port;
 	u16   m_Pin;
 	MODE  m_Mode;
-	OutputValue m_eGpioOutputState;
-	ClockManager*         m_pClockManager;
+	OutputValue   m_eGpioOutputState;
+	ClockManager* m_pClockManager;
 
 };
 

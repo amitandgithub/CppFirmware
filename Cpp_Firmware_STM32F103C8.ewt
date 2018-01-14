@@ -2384,6 +2384,12 @@
             <name>$PROJ_DIR$\HAL\src\GpioInput.cpp</name>
         </file>
         <file>
+            <name>$PROJ_DIR$\HAL\src\GpioOutput.cpp</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\HAL\src\I2CDriver.cpp</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\HAL\src\InterruptManager.cpp</name>
         </file>
         <file>
@@ -2392,6 +2398,24 @@
         <file>
             <name>$PROJ_DIR$\HAL\src\SysTickTimer.cpp</name>
         </file>
+    </group>
+    <group>
+        <name>Modules</name>
+        <group>
+            <name>Button</name>
+            <file>
+                <name>$PROJ_DIR$\HAL\src\HwButton.cpp</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\HAL\src\HwButtonIntr.cpp</name>
+            </file>
+        </group>
+        <group>
+            <name>LED</name>
+            <file>
+                <name>$PROJ_DIR$\HAL\src\Led.cpp</name>
+            </file>
+        </group>
     </group>
     <group>
         <name>Startup</name>

@@ -19,6 +19,7 @@ int main(void)
 
     // Start SysTick Timer for 1ms (1000 us) tick resolution
     SysTickTimer::HwInit(1000UL);
+
     Init_Tests();
 
     while(1)

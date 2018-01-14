@@ -20,7 +20,7 @@ namespace Bsp
 class GpioInput: public Gpio
 {
 public:
-  
+
 	GpioInput(PORT Port, u16 Pin);
 
 	GpioInput(PORT Port, u16 Pin, Peripheral::ISR aISR,IntOnWhichEdge eIntOnWhichEdge, EXTIMode eEXTIMode );
@@ -32,13 +32,13 @@ public:
 	virtual bool HwInit();
 
 	inline bool ReadInput() const { return GPIO_ReadInputDataBit(m_Port,m_Pin); }
-        
-	
+
+
 
 
 private:
-        bool ConfigureInterrupt();
-        
+    bool ConfigureInterrupt();
+
 	Bsp::PeripheralBase::IRQn MapPin2ExtLine();
 
 	u8 MapPin2PinSource();
@@ -46,11 +46,10 @@ private:
 	bool ExtLineInterruptConfig();
 
 private:
-
-	PORT  m_Port;
-	u16   m_Pin;
-	IntOnWhichEdge        m_eEdge;
-	EXTIMode              m_eEXTIMode;
+	u16             m_Pin;
+	PORT            m_Port;
+	EXTIMode        m_eEXTIMode;
+    IntOnWhichEdge  m_eEdge;
 	Peripheral::ISR m_pISR;
 };
 

@@ -10,6 +10,7 @@
 
 #include"Peripheral.hpp"
 #include "stm32f10x.h"
+
 #define Timed(x) Timeout = 0xFFFF; while (x) { if (Timeout -- == 0) goto errReturn ;}
 namespace Bsp
 {
@@ -24,12 +25,12 @@ public:
         I2C_ERROR_BUSY_TRANSMITTING,
         I2C_ERROR_BUSY_RECEIVING,
       }I2C_STATUS;
-                
+
 	typedef void(*I2CIsr_t)();
 	typedef enum{
 		I2C1_B6_B7 = 0,
 		I2C1_B8_B9,
-		I2C2_B11_B12
+		I2C2_B10_B11
 	}I2CInstance_t;
 	typedef enum{
 		BaudRate_100000   = 100000,
