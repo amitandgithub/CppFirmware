@@ -7,9 +7,7 @@
 
 
 #include "GpioInput.hpp"
-#include "misc.h"
 #include "stm32f10x_exti.h"
-#include "InterruptManager.hpp"
 
 namespace Bsp
 {
@@ -34,7 +32,7 @@ GpioInput::GpioInput(PORT Port, u16 Pin, InterruptManager::ISR aISR,
 }
 
 GpioInput::GpioInput(PORT Port, u16 Pin, InterruptManager::ISR aISR,
-		             IntOnWhichEdge eIntOnWhichEdge, EXTIMode eEXTIMode )
+		     IntOnWhichEdge eIntOnWhichEdge, EXTIMode eEXTIMode )
 {
 	m_Port = Port;
 	m_Pin = Pin;
@@ -68,7 +66,7 @@ Bsp::PeripheralBase::IRQn GpioInput::MapPin2ExtLine()
 
 u8 GpioInput::MapPin2PinSource()
 {
-	const u8 PinSource =         
+	const u8 PinSource =
          (GpioInput::m_Pin == GPIO_Pin_0) ? 0  :
          (GpioInput::m_Pin == GPIO_Pin_1) ? 1  :
          (GpioInput::m_Pin == GPIO_Pin_2) ? 2  :
@@ -92,7 +90,7 @@ u8 GpioInput::MapPin2PinSource()
 bool GpioInput::HwInit()
 {
         GPIO_InitTypeDef GPIO_InitStructure;
-	const Peripheral::Peripheral_t  PeripheralName = 
+	const Peripheral::Peripheral_t  PeripheralName =
        (m_Port==GPIOA)? Peripheral::APB2Periph_GPIOA :
        (m_Port==GPIOB)? Peripheral::APB2Periph_GPIOB :
        (m_Port==GPIOC)? Peripheral::APB2Periph_GPIOC :
@@ -100,45 +98,45 @@ bool GpioInput::HwInit()
        (m_Port==GPIOE)? Peripheral::APB2Periph_GPIOE :
        (m_Port==GPIOF)? Peripheral::APB2Periph_GPIOF : Peripheral::APB2Periph_GPIOG;
 
-	// Enable the GPIO hardware Clocks
-        HwClockEnable(PeripheralName);
-        HwClockEnable(Bsp::Peripheral::APB2Periph_AFIO);
-        
-        GPIO_InitStructure.GPIO_Pin    = m_Pin;
-	GPIO_InitStructure.GPIO_Speed  = GPIO_Speed_50MHz;
-	GPIO_InitStructure.GPIO_Mode   = GPIO_Mode_IPU;
-	GPIO_Init( m_Port, &GPIO_InitStructure );
-        
-        if(m_pISR != nullptr)
-        {
-          // Configure the Interrupt if ISR is supplied with the constructor
-          ConfigureInterrupt();          
-        }
-	return true;
+       // Enable the GPIO hardware Clocks
+       HwClockEnable(PeripheralName);
+       HwClockEnable(Bsp::Peripheral::APB2Periph_AFIO);
+
+       GPIO_InitStructure.GPIO_Pin    = m_Pin;
+       GPIO_InitStructure.GPIO_Speed  = GPIO_Speed_50MHz;
+       GPIO_InitStructure.GPIO_Mode   = GPIO_Mode_IPU;
+       GPIO_Init( m_Port, &GPIO_InitStructure );
+
+       if(m_pISR != nullptr)
+       {
+           // Configure the Interrupt if ISR is supplied with the constructor
+           ConfigureInterrupt();
+       }
+       return true;
 }
 
 bool GpioInput::ConfigureInterrupt()
 {
-  bool Status = false;
-  
-	Bsp::PeripheralBase::IRQn L_IRQn; 
+    bool Status = false;
 
-	if(m_pISR != nullptr)
-	{
-		L_IRQn = MapPin2ExtLine();
-		//Register Interrupt
-                RegisterInterrupt(m_pISR, L_IRQn, 0);
+    Bsp::PeripheralBase::IRQn L_IRQn;
 
-		// Configure External Gpio Line for Interrupt
-		ExtLineInterruptConfig();
+    if(m_pISR != nullptr)
+    {
+        L_IRQn = MapPin2ExtLine();
+        //Register Interrupt
+        RegisterInterrupt(m_pISR, L_IRQn, 0);
 
-		//Enable_Interrupt
-		HwEnableInterrupt(L_IRQn);
+        // Configure External Gpio Line for Interrupt
+        ExtLineInterruptConfig();
 
-		Status = true;
-	}
-        
-  return Status;
+        //Enable_Interrupt
+        HwEnableInterrupt(L_IRQn);
+
+        Status = true;
+    }
+
+    return Status;
 }
 
 bool GpioInput::ExtLineInterruptConfig()
@@ -152,15 +150,15 @@ bool GpioInput::ExtLineInterruptConfig()
        (m_Port==GPIOE)? 4 :
        (m_Port==GPIOF)? 5 : 6;
 
-        GPIO_EXTILineConfig( GpioPort,MapPin2PinSource() );
+       GPIO_EXTILineConfig( GpioPort,MapPin2PinSource() );
 
-        EXTI_InitStruct.EXTI_Line = m_Pin;
-        EXTI_InitStruct.EXTI_Mode = static_cast<EXTIMode_TypeDef>(m_eEXTIMode);
-        EXTI_InitStruct.EXTI_Trigger = static_cast<EXTITrigger_TypeDef>(m_eEdge);
-        EXTI_InitStruct.EXTI_LineCmd = ENABLE;
-        EXTI_Init(&EXTI_InitStruct);
+       EXTI_InitStruct.EXTI_Line = m_Pin;
+       EXTI_InitStruct.EXTI_Mode = static_cast<EXTIMode_TypeDef>(m_eEXTIMode);
+       EXTI_InitStruct.EXTI_Trigger = static_cast<EXTITrigger_TypeDef>(m_eEdge);
+       EXTI_InitStruct.EXTI_LineCmd = ENABLE;
+       EXTI_Init(&EXTI_InitStruct);
 
-	return true;
+       return true;
 }
 /*
 InterruptManager::IRQn GpioInput::MapPin2IRQn()

@@ -42,61 +42,61 @@ ClockManager* ClockManager::GetInstance()
 
 bool ClockManager::PeripheralClockEnable(Bsp::PeripheralBase::Peripheral_t RCC_Periph)
 {
-        bool Status = false;
+    bool Status = false;
 	Bsp::PeripheralBase::Peripheral_t BitAdjusted;
 
 	if(RCC_Periph>= Bsp::PeripheralBase::APB2Periph_AFIO && RCC_Periph<= Bsp::PeripheralBase::APB2Periph_TIM11 )
 	{
 		RCC_APB2PeriphClockCmd( 1U<<RCC_Periph, ENABLE);
-                Status = true;
+        Status = true;
 	}
 	else if (RCC_Periph>= Bsp::PeripheralBase::APB1Periph_TIM2 && RCC_Periph<= Bsp::PeripheralBase::APB1Periph_CEC )
 	{
 		BitAdjusted = static_cast<Bsp::PeripheralBase::Peripheral_t>(RCC_Periph - Bsp::PeripheralBase::APB1Periph_TIM2);
 		RCC_APB1PeriphClockCmd( 1U<<BitAdjusted, ENABLE);
-                Status = true;
+        Status = true;
 	}
 	else if (RCC_Periph>= Bsp::PeripheralBase::AHBPeriph_DMA1 && RCC_Periph<= Bsp::PeripheralBase::AHBPeriph_CRC )
 	{
 		BitAdjusted = static_cast<Bsp::PeripheralBase::Peripheral_t>(RCC_Periph - Bsp::PeripheralBase::AHBPeriph_DMA1);
 		RCC_AHBPeriphClockCmd( 1U<<RCC_Periph, ENABLE);
-                Status = true;
+        Status = true;
 	}
 	else
 	{
 		// Nothing to do
-          
+
 	}
     return Status;
 }
 
 bool ClockManager::PeripheralClockDisble(Bsp::PeripheralBase::Peripheral_t RCC_Periph)
 {
-        bool Status = false;
+    bool Status = false;
 	Bsp::PeripheralBase::Peripheral_t BitAdjusted;
 
 	if(RCC_Periph>= Bsp::PeripheralBase::APB2Periph_AFIO && RCC_Periph<= Bsp::PeripheralBase::APB2Periph_TIM11 )
 	{
 		RCC_APB2PeriphClockCmd( 1U<<RCC_Periph, DISABLE);
-                Status = true;
+        Status = true;
 	}
 	else if (RCC_Periph>= Bsp::PeripheralBase::APB1Periph_TIM2 && RCC_Periph<= Bsp::PeripheralBase::APB1Periph_CEC )
 	{
 		BitAdjusted = static_cast<Bsp::PeripheralBase::Peripheral_t>(RCC_Periph - Bsp::PeripheralBase::APB1Periph_TIM2);
 		RCC_APB1PeriphClockCmd( 1U<<BitAdjusted, DISABLE);
-                Status = true;
+        Status = true;
 	}
 	else if (RCC_Periph>= Bsp::PeripheralBase::AHBPeriph_DMA1 && RCC_Periph<= Bsp::PeripheralBase::AHBPeriph_CRC )
 	{
 		BitAdjusted = static_cast<Bsp::PeripheralBase::Peripheral_t>(RCC_Periph - Bsp::PeripheralBase::AHBPeriph_DMA1);
 		RCC_AHBPeriphClockCmd( 1U<<RCC_Periph, DISABLE);
-                Status = true;
+        Status = true;
 	}
 	else
 	{
 		// Nothing to do
 	}
-        return Status;
+    return Status;
 
 }
 

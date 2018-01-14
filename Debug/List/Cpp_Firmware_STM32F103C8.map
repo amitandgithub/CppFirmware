@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ELF Linker V8.20.1.14183/W32 for ARM                13/Jan/2018  19:57:51
+# IAR ELF Linker V8.20.1.14183/W32 for ARM                14/Jan/2018  11:19:18
 # Copyright 2007-2017 IAR Systems AB.
 #
 #    Output file  =  
@@ -10,7 +10,7 @@
 #        C:\Amit
 #        Caudhary\STM32_IAR\Projects\CppFirmware\Debug\List\Cpp_Firmware_STM32F103C8.map
 #    Command line =  
-#        -f C:\Users\AMITCH~1\AppData\Local\Temp\EW5D58.tmp ("C:\Amit
+#        -f C:\Users\AMITCH~1\AppData\Local\Temp\EWFDC5.tmp ("C:\Amit
 #        Caudhary\STM32_IAR\Projects\CppFirmware\Debug\Obj\ClockManager.o"
 #        "C:\Amit
 #        Caudhary\STM32_IAR\Projects\CppFirmware\Debug\Obj\GpioInput.o"
@@ -569,7 +569,7 @@ RCC_SYSCLKConfig        0x08000eb5   0x12  Code  Gb  stm32f10x_rcc.o [1]
 Region$$Table$$Base     0x08001548          --   Gb  - Linker created -
 Region$$Table$$Limit    0x08001570          --   Gb  - Linker created -
 RunTests()              0x08001361   0x1c  Code  Gb  Test.o [1]
-RunTests()::Input_Count
+RunTests()::Input_State
                         0x20000128    0x4  Data  Lc  Test.o [1]
 SHT$$INIT_ARRAY$$Base   0x080016c0          --   Gb  - Linker created -
 SHT$$INIT_ARRAY$$Limit  0x080016c4          --   Gb  - Linker created -

@@ -81,7 +81,7 @@ bool InterruptManager::RegisterInterrupt(ISR pISR, IRQn eIRQn )
 {
 	switch(static_cast<short int>(eIRQn))
 	{
-        case InterruptManager::NMI_Handler               :    InterruptManager::m_NMI_Handler                 = pISR; break;
+    case InterruptManager::NMI_Handler               :    InterruptManager::m_NMI_Handler                 = pISR; break;
 	case InterruptManager::HardFault_Handler         :    InterruptManager::m_HardFault_Handler           = pISR; break;
 	case InterruptManager::MemManage_Handler         :    InterruptManager::m_MemManage_Handler           = pISR; break;
 	case InterruptManager::BusFault_Handler          :    InterruptManager::m_BusFault_Handler            = pISR; break;
@@ -167,28 +167,28 @@ InterruptManager* InterruptManager::GetInstance()
 
 bool InterruptManager::DisableInterrupt(IRQn eIRQn)
 {
-  bool Status = false;
-  
+    bool Status = false;
+
 	if( (eIRQn >= EXTI5_IRQHandler ) && (eIRQn <= EXTI9_IRQHandler )  )
-        {
-		 eIRQn = InterruptManager::EXTI9_5_IRQHandler; 
-            
-        }
+    {
+        eIRQn = InterruptManager::EXTI9_5_IRQHandler;
+
+    }
 	else if( (eIRQn >= EXTI10_IRQHandler ) && (eIRQn <= EXTI15_IRQHandler )  )
-        {
-		 eIRQn = InterruptManager::EXTI15_10_IRQHandler;  
-               
-        }
+    {
+        eIRQn = InterruptManager::EXTI15_10_IRQHandler;
+
+    }
 	else
 	{
 		// nothing to do
 	}
 
-          /* Disable the Selected IRQ Channels -------------------------------------*/
-          NVIC->ICER[static_cast<u8>(eIRQn) >> 0x05] = (uint32_t)0x01 << (static_cast<u8>(eIRQn) & (u8)0x1F);
-          Status = true;
+    /* Disable the Selected IRQ Channels -------------------------------------*/
+    NVIC->ICER[static_cast<u8>(eIRQn) >> 0x05] = (uint32_t)0x01 << (static_cast<u8>(eIRQn) & (u8)0x1F);
+    Status = true;
 
-        return  Status;
+    return  Status;
 }
 
 bool InterruptManager::EnableInterrupt(IRQn eIRQn)
@@ -196,58 +196,58 @@ bool InterruptManager::EnableInterrupt(IRQn eIRQn)
     bool Status = false;
 
 	if( (eIRQn >= EXTI5_IRQHandler ) && (eIRQn <= EXTI9_IRQHandler )  )
-        {
-		 eIRQn = InterruptManager::EXTI9_5_IRQHandler; 
-               
-        }
+    {
+        eIRQn = InterruptManager::EXTI9_5_IRQHandler;
+
+    }
 	else if( (eIRQn >= EXTI10_IRQHandler ) && (eIRQn <= EXTI15_IRQHandler )  )
-        {
-		 eIRQn = InterruptManager::EXTI15_10_IRQHandler;     
-               
-        }
+    {
+        eIRQn = InterruptManager::EXTI15_10_IRQHandler;
+
+    }
 	else
 	{
 		// nothing to do
 	}
-        
-        
-        
-        /* Enable the Selected IRQ Channels --------------------------------------*/
-        NVIC->ISER[( static_cast<u8>(eIRQn) >> 0x05)] = (u32)0x01 << (static_cast<u8>(eIRQn) & (u8)0x1F);
-        Status = true;
-          
-        return  Status;
+
+
+
+    /* Enable the Selected IRQ Channels --------------------------------------*/
+    NVIC->ISER[( static_cast<u8>(eIRQn) >> 0x05)] = (u32)0x01 << (static_cast<u8>(eIRQn) & (u8)0x1F);
+    Status = true;
+
+    return  Status;
 
 }
 bool InterruptManager::NVICConfig(IRQn eIRQn, u8 Priority, u8 SubPriority)
 {
-  bool Status = false;
+    bool Status = false;
 	NVIC_InitTypeDef NVIC_InitStructure;
 	InterruptState aFunctionalState = DISABLE;
 
 	if( (eIRQn >= EXTI5_IRQHandler ) && (eIRQn <= EXTI9_IRQHandler )  )
-        {
-		 eIRQn = InterruptManager::EXTI9_5_IRQHandler;  
-        }
+    {
+        eIRQn = InterruptManager::EXTI9_5_IRQHandler;
+    }
 
 	else if( (eIRQn >= EXTI10_IRQHandler ) && (eIRQn <= EXTI15_IRQHandler )  )
-        {
-		 eIRQn = InterruptManager::EXTI15_10_IRQHandler;          
-        }
+    {
+        eIRQn = InterruptManager::EXTI15_10_IRQHandler;
+    }
 	else
 	{
 		// nothing to do
 	}
-        
-        /* Configure NVIC for External Interrupts */
-          NVIC_InitStructure.NVIC_IRQChannel = eIRQn;
-          NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = Priority;
-          NVIC_InitStructure.NVIC_IRQChannelSubPriority = SubPriority;
-          NVIC_InitStructure.NVIC_IRQChannelCmd = static_cast<FunctionalState>(aFunctionalState);
-          NVIC_Init( &NVIC_InitStructure );
-          Status = true;
-          
-        return Status;
+
+    /* Configure NVIC for External Interrupts */
+    NVIC_InitStructure.NVIC_IRQChannel = eIRQn;
+    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = Priority;
+    NVIC_InitStructure.NVIC_IRQChannelSubPriority = SubPriority;
+    NVIC_InitStructure.NVIC_IRQChannelCmd = static_cast<FunctionalState>(aFunctionalState);
+    NVIC_Init( &NVIC_InitStructure );
+    Status = true;
+
+    return Status;
 }
 
 

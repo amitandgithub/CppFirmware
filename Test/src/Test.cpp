@@ -11,7 +11,7 @@ void Init_Tests()
 
   TestGpio.HwInit();
   TestGpio_WithoutInterrupt.HwInit();
-  
+
 }
 
 void GpioInput_ISR()
@@ -22,14 +22,14 @@ void GpioInput_ISR()
 
 void RunTests()
 {
-  static uint32_t Input_Count = 0;
-  
+  static uint32_t Input_State = 0;
+
   if(TestGpio_WithoutInterrupt.ReadInput() == true)
   {
-    Input_Count = 1;
+    Input_State = 1;
   }
   else
   {
-    Input_Count = 0;
+    Input_State = 0;
   }
 }

@@ -33,17 +33,6 @@ bool SysTickTimer::HwInit(u32 SysTickFreq)
 
 }
 
-//SysTickTimer* SysTickTimer::GetInstance()
-//{
-//	if(m_pSysTickTimer == nullptr)
-//	{
-//		static SysTickTimer aSysTickTimer;
-//		aSysTickTimer.HwInit();
-//		m_pSysTickTimer = &aSysTickTimer;
-//	}
-//	return m_pSysTickTimer;
-//}
-
 void SysTickTimer::DelayTicks (u32 Ticks)
 {
   u32 start, end;

@@ -14,18 +14,18 @@ static void prvSetupHardware( void );
 
 int main(void)
 {
-   // Initialize the Clocks, memories and other Microcontroller HW  
-   prvSetupHardware();
+    // Initialize the Clocks, memories and other Microcontroller HW
+    prvSetupHardware();
 
-  // Start SysTick Timer for 1ms (1000 us) tick resolution
-  SysTickTimer::HwInit(1000UL);
-  Init_Tests();
-  
-  while(1)
-  {
-    RunTests();
-  
-  }
+    // Start SysTick Timer for 1ms (1000 us) tick resolution
+    SysTickTimer::HwInit(1000UL);
+    Init_Tests();
+
+    while(1)
+    {
+        RunTests();
+
+    }
 
 }
 
