@@ -2062,6 +2062,9 @@
             <name>$PROJ_DIR$\HAL\src\Peripheral.cpp</name>
         </file>
         <file>
+            <name>$PROJ_DIR$\HAL\src\SpiDriver.cpp</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\HAL\src\SysTickTimer.cpp</name>
         </file>
     </group>
@@ -2086,6 +2089,12 @@
             <name>LED</name>
             <file>
                 <name>$PROJ_DIR$\HAL\src\Led.cpp</name>
+            </file>
+        </group>
+        <group>
+            <name>Nokia 5110 Display</name>
+            <file>
+                <name>$PROJ_DIR$\HAL\src\Nokia5110LCD.cpp</name>
             </file>
         </group>
     </group>

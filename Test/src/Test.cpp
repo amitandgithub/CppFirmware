@@ -10,6 +10,12 @@ static I2CDriver I2C_Obj(I2CDriver::I2C1_B6_B7, nullptr, I2CDriver::Master, I2CD
 static INA219 INA219_Obj(&I2C_Obj,0x80);
 static INA219::Power_t Power;
 
+static SpiDriver SpiDriverLCD(SpiDriver::SPI_1_A7_A6_A5_A4);
+static GpioOutput DataCommandSelectGpio(GPIOB,GPIO_Pin_1);
+static GpioOutput ResetPinGpio(GPIOB,GPIO_Pin_0);
+static GpioOutput BackLightGpio(GPIOB,GPIO_Pin_10);
+Nokia5110LCD NokiaLCD( &SpiDriverLCD, &ResetPinGpio, &DataCommandSelectGpio, &BackLightGpio );
+
 void Init_Tests()
 {
   GpioInput TestGpio(GPIOA,GPIO_Pin_1, GpioInput_ISR,Bsp::GpioInput::EXTI_Trigger_Rising);
@@ -22,6 +28,8 @@ void Init_Tests()
   HwButton_A2.RegisterEventHandler(Bsp::HwButtonIntr::LongLongPress,static_cast<Bsp::HwButtonIntr::BtnHandler>(LongLongPressEvent));
   I2C_Obj.HwInit();
   INA219_Obj.SetCalibration_32V_2A();
+  NokiaLCD.HwInit();
+  NokiaLCD.DrawLine(1, 0, ">Initialising.");
 
 }
 
@@ -33,9 +41,10 @@ void GpioInput_ISR()
 
 void RunTests()
 {
-    ButtonTest();
+   // ButtonTest();
    // I2CDriver_Test();
     INA219_Obj.Run(&Power);
+    Nokia_Display_Test();
 }
 
 void GpioTest()
@@ -73,19 +82,38 @@ void ButtonTest()
 void ClickEvent(void)
 {
     Led_PC13.MultiBlink(1);
+    NokiaLCD.DrawLine(1, 0, "Click");
 }
 void LongPressEvent(void)
 {
-     Led_PC13.MultiBlink(2);
+    Led_PC13.MultiBlink(2);
+    NokiaLCD.DrawLine(1, 0, "Long Press");
 }
 void LongLongPressEvent(void)
 {
-     Led_PC13.MultiBlink(3);
+    Led_PC13.MultiBlink(3);
+    NokiaLCD.DrawLine(1, 0, "Long Long Pres");
 }
 void I2CDriver_Test()
 {
     static uint8_t I2C_Devices[10];
 
     I2C_Obj.ScanBus(I2C_Devices,10);
+}
+
+void Nokia_Display_Test()
+{
+    static const char Array[] = {'-','\\','|','/','-','\\','|','/'};
+    static char index;
+    HwButton_A2.RunStateMachine();
+    NokiaLCD.DrawChar(0, 0, Array[index % sizeof(Array)]);
+    NokiaLCD.DrawChar(0, 2, Array[index % sizeof(Array)]);
+    NokiaLCD.DrawChar(0, 4, Array[index % sizeof(Array)]);
+    NokiaLCD.DrawChar(0, 6, Array[index % sizeof(Array)]);
+    NokiaLCD.DrawChar(0, 8, Array[index % sizeof(Array)]);
+    NokiaLCD.DrawChar(0, 10,Array[index % sizeof(Array)]);
+    NokiaLCD.DrawChar(0, 12,Array[index++ % sizeof(Array)]);
+    SysTickTimer::DelayTicks(150);
+
 }
 

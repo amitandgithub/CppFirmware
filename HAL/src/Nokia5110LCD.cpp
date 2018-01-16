@@ -16,7 +16,7 @@ namespace App
 
 //This table contains the hex values that represent pixels
 //for a font that is 5 pixels wide and 8 pixels high
-   static const s8 ASCII[][5] = {
+static const s8 ASCII[][5] = {
    {0x00, 0x00, 0x00, 0x00, 0x00} // 20
   ,{0x00, 0x00, 0x5f, 0x00, 0x00} // 21 !
   ,{0x00, 0x07, 0x00, 0x07, 0x00} // 22 "
@@ -116,11 +116,12 @@ namespace App
   ,{0x78, 0x46, 0x41, 0x46, 0x78} // 7f DEL
 };
 
-Nokia5110LCD::Nokia5110LCD(SpiDriver::SpiInstance_t Spi,
-			 Gpio::PORT ResetPort, u16 ResetPin,
-			 Gpio::PORT DCPort, u16 DCPin,
-			 Gpio::PORT BKLPort, u16 BKLPin)
+Nokia5110LCD::Nokia5110LCD(  SpiDriver*  pSpiDriver,
+                             GpioOutput* pResetGpio,
+                             GpioOutput* pDataCommandGpio,
+                             GpioOutput* pBacklightGpio     )
 {
+    /*
 	m_DCPort      = DCPort;
 	m_DCPin       = DCPin;
 	m_ResetPort   = ResetPort;
@@ -128,15 +129,17 @@ Nokia5110LCD::Nokia5110LCD(SpiDriver::SpiInstance_t Spi,
 	m_BKLPort     = BKLPort;
 	m_BKLPin      = BKLPin;
 	m_Spi         = Spi;
+    */
 
-	m_pDisplaySPI            = nullptr;
-	m_pDataCommandSelect     = nullptr;
-	m_pReset                 = nullptr;
-	m_pBackLight             = nullptr;
+    m_pDisplaySPI        = pSpiDriver;
+	m_pDataCommandSelect = pDataCommandGpio;
+	m_pReset             = pResetGpio;
+	m_pBackLight         = pBacklightGpio;
 }
 
 bool Nokia5110LCD::HwInit()
 {
+    /*
 	static SpiDriver SpiDriverLCD(m_Spi);
 	static GpioOutput DataCommandSelectGpio(m_DCPort,m_DCPin);
 	static GpioOutput ResetPinGpio(m_ResetPort,m_ResetPin);
@@ -146,7 +149,7 @@ bool Nokia5110LCD::HwInit()
 	m_pDataCommandSelect = &DataCommandSelectGpio;
 	m_pReset             = &ResetPinGpio;
 	m_pBackLight         = &BackLightGpio;
-
+    */
 	m_pDisplaySPI->HwInit();
 	m_pDataCommandSelect->HwInit();
 	m_pReset->HwInit();
@@ -264,7 +267,7 @@ void Nokia5110LCD::LCDCharacter(const char character)
 		Write(DATA, ASCII[character - 0x20][index]);
 	//0x20 is the ASCII character for Space (' '). The font table starts with this character
 
-	Write(DATA, 0x00); //Blank vertical line padding
+	//Write(DATA, 0x00); //Blank vertical line padding
 }
 
 //Given a string of characters, one by one is passed to the LCD
@@ -274,27 +277,27 @@ void Nokia5110LCD::DrawString(const char *characters)
     LCDCharacter(*characters++);
 }
 
-void Nokia5110LCD::DrawLine(unsigned char Row, unsigned char Col, const char* Str)
+ void Nokia5110LCD::DrawLine(unsigned char Row, unsigned char Col, const char* Str)
 {
 	u8 i=0;
 	GoToXY(Col*SIZE_OF_1_CHAR,Row);
-	DrawString("            ");
+	DrawString("              ");
 
 	GoToXY(Col*SIZE_OF_1_CHAR,Row);
 
-	while (*Str && i<12)
+	while (*Str && i<NO_OF_CHAR_IN_LINE)
 	{
 		LCDCharacter(*Str++);
 		i++;
 	}
+
 }
 void Nokia5110LCD::DrawChar(unsigned char Row, unsigned char Col, const char aChar)
 {
-	GoToXY(Col,Row);
+	GoToXY(Col*SIZE_OF_1_CHAR,Row);
 	LCDCharacter(aChar);
 
 }
-
 void Nokia5110LCD::DrawBuffer(char* pBuffer)
 {
 	GoToXY(0*SIZE_OF_1_CHAR,0);

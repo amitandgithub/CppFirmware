@@ -38,11 +38,12 @@ public:
 	static const u8 LCD_Y  = 48;
 
 	static const u8 SIZE_OF_1_CHAR = 6;
+    static const u8 NO_OF_CHAR_IN_LINE = 14;
 
-	Nokia5110LCD(SpiDriver::SpiInstance_t Spi,
-				 Gpio::PORT ResetPort, u16 ResetPin,
-				 Gpio::PORT DCPort, u16 DCPin,
-				 Gpio::PORT BKLPort, u16 BKLPin);
+	Nokia5110LCD(SpiDriver* pSpiDriver,
+				 GpioOutput* pResetGpio,
+				 GpioOutput* pDataCommandGpio,
+				 GpioOutput* pBacklightGpio);
 	~Nokia5110LCD(){};
 	bool HwInit();
 	bool DisplayInit();
@@ -62,65 +63,7 @@ private:
 	GpioOutput* m_pDataCommandSelect;
 	GpioOutput* m_pReset;
 	GpioOutput* m_pBackLight;
-
-	SpiDriver::SpiInstance_t m_Spi;
-	Gpio::PORT   m_DCPort;
-	u16          m_DCPin;
-	Gpio::PORT   m_ResetPort;
-	u16          m_ResetPin;
-	Gpio::PORT   m_BKLPort;
-	u16          m_BKLPin;
-
-
-
-
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #endif /* APP_INC_NOKIA5110LCD_HPP_ */

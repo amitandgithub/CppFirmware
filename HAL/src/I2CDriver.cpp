@@ -70,7 +70,7 @@ errReturn:
 #endif
 	return I2C_ERROR_STOP_CONDITION_TIMEOUT;
 }
-uint8_t I2CDriver::ReceiveWithACK()
+uint8_t I2CDriver::HwReceiveWithACK()
 {
     vu32 Timeout = 0;
     // Enable ACK of received data
@@ -92,7 +92,7 @@ errReturn:
 	return 0xFF;
 }
 
-uint8_t I2CDriver::ReceiveWithNACK()
+uint8_t I2CDriver::HwReceiveWithNACK()
 {
     vu32 Timeout = 0;
     // Disable ACK of received data
@@ -160,7 +160,7 @@ errReturn:
 	return I2C_ERROR_DATA_TRANSMISSION_TIMEOUT;
 
 }
-void I2CDriver::SendByte(u8 SlaveAddress, u8 data)
+void I2CDriver::HwSendByte(u8 SlaveAddress, u8 data)
 {
     m_Status |=HwStart();
     m_Status |=HwSendAddressWithDirection(SlaveAddress, Write);
@@ -168,12 +168,12 @@ void I2CDriver::SendByte(u8 SlaveAddress, u8 data)
     m_Status |=HwStop();
 }
 
-uint8_t I2CDriver::ReadByte(u8 SlaveAddress)
+uint8_t I2CDriver::HwReadByte(u8 SlaveAddress)
 {
     uint8_t Data;
     m_Status |=HwStart();
     m_Status |=HwSendAddressWithDirection(SlaveAddress, Read);
-    Data = ReceiveWithNACK();
+    Data = HwReceiveWithNACK();
     m_Status |= HwStop();
     return Data;
 }
@@ -279,8 +279,6 @@ bool I2CDriver::HwInit()
         GPIO_InitStructure.GPIO_Pin = GPIO_Pin_6 | GPIO_Pin_7;
 
         /* I2C1 Reset */
-       // RCC_APB1PeriphResetCmd(RCC_APB1Periph_I2C1 , ENABLE);
-       // RCC_APB1PeriphResetCmd(RCC_APB1Periph_I2C1 , DISABLE);
         HwReset();
 	}
 	else if( m_I2CInstance == I2C1_B8_B9)
@@ -293,8 +291,6 @@ bool I2CDriver::HwInit()
         GPIO_InitStructure.GPIO_Pin = GPIO_Pin_8 | GPIO_Pin_9;
 
         /* I2C1 Reset */
-        //RCC_APB1PeriphResetCmd(RCC_APB1Periph_I2C1 , ENABLE);
-        //RCC_APB1PeriphResetCmd(RCC_APB1Periph_I2C1 , DISABLE);
         HwReset();
 	}
     else if( m_I2CInstance == I2C2_B10_B11)
@@ -307,8 +303,6 @@ bool I2CDriver::HwInit()
         GPIO_InitStructure.GPIO_Pin = GPIO_Pin_10 | GPIO_Pin_11;
 
         /* I2C2 Reset */
-        //RCC_APB1PeriphResetCmd(RCC_APB1Periph_I2C2 , ENABLE);
-        //RCC_APB1PeriphResetCmd(RCC_APB1Periph_I2C2 , DISABLE);
         HwReset();
 	}
 

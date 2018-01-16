@@ -33,12 +33,13 @@ bool SpiDriver::HwInit()
 	SPI_InitTypeDef  SPI_InitStructure;
 	GPIO_InitTypeDef GPIO_InitStructure;
 	//PortManager*  pPortManager    = GetPortManager();
-	ClockManager* pClockManager  = GetClockManager();
+	//ClockManager* pClockManager  = GetClockManager();
 
 	if( m_SpiInstance == SPI_1_A7_A6_A5_A4)
 	{
 		m_SPIx = SPI1;
-		pClockManager->PeripheralClockEnable(ClockManager::APB2Periph_SPI1);
+		//pClockManager->PeripheralClockEnable(ClockManager::APB2Periph_SPI1);
+        HwClockEnable(Bsp::Peripheral::APB2Periph_SPI1);
 
 		  /* Configure SPI1 pins: NSS, SCK, MISO and MOSI */
 		  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_5 | GPIO_Pin_6 | GPIO_Pin_7;
@@ -65,8 +66,9 @@ bool SpiDriver::HwInit()
 	else if(m_SpiInstance == SPI_1_B5_B4_B3_A15)
 	{
 		m_SPIx = SPI1;
-		pClockManager->PeripheralClockEnable(ClockManager::APB2Periph_SPI1);
+		//pClockManager->PeripheralClockEnable(ClockManager::APB2Periph_SPI1);
 		//pPortManager->PortConfig(PortManager::GPIO_Remaped_SPI1);
+        HwClockEnable(Bsp::Peripheral::APB2Periph_SPI1);
 
 		  /* Configure SPI1 pins: NSS, SCK, MISO and MOSI */
 		  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_5 | GPIO_Pin_4 | GPIO_Pin_3;
@@ -92,7 +94,8 @@ bool SpiDriver::HwInit()
 	else if(m_SpiInstance == SPI_2_B12_B13_B14_B15)
 	{
 		m_SPIx = SPI2;
-		pClockManager->PeripheralClockEnable(ClockManager::APB1Periph_SPI2);
+		//pClockManager->PeripheralClockEnable(ClockManager::APB1Periph_SPI2);
+        HwClockEnable(Bsp::Peripheral::APB1Periph_SPI2);
 
 		  /* Configure SPI2 pins: NSS, SCK, MISO and MOSI */
 		  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15;
@@ -118,7 +121,9 @@ bool SpiDriver::HwInit()
 	else if(m_SpiInstance == SPI_3)
 	{
 		m_SPIx = SPI3;
-		pClockManager->PeripheralClockEnable(ClockManager::APB1Periph_SPI3);
+		//pClockManager->PeripheralClockEnable(ClockManager::APB1Periph_SPI3);
+        HwClockEnable(Bsp::Peripheral::APB1Periph_SPI3);
+
 	}
 	else
 	{

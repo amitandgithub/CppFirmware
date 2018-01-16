@@ -11,7 +11,6 @@
 using namespace Bsp;
 static void prvSetupHardware( void );
 
-
 int main(void)
 {
     // Initialize the Clocks, memories and other Microcontroller HW
@@ -26,7 +25,6 @@ int main(void)
     {
         RunTests();
     }
-
 }
 
 static void prvSetupHardware( void )

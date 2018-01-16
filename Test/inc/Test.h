@@ -19,10 +19,12 @@
 #include "HwButton.hpp"
 #include "HwButtonIntr.hpp"
 #include <I2CDriver.hpp>
-#include"INA219.hpp"
+#include "INA219.hpp"
+#include "SpiDriver.hpp"
+#include "Nokia5110LCD.hpp"
 
 using namespace Bsp;
-
+using namespace App;
 
 void Init_Tests();
 void RunTests();
@@ -34,5 +36,6 @@ void ClickEvent(void);
 void LongPressEvent(void);
 void LongLongPressEvent(void);
 void I2CDriver_Test();
+void Nokia_Display_Test();
 
 #endif
