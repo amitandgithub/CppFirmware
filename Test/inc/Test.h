@@ -19,6 +19,7 @@
 #include "HwButton.hpp"
 #include "HwButtonIntr.hpp"
 #include <I2CDriver.hpp>
+#include"INA219.hpp"
 
 using namespace Bsp;
 

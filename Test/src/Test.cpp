@@ -7,6 +7,8 @@ static GpioInput TestGpio_WithoutInterrupt(GPIOA,GPIO_Pin_2);
 static Led Led_PC13(GPIOC,GPIO_Pin_13);
 static Bsp::HwButtonIntr HwButton_A2(GPIOA, GPIO_Pin_3,Bsp::GpioInput::EXTI_Trigger_Rising, Bsp::GpioInput::EXTI_Mode_Interrupt);
 static I2CDriver I2C_Obj(I2CDriver::I2C1_B6_B7, nullptr, I2CDriver::Master, I2CDriver::BaudRate_100000 ); // I2C1_B6_B7
+static INA219 INA219_Obj(&I2C_Obj,0x80);
+static INA219::Power_t Power;
 
 void Init_Tests()
 {
@@ -19,6 +21,7 @@ void Init_Tests()
   HwButton_A2.RegisterEventHandler(Bsp::HwButtonIntr::LongPress,static_cast<Bsp::HwButtonIntr::BtnHandler>(LongPressEvent));
   HwButton_A2.RegisterEventHandler(Bsp::HwButtonIntr::LongLongPress,static_cast<Bsp::HwButtonIntr::BtnHandler>(LongLongPressEvent));
   I2C_Obj.HwInit();
+  INA219_Obj.SetCalibration_32V_2A();
 
 }
 
@@ -31,7 +34,8 @@ void GpioInput_ISR()
 void RunTests()
 {
     ButtonTest();
-    I2CDriver_Test();
+   // I2CDriver_Test();
+    INA219_Obj.Run(&Power);
 }
 
 void GpioTest()
