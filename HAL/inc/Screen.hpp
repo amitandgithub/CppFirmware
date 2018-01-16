@@ -12,14 +12,14 @@
 #ifndef SCREEN_HPP_
 #define SCREEN_HPP_
 
-namespace Bsp 
+namespace Bsp
 {
 
-class Screen 
+class Screen
 {
 public:
   	typedef void(*EventHandler_t)();
-        
+
 	typedef enum
 	{
 		Touch = 0,
@@ -27,21 +27,21 @@ public:
 		LongLongTouch,
 		MaxEvents
 	}Event_t;
-        
+
 	Screen();
 	virtual ~Screen();
-       	const static unsigned char NO_OF_CHARS_IN_LINE   = 12U;
+    const static unsigned char NO_OF_CHARS_IN_LINE   = 14U;
 	const static unsigned char NO_OF_LINES_IN_SCREEN = 6U;
 	constexpr static unsigned char SIZE_OF_SCREEN = ( NO_OF_CHARS_IN_LINE * NO_OF_LINES_IN_SCREEN) ;
-        
+
         void AddText(char* pText);
-        
+
         virtual void EventHandler(Event_t anEvent);
-        
+
         virtual inline char * GetScreenTextArray(){return ScreenText;}
 
 	void SetText(unsigned char Line, unsigned char Col, const char* pText, unsigned char Len);
-        
+
         void SetText(const char* pText);
 private:
 	char ScreenText[NO_OF_LINES_IN_SCREEN * NO_OF_CHARS_IN_LINE];

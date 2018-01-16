@@ -121,16 +121,6 @@ Nokia5110LCD::Nokia5110LCD(  SpiDriver*  pSpiDriver,
                              GpioOutput* pDataCommandGpio,
                              GpioOutput* pBacklightGpio     )
 {
-    /*
-	m_DCPort      = DCPort;
-	m_DCPin       = DCPin;
-	m_ResetPort   = ResetPort;
-	m_ResetPin    = ResetPin;
-	m_BKLPort     = BKLPort;
-	m_BKLPin      = BKLPin;
-	m_Spi         = Spi;
-    */
-
     m_pDisplaySPI        = pSpiDriver;
 	m_pDataCommandSelect = pDataCommandGpio;
 	m_pReset             = pResetGpio;
@@ -139,17 +129,6 @@ Nokia5110LCD::Nokia5110LCD(  SpiDriver*  pSpiDriver,
 
 bool Nokia5110LCD::HwInit()
 {
-    /*
-	static SpiDriver SpiDriverLCD(m_Spi);
-	static GpioOutput DataCommandSelectGpio(m_DCPort,m_DCPin);
-	static GpioOutput ResetPinGpio(m_ResetPort,m_ResetPin);
-	static GpioOutput BackLightGpio(m_BKLPort,m_BKLPin);
-
-	m_pDisplaySPI        = &SpiDriverLCD;
-	m_pDataCommandSelect = &DataCommandSelectGpio;
-	m_pReset             = &ResetPinGpio;
-	m_pBackLight         = &BackLightGpio;
-    */
 	m_pDisplaySPI->HwInit();
 	m_pDataCommandSelect->HwInit();
 	m_pReset->HwInit();
@@ -302,7 +281,7 @@ void Nokia5110LCD::DrawBuffer(char* pBuffer)
 {
 	GoToXY(0*SIZE_OF_1_CHAR,0);
 
-	for(int i = 0; i < 12*6 ; i++)
+	for(int i = 0; i < NO_OF_CHAR_IN_LINE*6 ; i++)
 	LCDCharacter(pBuffer[i]);
 
 }

@@ -2431,6 +2431,18 @@
                 <name>$PROJ_DIR$\HAL\src\Nokia5110LCD.cpp</name>
             </file>
         </group>
+        <group>
+            <name>UI</name>
+            <file>
+                <name>$PROJ_DIR$\HAL\src\ControlScreen.cpp</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\HAL\src\Screen.cpp</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\HAL\src\UI.cpp</name>
+            </file>
+        </group>
     </group>
     <group>
         <name>Startup</name>

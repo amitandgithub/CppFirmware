@@ -14,9 +14,9 @@ Screen::Screen()
 	 std::memset(&ScreenText[0],'.',SIZE_OF_SCREEN);
 }
 
-Screen::~Screen() 
+Screen::~Screen()
 {
-	
+
 }
 
 void Screen::AddText(char* pText)
@@ -40,10 +40,10 @@ void Screen::SetText(const char* pText)
 void Screen::EventHandler(Event_t anEvent)
 {
   //unsigned char LActiveScreen = App::UI::GetActiveScreen();
-  
-        if(anEvent == Touch)
+
+    if(anEvent == Touch)
 	{
-           App::UI::GoToPreviousScreen();      
+           App::UI::GoToPreviousScreen();
 	}
 	else if(anEvent == LongTouch)
 	{
@@ -51,13 +51,13 @@ void Screen::EventHandler(Event_t anEvent)
 	}
 	else if(anEvent == LongLongTouch)
 	{
-            //App::UI::GoToNextScreen();   
+            //App::UI::GoToNextScreen();
 	}
 	else
 	{
 		// Nothing To Do
 	}
-  
+
 }
 
 

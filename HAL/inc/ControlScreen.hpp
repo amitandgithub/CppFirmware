@@ -17,7 +17,7 @@ class ControlScreen : public Screen
 public:
 	ControlScreen();
 	virtual ~ControlScreen();
-        
+
 	typedef enum
 	{
 		Up = 0,
@@ -32,21 +32,21 @@ public:
 	constexpr static unsigned char SIZE_OF_HANDLER = ( NO_OF_LINES_IN_SCREEN * NO_OF_HANDLERS_IN_LINE ) ;
 
 	inline void AddText(char * pText){std::memcpy(m_Screen.GetScreenTextArray(), pText, SIZE_OF_SCREEN);}
-        
-        void AddHandler(unsigned char LineNo, EventHandler_t LongTouchHandler, EventHandler_t LLongTouchHandler);
-        
+
+    void AddHandler(unsigned char LineNo, EventHandler_t LongTouchHandler, EventHandler_t LLongTouchHandler);
+
 	void EventHandler(Event_t anEvent);
 
 	inline unsigned char GetActiveLine() const {return ActiveLine;}
-        
-        inline char * GetScreenTextArray(){return m_Screen.GetScreenTextArray();}
+
+    inline char * GetScreenTextArray(){return m_Screen.GetScreenTextArray();}
 
 private:
   	Screen m_Screen;
 	EventHandler_t m_EventHandlers[SIZE_OF_HANDLER];
 	void MovePointer(Direction_t Direction);
 	unsigned char ActiveLine;
-        
+
 };
 
 } /* namespace Bsp */
