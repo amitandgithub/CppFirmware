@@ -240,13 +240,13 @@ void Nokia5110LCD::DrawBitmap(const char my_array[])
 void Nokia5110LCD::LCDCharacter(const char character)
 {
 	s32 index;
-	Write(DATA, 0x00); //Blank vertical line padding
+	//Write(DATA, 0x00); //Blank vertical line padding
 
 	for (index = 0 ; index < 5 ; index++)
 		Write(DATA, ASCII[character - 0x20][index]);
 	//0x20 is the ASCII character for Space (' '). The font table starts with this character
 
-	//Write(DATA, 0x00); //Blank vertical line padding
+	Write(DATA, 0x00); //Blank vertical line padding
 }
 
 //Given a string of characters, one by one is passed to the LCD

@@ -8,22 +8,24 @@
 #ifndef APP_INC_SYSTICKTIMER_HPP_
 #define APP_INC_SYSTICKTIMER_HPP_
 
+#include "stm32f10x.h"
+
 namespace Bsp
 {
 
 class SysTickTimer
 {
 public:
-	const u32 SYS_TICK_FREQ = 1000UL;
-	static bool HwInit(u32 SysTickFreq);
-	static inline u32 GetTicks(){ return m_ticks;}
-	static inline u32 GetMicroTicks(){ return (m_ticks*1000UL +  (SysTick->LOAD - SysTick->VAL) );}
+	const unsigned int SYS_TICK_FREQ = 1000UL;
+	static bool HwInit(unsigned int SysTickFreq);
+	static inline unsigned int GetTicks(){ return m_ticks;}
+	static inline unsigned int GetMicroTicks(){ return (m_ticks*1000UL +  (SysTick->LOAD - SysTick->VAL) );}
 
-	static void DelayTicks (u32 Ticks);
+	static void DelayTicks (unsigned int Ticks);
 
-	static inline u32 GetTicksSince(u32 LastTicks)
+	static inline unsigned int GetTicksSince(unsigned int LastTicks)
 	{
-		u32 CurrentTicks = GetTicks();
+		unsigned int CurrentTicks = GetTicks();
 
 		return ( (CurrentTicks >= LastTicks)? (CurrentTicks - LastTicks ) :   (CurrentTicks - LastTicks + 0xFFFFFFFFUL) );
 	}
@@ -35,7 +37,7 @@ public:
 private:
 	//SysTickTimer(){m_pSysTickTimer = nullptr;}
 	//static SysTickTimer* m_pSysTickTimer;
-	static volatile uint32_t m_ticks;
+	static volatile unsigned int m_ticks;
 
 };
 

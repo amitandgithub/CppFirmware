@@ -2377,30 +2377,54 @@
     </group>
     <group>
         <name>HAL</name>
-        <file>
-            <name>$PROJ_DIR$\HAL\src\ClockManager.cpp</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\HAL\src\GpioInput.cpp</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\HAL\src\GpioOutput.cpp</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\HAL\src\I2CDriver.cpp</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\HAL\src\InterruptManager.cpp</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\HAL\src\Peripheral.cpp</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\HAL\src\SpiDriver.cpp</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\HAL\src\SysTickTimer.cpp</name>
-        </file>
+        <group>
+            <name>ADC</name>
+        </group>
+        <group>
+            <name>Gpio</name>
+            <file>
+                <name>$PROJ_DIR$\HAL\src\GpioInput.cpp</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\HAL\src\GpioOutput.cpp</name>
+            </file>
+        </group>
+        <group>
+            <name>I2C</name>
+            <file>
+                <name>$PROJ_DIR$\HAL\src\I2CDriver.cpp</name>
+            </file>
+        </group>
+        <group>
+            <name>Peripheral</name>
+            <file>
+                <name>$PROJ_DIR$\HAL\src\ClockManager.cpp</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\HAL\src\InterruptManager.cpp</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\HAL\src\Peripheral.cpp</name>
+            </file>
+        </group>
+        <group>
+            <name>PWM</name>
+        </group>
+        <group>
+            <name>SPI</name>
+            <file>
+                <name>$PROJ_DIR$\HAL\src\SpiDriver.cpp</name>
+            </file>
+        </group>
+        <group>
+            <name>SysTick</name>
+            <file>
+                <name>$PROJ_DIR$\HAL\src\SysTickTimer.cpp</name>
+            </file>
+        </group>
+        <group>
+            <name>UART</name>
+        </group>
     </group>
     <group>
         <name>Modules</name>
@@ -2411,6 +2435,15 @@
             </file>
             <file>
                 <name>$PROJ_DIR$\HAL\src\HwButtonIntr.cpp</name>
+            </file>
+        </group>
+        <group>
+            <name>Clock</name>
+            <file>
+                <name>$PROJ_DIR$\HAL\src\Clock.cpp</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\HAL\src\Time.cpp</name>
             </file>
         </group>
         <group>

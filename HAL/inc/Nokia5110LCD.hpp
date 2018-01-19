@@ -46,6 +46,8 @@ public:
 				 GpioOutput* pBacklightGpio);
 	~Nokia5110LCD(){};
 	bool HwInit();
+    void BackLightOn() { if(m_pBackLight) m_pBackLight->SetOutput();  }
+    void BackLightOff(){ if(m_pBackLight) m_pBackLight->ClearOutput();}
 	bool DisplayInit();
 	void SetMode(u8 LCDMode);
 	void Write(DC_t DC, unsigned char data);

@@ -18,18 +18,14 @@ Nokia5110LCD NokiaLCD( &SpiDriverLCD, &ResetPinGpio, &DataCommandSelectGpio, &Ba
 
 UI MyUI(&NokiaLCD);
 Screen::Event_t gEvent = Screen::MaxEvents;
-static ControlScreen MenuScreen;
 static ControlScreen myControlScreen;
 static Screen PowerMonitorScreen;
-static Screen Aarav;
-static Screen Tanya;
-static UI::ScreenHandle_t MenuScreenHandle;
+
 static UI::ScreenHandle_t myControlScreenHandle;
-static UI::ScreenHandle_t AaravScreenHandle;
-static UI::ScreenHandle_t TanyaScreenHandle;
 
 uint8_t aCurrent[9];
 uint8_t aVoltage[9];
+Clock nClock;
 
 void Init_Tests()
 {
@@ -45,6 +41,7 @@ void Init_Tests()
   INA219_Obj.SetCalibration_32V_2A();
   MyUI.Init();
   CreateUI();
+  Create_Alarm_Clock();
 
 }
 
@@ -77,6 +74,11 @@ void RunTests()
     ftoa(Power.Power, (char*)aCurrent, 6);
     PowerMonitorScreen.SetText(3, 0, "P = ", 4);
     PowerMonitorScreen.SetText(3, 4,  (char*)aCurrent, 7);
+
+    nClock.Run();
+    nClock.RunAlarmHandler();
+    PowerMonitorScreen.SetText(0, 4, nClock.GetCurrentTimeString((char*)aCurrent), 8);
+
 }
 
 void GpioTest()
@@ -106,7 +108,6 @@ void LEDTest()
 void ButtonTest()
 {
     HwButton_A2.RunStateMachine();
-
 }
 
 
@@ -147,37 +148,28 @@ void Nokia_Display_Test()
     NokiaLCD.DrawChar(0, 12,Array[index++ % sizeof(Array)]);
     SysTickTimer::DelayTicks(150);
 }
+static Clock::AlarmHandle_t nClockHandle;
+void OneSecondHandler()
+{
+    Led_PC13.Toggle();
+}
+void Create_Alarm_Clock()
+{
+
+    Time time(0,0,10);
+    nClockHandle = nClock.CreateAlarm( Clock::ALARM_TYPE_REPEAT, time, OneSecondHandler );
+    nClock.StartAlarm(nClockHandle);
+
+
+}
+
+
+
 void CreateUI()
 {
-    Aarav.AddText( (char *)
-                       "Aarav         "
-                       "Aarav         "
-                       "Aarav         "
-                       "Aarav         "
-                       "Aarav         "
-                       "Aarav         "
-                       );
-
-    MenuScreen.AddText( (char *)
-                       ">Menu1        "
-                       " Menu2        "
-                       " Menu3        "
-                       " Menu4        "
-                       " Menu5        "
-                       " Next Menu    "
-                       );
-
-    Tanya.AddText( (char *)
-                       "Tanya         "
-                       "Tanya         "
-                       "Tanya         "
-                       "Tanya         "
-                       "Tanya         "
-                       "Tanya         "
-                       );
 
     PowerMonitorScreen.AddText( (char *)
-                       "< Live Power >"
+                       "T =           "
                        "              "
                        "              "
                        "              "
@@ -187,23 +179,17 @@ void CreateUI()
 
     myControlScreen.AddText( (char *)
                        ">Live Power   "
-                       " Aarav,Avni   "
-                       " Tanya,Dog    "
-                       " Rudransh,    "
-                       " Amit,sumit   "
-                       " Next Menu    "
+                       " Back Lite    "
+                       " Reset Data   "
+                       "              "
+                       "              "
+                       "              "
                        );
    myControlScreen.AddHandler(0,Line0Menu0LongTouchHandler,Line0Menu0LongLongTouchHandler);
-   myControlScreen.AddHandler(1,Line1AaravLongTouchHandler,Line0Menu0LongLongTouchHandler);
-   myControlScreen.AddHandler(2,Line2TanyaLongTouchHandler,Line0Menu0LongLongTouchHandler);
-   myControlScreen.AddHandler(5,Line5Menu0LongTouchHandler,nullptr);
-   MenuScreen.AddHandler(5,Line5MenuScreenLongTouchHandler,nullptr);
+   myControlScreen.AddHandler(1,LongTouchBackLightHandler,nullptr);
 
    MyUI.AddScreen(&PowerMonitorScreen);
-   AaravScreenHandle = MyUI.AddScreen(&Aarav);
-   TanyaScreenHandle = MyUI.AddScreen(&Tanya);
    myControlScreenHandle = MyUI.AddScreen(&myControlScreen);
-   MenuScreenHandle = MyUI.AddScreen(&MenuScreen);
 }
 
 void ClickEvent(void)
@@ -223,19 +209,20 @@ void Line0Menu0LongTouchHandler()
 {
   UI::SetActiveScreen(0);
 }
+void LongTouchBackLightHandler()
+{
+    BackLightGpio.ToggleOutput();
 
-void Line1AaravLongTouchHandler()
-{
-  UI::SetActiveScreen(AaravScreenHandle);
+    if(BackLightGpio.ReadOutputValue())
+    {
+        myControlScreen.SetText(myControlScreen.GetActiveLine(),11,"ON ", 3);
+    }
+    else
+    {
+        myControlScreen.SetText(myControlScreen.GetActiveLine(),11,"OFF", 3);
+    }
 }
-void Line2TanyaLongTouchHandler()
-{
-  UI::SetActiveScreen(TanyaScreenHandle);
-}
-void Line5Menu0LongTouchHandler()
-{
-  UI::SetActiveScreen(MenuScreenHandle);
-}
+
 void Line5MenuScreenLongTouchHandler()
 {
   UI::SetActiveScreen(myControlScreenHandle);

@@ -13,14 +13,14 @@ ControlScreen::ControlScreen(): ActiveLine(0)
 {
   m_Pointer = '>';
   m_Space = ' ';
-  
+
   for(int i = 0; i<Screen::NO_OF_LINES_IN_SCREEN * ControlScreen::NO_OF_HANDLERS_IN_LINE; i++)
 		m_EventHandlers[i] = nullptr;
 }
 
-ControlScreen::~ControlScreen() 
+ControlScreen::~ControlScreen()
 {
-	
+
 }
 
 void ControlScreen::AddHandler(unsigned char LineNo, EventHandler_t LongTouchHandler, EventHandler_t LLongTouchHandler)
@@ -28,7 +28,17 @@ void ControlScreen::AddHandler(unsigned char LineNo, EventHandler_t LongTouchHan
    m_EventHandlers[(LineNo % NO_OF_LINES_IN_SCREEN)*NO_OF_HANDLERS_IN_LINE + 0 ] =  LongTouchHandler;
    m_EventHandlers[(LineNo % NO_OF_LINES_IN_SCREEN)*NO_OF_HANDLERS_IN_LINE + 1 ] =  LLongTouchHandler;
 }
- 
+
+void ControlScreen::SetText(unsigned char Line, unsigned char Col, const char* pText, unsigned char Len)
+{
+    Line %= NO_OF_LINES_IN_SCREEN;
+    Col  %= NO_OF_CHARS_IN_LINE;
+
+    for(uint8_t i = 0; i< Len; i++)
+    {
+        (m_Screen.GetScreenTextArray())[(Line*NO_OF_CHARS_IN_LINE)+Col+i] = pText[i];
+    }
+}
 void ControlScreen::EventHandler(Event_t anEvent)
 {
 	if(anEvent == Touch)
@@ -77,7 +87,7 @@ void ControlScreen::MovePointer(Direction_t Direction)
 	}
 	else if( Direction == Up )
 	{
-		// Roll over to the last line
+		// Roll over to the First line
 		ActiveLine -= 1;
 
 	}

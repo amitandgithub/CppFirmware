@@ -26,8 +26,15 @@ void Screen::AddText(char* pText)
 
 void Screen::SetText(unsigned char Line, unsigned char Col, const char* pText, unsigned char Len)
 {
-  std::memcpy(&ScreenText[ ((Line % NO_OF_LINES_IN_SCREEN) * NO_OF_CHARS_IN_LINE) + (Col%NO_OF_CHARS_IN_LINE) ],pText, Len%((unsigned char)(NO_OF_CHARS_IN_LINE-Col)) );
-  //                       (Lines 0 - 5)                                          ( Col 0 - 11)                     ( Len 0-11 )
+    Line %= NO_OF_LINES_IN_SCREEN;
+    Col  %= NO_OF_CHARS_IN_LINE;
+
+    for(uint8_t i = 0; i< Len; i++)
+    {
+        ScreenText[(Line*NO_OF_CHARS_IN_LINE)+Col+i] = pText[i];
+    }
+  //std::memcpy(&ScreenText[ ((Line % NO_OF_LINES_IN_SCREEN) * NO_OF_CHARS_IN_LINE) + (Col%NO_OF_CHARS_IN_LINE) ],pText, Len%((unsigned char)(NO_OF_CHARS_IN_LINE-Col)) );
+  //                       (Lines 0 - 5)                                          ( Col 0 - 13)                     ( Len 0-13 )
 }
 
 void Screen::SetText(const char* pText)

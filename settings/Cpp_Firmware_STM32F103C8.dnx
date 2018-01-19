@@ -20,7 +20,7 @@
         <stlinkResetStrategy>1</stlinkResetStrategy>
     </StLinkDriver>
     <DebugChecksum>
-        <Checksum>2239490153</Checksum>
+        <Checksum>1506391707</Checksum>
     </DebugChecksum>
     <Exceptions>
         <StopOnUncaught>_ 0</StopOnUncaught>
@@ -30,6 +30,7 @@
         <Enabled>_ 0</Enabled>
     </CodeCoverage>
     <Disassembly>
+        <MixedMode>1</MixedMode>
         <InstrCount>0</InstrCount>
     </Disassembly>
     <CallStack>
@@ -57,9 +58,6 @@
         <Show>1 1</Show>
         <Sort>4 0</Sort>
     </SfrWindow>
-    <struct_types>
-        <Fmt0>class Bsp::I2CDriver-m_Status	4	0</Fmt0>
-    </struct_types>
     <Trace2>
         <Enabled>0</Enabled>
         <ShowSource>0</ShowSource>

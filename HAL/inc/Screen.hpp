@@ -34,15 +34,15 @@ public:
 	const static unsigned char NO_OF_LINES_IN_SCREEN = 6U;
 	constexpr static unsigned char SIZE_OF_SCREEN = ( NO_OF_CHARS_IN_LINE * NO_OF_LINES_IN_SCREEN) ;
 
-        void AddText(char* pText);
+    void AddText(char* pText);
 
-        virtual void EventHandler(Event_t anEvent);
+    virtual void EventHandler(Event_t anEvent);
 
-        virtual inline char * GetScreenTextArray(){return ScreenText;}
+    virtual inline char * GetScreenTextArray(){return ScreenText;}
 
-	void SetText(unsigned char Line, unsigned char Col, const char* pText, unsigned char Len);
+	virtual void SetText(unsigned char Line, unsigned char Col, const char* pText, unsigned char Len);
 
-        void SetText(const char* pText);
+    void SetText(const char* pText);
 private:
 	char ScreenText[NO_OF_LINES_IN_SCREEN * NO_OF_CHARS_IN_LINE];
 };

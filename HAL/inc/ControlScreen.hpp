@@ -35,6 +35,8 @@ public:
 
     void AddHandler(unsigned char LineNo, EventHandler_t LongTouchHandler, EventHandler_t LLongTouchHandler);
 
+    virtual void SetText(unsigned char Line, unsigned char Col, const char* pText, unsigned char Len);//{m_Screen.SetText(Line,Col,pText,Len);}
+
 	void EventHandler(Event_t anEvent);
 
 	inline unsigned char GetActiveLine() const {return ActiveLine;}

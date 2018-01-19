@@ -27,9 +27,11 @@
 #include "Screen.hpp"
 #include "ControlScreen.hpp"
 #include "UI.hpp"
+#include "Clock.hpp"
 
 using namespace Bsp;
 using namespace App;
+using namespace Utility;
 
 void Init_Tests();
 void RunTests();
@@ -52,10 +54,16 @@ void Line5Menu0LongTouchHandler();
 void Line5MenuScreenLongTouchHandler();
 void Line2TanyaLongTouchHandler();
 void Line1AaravLongTouchHandler();
+void LongTouchBackLightHandler();
+void Create_Alarm_Clock();
+void OneSecondHandler();
+
+
+
 
 
 void reverse(char *str, int len);
-int intToStr(int x, char str[], int d);
-void ftoa(float n, char *res, int afterpoint);
+extern int intToStr(int x, char str[], int d);
+extern void ftoa(float n, char *res, int afterpoint);
 
 #endif
