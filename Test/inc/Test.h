@@ -28,6 +28,7 @@
 #include "ControlScreen.hpp"
 #include "UI.hpp"
 #include "Clock.hpp"
+#include "MilliTime.hpp"
 
 using namespace Bsp;
 using namespace App;

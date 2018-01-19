@@ -2442,9 +2442,6 @@
             <file>
                 <name>$PROJ_DIR$\HAL\src\Clock.cpp</name>
             </file>
-            <file>
-                <name>$PROJ_DIR$\HAL\src\Time.cpp</name>
-            </file>
         </group>
         <group>
             <name>INA219</name>
@@ -2462,6 +2459,15 @@
             <name>Nokia 5110 Display</name>
             <file>
                 <name>$PROJ_DIR$\HAL\src\Nokia5110LCD.cpp</name>
+            </file>
+        </group>
+        <group>
+            <name>Time</name>
+            <file>
+                <name>$PROJ_DIR$\HAL\src\MilliTime.cpp</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\HAL\src\Time.cpp</name>
             </file>
         </group>
         <group>

@@ -1,8 +1,6 @@
 
 
 #include "Clock.hpp"
-#include "SysTickTimer.hpp"
-
 
 namespace Utility
 {
@@ -92,24 +90,13 @@ bool Clock::ResemeAlarm(AlarmHandle_t nAlarmHandle)
 
 bool Clock::ReloadAlarmTime(AlarmHandle_t nAlarmHandle)
 {
-
     if(nAlarmHandle < MAX_ALARMS )
     {
-
-
         m_Alarms[nAlarmHandle].ReloadTime = GetCurrentTime() +  m_Alarms[nAlarmHandle].time;
-        //m_Alarms[nAlarmHandle].Time.Min += time.Min;
-        //m_Alarms[nAlarmHandle].Time.Hrs += time.Hrs;
-
         m_Alarms[nAlarmHandle].State = ALARM_ACTIVE;
         return true;
     }
     return false;
-}
-
-void Clock::IncrementSec()
-{
-   m_CurrentTime++;
 }
 void Clock::UpdateAlarms()
 {
@@ -120,8 +107,7 @@ void Clock::UpdateAlarms()
 
             if( (m_Alarms[i].ReloadTime.GetHrs() <=  m_CurrentTime.GetHrs()) &&
                 (m_Alarms[i].ReloadTime.GetMin() <=  m_CurrentTime.GetMin()) &&
-                (m_Alarms[i].ReloadTime.GetSec() <=  m_CurrentTime.GetSec())
-               )
+                (m_Alarms[i].ReloadTime.GetSec() <=  m_CurrentTime.GetSec()) )
             {
                m_Alarms[i].State =  ALARM_EXPIRED;
             }
@@ -130,29 +116,12 @@ void Clock::UpdateAlarms()
     }
 }
 
-inline bool Clock::UpdateCurrentTime()
-{
-    static unsigned int TickDifference = 0;
-    unsigned int elapsed_ticks;
-
-    TickDifference = TickDifference; // To avoid compiler warning
-
-    elapsed_ticks = Bsp::SysTickTimer::GetTicksSince(m_Previous_Millis);
-
-    if( elapsed_ticks >= 1000UL -1 )
-    {
-        m_Previous_Millis = Bsp::SysTickTimer::GetTicks();
-        IncrementSec();
-        TickDifference =  m_Previous_Millis - elapsed_ticks;
-        return true;
-    }
-    return false;
-}
-
 void Clock::Run()
 {
-   if( UpdateCurrentTime() == true )
+   if( m_CurrentTime.Run() == true )
    {
+       // Time has been updated , so update
+       // the alarms too
         UpdateAlarms();
    }
 }

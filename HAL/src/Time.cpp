@@ -10,15 +10,15 @@ namespace Utility
 
 void Time::Set(unsigned char hrs, unsigned char min, unsigned char sec)
 {
-    if(sec > 60)
+    if(sec > 59)
     {
-        sec = sec - 60;
+        sec = sec - 59;
         min++;
     }
 
-    if(min > 60)
+    if(min > 59)
     {
-        min = min - 60;
+        min = min - 59;
         hrs++;
     }
 
@@ -27,23 +27,24 @@ void Time::Set(unsigned char hrs, unsigned char min, unsigned char sec)
     Hrs = hrs;
 }
 
-Time::Time(unsigned char hrs, unsigned char min, unsigned char sec)
+Time::Time(unsigned char hrs, unsigned char min, unsigned char sec, unsigned int update_frequency)
 {
-    if(sec > 60)
+    if(sec > 59)
     {
-        sec = sec - 60;
+        sec = sec - 59;
         min++;
     }
 
-    if(min > 60)
+    if(min > 59)
     {
-        min = min - 60;
+        min = min - 59;
         hrs++;
     }
 
     Sec = sec;
     Min = min;
     Hrs = hrs;
+    m_UpdateFrequencyInMillis = update_frequency;
 }
 
 // Overload + for Time.
@@ -54,15 +55,15 @@ Time Time::operator+(Time t)
     temp.Min = t.Min + Min;
     temp.Hrs = t.Hrs + Hrs;
 
-    if(temp.Sec > 60)
+    if(temp.Sec > 59)
     {
-        temp.Sec = temp.Sec - 60;
+        temp.Sec = temp.Sec - 59;
         temp.Min++;
     }
 
-    if(temp.Min > 60)
+    if(temp.Min > 59)
     {
-        temp.Min = temp.Min - 60;
+        temp.Min = temp.Min - 59;
         Hrs++;
     }
     return temp;
@@ -102,15 +103,15 @@ Time Time::operator++()
 {
     Sec++;
 
-    if(Sec > 60)
+    if(Sec > 59)
     {
-        Sec = Sec - 60;
+        Sec = Sec - 59;
         Min++;
     }
 
-    if(Min > 60)
+    if(Min > 59)
     {
-        Min = Min - 60;
+        Min = Min - 59;
         Hrs++;
     }
     return *this;
@@ -120,15 +121,15 @@ Time Time::operator++(int x)
 {
     Sec++;
 
-    if(Sec > 60)
+    if(Sec > 59)
     {
-        Sec = Sec - 60;
+        Sec = Sec - 59;
         Min++;
     }
 
-    if(Min > 60)
+    if(Min > 59)
     {
-        Min = Min - 60;
+        Min = Min - 59;
         Hrs++;
     }
     return *this;
@@ -181,7 +182,51 @@ char* Time::Get(char* pBuffer)
     return pBuffer;
 }
 
+void Time::IncrementTime()
+{
+    (*this)++;
+}
+bool Time::Update()
+{
+    static unsigned int TickDifference = 0;
+    unsigned int elapsed_ticks;
 
+    TickDifference = TickDifference; // To avoid compiler warning
+
+    elapsed_ticks = GetRawMiliSecTicksSince(m_Previous_Millis);
+
+    if( elapsed_ticks >= m_UpdateFrequencyInMillis -1UL )
+    {
+        m_Previous_Millis = GetRawMilliSecTicks();
+        IncrementTime();
+        TickDifference =  m_Previous_Millis - elapsed_ticks;
+        return true;
+    }
+    return false;
+
+}
+
+bool Time::Run()
+{
+    unsigned int current_ticks = GetRawMilliSecTicks();
+
+    if(  (current_ticks - m_Previous_Millis) > 0)
+    {
+        if( (current_ticks - m_Previous_Millis) >= m_UpdateFrequencyInMillis)
+        {
+           return Update();
+        }
+    }
+    else
+    {
+        if( (m_Previous_Millis - current_ticks + 0xFFFFFFFF ) >= m_UpdateFrequencyInMillis)
+        {
+          return Update();
+        }
+    }
+
+    return false;
+}
 
 
 

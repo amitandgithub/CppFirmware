@@ -26,6 +26,7 @@ static UI::ScreenHandle_t myControlScreenHandle;
 uint8_t aCurrent[9];
 uint8_t aVoltage[9];
 Clock nClock;
+MilliTime MilliSecTimer;
 
 void Init_Tests()
 {
@@ -77,7 +78,11 @@ void RunTests()
 
     nClock.Run();
     nClock.RunAlarmHandler();
+    MilliSecTimer.Run();
     PowerMonitorScreen.SetText(0, 4, nClock.GetCurrentTimeString((char*)aCurrent), 8);
+
+    PowerMonitorScreen.SetText(5, 0, MilliSecTimer.Get((char*)aCurrent), 12);
+
 
 }
 
@@ -109,8 +114,6 @@ void ButtonTest()
 {
     HwButton_A2.RunStateMachine();
 }
-
-
 
 void ClickEvent1(void)
 {
@@ -156,11 +159,9 @@ void OneSecondHandler()
 void Create_Alarm_Clock()
 {
 
-    Time time(0,0,10);
+    static Time time(0,0,5);
     nClockHandle = nClock.CreateAlarm( Clock::ALARM_TYPE_REPEAT, time, OneSecondHandler );
     nClock.StartAlarm(nClockHandle);
-
-
 }
 
 

@@ -11,7 +11,7 @@
 #ifndef TIME_HPP_
 #define TIME_HPP_
 
-
+#include "SysTickTimer.hpp"
 
 namespace Utility
 {
@@ -19,8 +19,8 @@ namespace Utility
 class Time
 {
 public:
-    Time():Sec(0),Min(0),Hrs(0){};
-    Time(unsigned char hrs, unsigned char min, unsigned char sec);
+    Time():Sec(0),Min(0),Hrs(0),m_UpdateFrequencyInMillis(1000){};
+    Time(unsigned char hrs, unsigned char min, unsigned char sec, unsigned int update_frequency = 1000UL);
     ~Time(){};
     Time operator+(Time t);
     Time operator-(Time t);
@@ -36,11 +36,18 @@ public:
     void SetMin(unsigned char min){Min = min;}
     void SetHrs(unsigned char hrs){Hrs = hrs;}
     void Set(unsigned char hrs, unsigned char min, unsigned char sec);
-
+    bool Run();
+    bool Update();
 private:
-        unsigned char Sec;
-        unsigned char Min;
-        unsigned char Hrs;
+    void IncrementTime();
+    unsigned int GetRawMilliSecTicks(){return Bsp::SysTickTimer::GetTicks();}
+    unsigned int GetRawMiliSecTicksSince(unsigned int LastTicks){return Bsp::SysTickTimer::GetTicksSince(LastTicks);}
+
+    unsigned int    m_Previous_Millis;
+    unsigned char   Sec;
+    unsigned char   Min;
+    unsigned char   Hrs;
+    unsigned int    m_UpdateFrequencyInMillis;
 
 };
 

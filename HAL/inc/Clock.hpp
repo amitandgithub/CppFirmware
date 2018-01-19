@@ -2,7 +2,7 @@
 // CLASS: Clock
 //
 // DESCRIPTION:
-//  This class is responsible for prividint the time and Alarm functionality.
+//  This class is responsible for prividing the Clock functionality.
 //
 // CREATED: 17-01-2018, by Amit Chaudhary
 //
@@ -12,6 +12,7 @@
 #define CLOCK_HPP_
 
 #include "Time.hpp"
+#include "SysTickTimer.hpp"
 #include "Test.h"
 
 namespace Utility
@@ -68,10 +69,11 @@ public:
     void RunAlarmHandler();
 
 private:
+    unsigned int GetRawMiliSecTicks(){return Bsp::SysTickTimer::GetTicks();}
+    unsigned int GetRawMiliSecTicksSince(unsigned int LastTicks){return Bsp::SysTickTimer::GetTicksSince(LastTicks);}
     bool ReloadAlarmTime(AlarmHandle_t nAlarmHandle);
     void UpdateAlarms();
-    bool UpdateCurrentTime();
-    void IncrementSec();
+
     Time           m_CurrentTime;
     unsigned int   m_Previous_Millis;
     unsigned char  m_CurrentAlarms;
