@@ -27,8 +27,8 @@ void INA219::Run(Power_t* pPower)
 	pPower->Voltage = GetBusVoltage_V();
 	pPower->Current = GetCurrent_mA();
 	pPower->Power   = GetPower_mW();
-        if(pPower->Voltage <0 || pPower->Voltage < 0.9f )pPower->Voltage=0; // Negative voltage till 0.90v is not what we are interested in.
-	if(pPower->Current < 0 ) pPower->Current = 0;         // Discard the junk values
+    if(pPower->Voltage <0 || pPower->Voltage < 0.9f )pPower->Voltage=0; // Negative voltage till 0.90v is not what we are interested in.
+	if(pPower->Current < 0 ) pPower->Current = 0;                       // Discard the junk values
 }
 
 

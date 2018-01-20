@@ -20,7 +20,7 @@
         <stlinkfoundProbes />
     </StLinkDriver>
     <DebugChecksum>
-        <Checksum>1321941078</Checksum>
+        <Checksum>1646161487</Checksum>
     </DebugChecksum>
     <Exceptions>
         <StopOnUncaught>_ 0</StopOnUncaught>
@@ -59,11 +59,17 @@
         <Sort>4 0</Sort>
     </SfrWindow>
     <struct_types>
-        <Fmt0>class Utility::MilliTime-Sec	3	0</Fmt0>
-        <Fmt1>class Utility::Time-Hrs	3	0</Fmt1>
-        <Fmt2>class Utility::Time-Min	3	0</Fmt2>
-        <Fmt3>class Utility::Time-Sec	3	0</Fmt3>
-        <Fmt4>class Utility::Time-m_Previous_Millis	3	0</Fmt4>
+        <Fmt0>class TimeFormat-date	3	0</Fmt0>
+        <Fmt1>class TimeFormat-dow	3	0</Fmt1>
+        <Fmt2>class TimeFormat-hour	3	0</Fmt2>
+        <Fmt3>class TimeFormat-min	3	0</Fmt3>
+        <Fmt4>class TimeFormat-mon	3	0</Fmt4>
+        <Fmt5>class TimeFormat-sec	3	0</Fmt5>
+        <Fmt6>class Utility::MilliTime-Sec	3	0</Fmt6>
+        <Fmt7>class Utility::Time-Hrs	3	0</Fmt7>
+        <Fmt8>class Utility::Time-Min	3	0</Fmt8>
+        <Fmt9>class Utility::Time-Sec	3	0</Fmt9>
+        <Fmt10>class Utility::Time-m_Previous_Millis	3	0</Fmt10>
     </struct_types>
     <Trace2>
         <Enabled>0</Enabled>

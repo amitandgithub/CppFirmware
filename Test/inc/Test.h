@@ -29,6 +29,7 @@
 #include "UI.hpp"
 #include "Clock.hpp"
 #include "MilliTime.hpp"
+#include <DS3231.h>
 
 using namespace Bsp;
 using namespace App;

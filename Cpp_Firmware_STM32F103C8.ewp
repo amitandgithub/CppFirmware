@@ -2110,6 +2110,12 @@
             </file>
         </group>
         <group>
+            <name>DS3231</name>
+            <file>
+                <name>$PROJ_DIR$\HAL\src\DS3231.cpp</name>
+            </file>
+        </group>
+        <group>
             <name>INA219</name>
             <file>
                 <name>$PROJ_DIR$\HAL\src\INA219.cpp</name>

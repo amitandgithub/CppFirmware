@@ -261,11 +261,7 @@ bool MilliTime::Run()
     if( ElapsedTicks > 1)
     {
         m_Previous_Millis = GetRawMilliSecTicks();
-        //IncrementTime();
-        //Set(0,0,0,ElapsedTicks + Millis);
-        //SetMillis(ElapsedTicks + Millis);
         AddMillis(ElapsedTicks);
-
         return true;
     }
     return false;

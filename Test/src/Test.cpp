@@ -23,10 +23,14 @@ static Screen PowerMonitorScreen;
 
 static UI::ScreenHandle_t myControlScreenHandle;
 
-uint8_t aCurrent[9];
+uint8_t aCurrent[20];
 uint8_t aVoltage[9];
 Clock nClock;
 MilliTime MilliSecTimer;
+// Init a Time-data structure
+DateNTime  t;
+
+static DS3231 rtc(&INA219_I2C,0xD0);
 
 void Init_Tests()
 {
@@ -43,6 +47,11 @@ void Init_Tests()
   MyUI.Init();
   CreateUI();
   Create_Alarm_Clock();
+  rtc.begin();
+  rtc.setDOW(DS3231::SATURDAY);
+  rtc.setDate(20,1,2018);
+  //rtc.setTime(15,41,0);
+  rtc.setTime(0,0,0);
 
 }
 
@@ -63,26 +72,38 @@ void RunTests()
     MyUI.Run();
     INA219_Obj.Run(&Power);
 
+    PowerMonitorScreen.SetText(0, 0, rtc.getDOWStr(DS3231::FORMAT_SHORT), 3);
+    PowerMonitorScreen.SetText(0, 3, ",", 1);
+    PowerMonitorScreen.SetText(0, 4, rtc.getDateStr(DS3231::FORMAT_LONG, DS3231::FORMAT_LITTLEENDIAN,'-'), 2);
+    PowerMonitorScreen.SetText(0, 6, "-", 1);
+    PowerMonitorScreen.SetText(0, 7, rtc.getMonthStr(DS3231::FORMAT_SHORT), 3);
+    PowerMonitorScreen.SetText(0, 10, "-", 1);
+    PowerMonitorScreen.SetText(0, 11, &(rtc.getDateStr(DS3231::FORMAT_LONG, DS3231::FORMAT_LITTLEENDIAN,'-'))[8], 2);
+    ftoa(rtc.getTemp(), (char*)aCurrent, 5);
+    PowerMonitorScreen.SetText(1, 4, (char*)aCurrent , 5);
+    PowerMonitorScreen.SetText(2, 4, rtc.getTimeStr(DS3231::FORMAT_LONG), 8);
+
+
+
     ftoa(Power.Voltage, (char*)aVoltage, 6);
     ftoa(Power.Current, (char*)aCurrent, 6);
 
-    PowerMonitorScreen.SetText(1, 0, "V = ", 4);
-    PowerMonitorScreen.SetText(1, 4,  (char*)aVoltage, 7);
+    PowerMonitorScreen.SetText(3, 0, "V = ", 4);
+    PowerMonitorScreen.SetText(3, 4,  (char*)aVoltage, 7);
 
-    PowerMonitorScreen.SetText(2, 0, "I = ", 4);
-    PowerMonitorScreen.SetText(2, 4,  (char*)aCurrent,7);
+    PowerMonitorScreen.SetText(4, 0, "I = ", 4);
+    PowerMonitorScreen.SetText(4, 4,  (char*)aCurrent,7);
 
     ftoa(Power.Power, (char*)aCurrent, 6);
-    PowerMonitorScreen.SetText(3, 0, "P = ", 4);
-    PowerMonitorScreen.SetText(3, 4,  (char*)aCurrent, 7);
+    PowerMonitorScreen.SetText(5, 0, "P = ", 4);
+    PowerMonitorScreen.SetText(5, 4,  (char*)aCurrent, 7);
 
-    nClock.Run();
-    nClock.RunAlarmHandler();
-    MilliSecTimer.Run();
-    PowerMonitorScreen.SetText(0, 4, nClock.GetCurrentTimeString((char*)aCurrent), 8);
-
-    PowerMonitorScreen.SetText(5, 0, MilliSecTimer.Get((char*)aCurrent), 12);
-
+    //nClock.Run();
+    //nClock.RunAlarmHandler();
+    //PowerMonitorScreen.SetText(0, 4, nClock.GetCurrentTimeString((char*)aCurrent), 8);
+    //MilliSecTimer.Run();
+    //PowerMonitorScreen.SetText(5, 0, MilliSecTimer.Get((char*)aCurrent), 12);
+    //t = rtc.getTime();
 
 }
 
@@ -170,9 +191,9 @@ void CreateUI()
 {
 
     PowerMonitorScreen.AddText( (char *)
+                       "D =           "
+                       "T =      'C   "
                        "T =           "
-                       "              "
-                       "              "
                        "              "
                        "              "
                        "              "

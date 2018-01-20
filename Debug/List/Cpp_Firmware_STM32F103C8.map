@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ELF Linker V8.20.1.14183/W32 for ARM                19/Jan/2018  22:16:44
+# IAR ELF Linker V8.20.1.14183/W32 for ARM                20/Jan/2018  22:49:40
 # Copyright 2007-2017 IAR Systems AB.
 #
 #    Output file  =  
@@ -10,11 +10,12 @@
 #        C:\Amit
 #        Caudhary\STM32_IAR\Projects\CppFirmware\Debug\List\Cpp_Firmware_STM32F103C8.map
 #    Command line =  
-#        -f C:\Users\AMITCH~1\AppData\Local\Temp\EW522C.tmp ("C:\Amit
+#        -f C:\Users\AMITCH~1\AppData\Local\Temp\EWEC97.tmp ("C:\Amit
 #        Caudhary\STM32_IAR\Projects\CppFirmware\Debug\Obj\Clock.o" "C:\Amit
 #        Caudhary\STM32_IAR\Projects\CppFirmware\Debug\Obj\ClockManager.o"
 #        "C:\Amit
 #        Caudhary\STM32_IAR\Projects\CppFirmware\Debug\Obj\ControlScreen.o"
+#        "C:\Amit Caudhary\STM32_IAR\Projects\CppFirmware\Debug\Obj\DS3231.o"
 #        "C:\Amit
 #        Caudhary\STM32_IAR\Projects\CppFirmware\Debug\Obj\GpioInput.o"
 #        "C:\Amit
@@ -113,217 +114,242 @@ initialize by copy { rw };
   .intvec                ro code  0x08000000    0xec  startup_stm32f10x_md.o [1]
                                 - 0x080000ec    0xec
 
-"P1":                                         0x4578
-  .text                  ro code  0x080000ec   0x744  InterruptManager.o [1]
-  .text                  ro code  0x08000830    0xb8  misc.o [1]
-  .text                  ro code  0x080008e8    0xc0  stm32f10x_exti.o [1]
-  .text                  ro code  0x080009a8   0x5d0  Test.o [1]
-  .text                  ro code  0x08000f78   0x338  GpioInput.o [1]
-  .text                  ro code  0x080012b0    0x20  Led.o [1]
-  .text                  ro code  0x080012d0   0x26a  HwButtonIntr.o [1]
-  .text                  ro code  0x0800153a     0x2  Test.o [1]
-  .text                  ro code  0x0800153c   0x470  I2CDriver.o [1]
-  .text                  ro code  0x080019ac    0x58  cxxabi.o [4]
-  .text                  ro code  0x08001a04   0x19e  INA219.o [1]
-  .rodata                const    0x08001ba2     0x1  unwind_debug.o [7]
-  .text                  ro code  0x08001ba4   0x280  SpiDriver.o [1]
-  .text                  ro code  0x08001e24    0xea  GpioOutput.o [1]
-  .text                  ro code  0x08001f10   0x208  Nokia5110LCD.o [1]
-  .text                  ro code  0x08002118    0xe8  UI.o [1]
-  .text                  ro code  0x08002200   0x1da  ControlScreen.o [1]
-  .text                  ro code  0x080023dc    0xa4  Screen.o [1]
-  .text                  ro code  0x08002480    0x20  Test.o [1]
-  .text                  ro code  0x080024a0     0xe  Test.o [1]
-  .text                  ro code  0x080024ae     0x8  Test.o [1]
-  .text                  ro code  0x080024b6   0x216  Clock.o [1]
-  .text                  ro code  0x080026cc    0xac  MilliTime.o [1]
-  .text                  ro code  0x08002778     0x8  Test.o [1]
-  .text                  ro code  0x08002780     0x8  Test.o [1]
-  .text                  ro code  0x08002788   0x164  Time.o [1]
-  .text                  ro code  0x080028ec    0x18  Test.o [1]
-  .text                  ro code  0x08002904    0x26  Test.o [1]
-  .text                  ro code  0x0800292c    0x18  Test.o [1]
-  .text                  ro code  0x08002944     0xc  Test.o [1]
-  .text                  ro code  0x08002950     0x6  Test.o [1]
-  .text                  ro code  0x08002958    0xc4  SysTickTimer.o [1]
-  .text                  ro code  0x08002a1c    0x2a  FltToS32.o [5]
-  .text                  ro code  0x08002a48    0x24  S32ToFlt.o [5]
-  .text                  ro code  0x08002a6c    0x80  FltSub.o [5]
-  .text                  ro code  0x08002aec   0x1a2  DblMul.o [5]
-  .text                  ro code  0x08002c90    0x20  DblCmpEq.o [5]
-  .text                  ro code  0x08002cb0   0x246  DblDiv.o [5]
-  .text                  ro code  0x08002ef8    0x48  FltToDbl.o [5]
-  .text                  ro code  0x08002f40    0x68  DblToFlt.o [5]
-  .text                  ro code  0x08002fa8   0x144  stm32f10x_gpio.o [1]
-  .text                  ro code  0x080030ec     0xc  Time.o [1]
-  .text                  ro code  0x080030f8    0x18  Time.o [1]
-  .text                  ro code  0x08003110     0xe  HwButtonIntr.o [1]
-  .text                  ro code  0x0800311e    0x10  HwButtonIntr.o [1]
-  .text                  ro code  0x08003130    0x66  ABImemset.o [6]
-  .text                  ro code  0x08003198   0x1e6  stm32f10x_i2c.o [1]
-  .text                  ro code  0x08003380    0x48  I2CDriver.o [1]
-  .text                  ro code  0x080033c8    0x68  I2CDriver.o [1]
-  .text                  ro code  0x08003430    0x44  I2CDriver.o [1]
-  .text                  ro code  0x08003474    0x44  I2CDriver.o [1]
-  .text                  ro code  0x080034b8    0xa0  cppinit.o [3]
-  .text                  ro code  0x08003558    0x24  FltCmpLe.o [5]
-  .text                  ro code  0x0800357c    0x22  S32ToDbl.o [5]
-  .text                  ro code  0x080035a0    0x1c  U32ToFlt.o [5]
-  .text                  ro code  0x080035bc    0xfc  FltDiv.o [5]
-  .text                  ro code  0x080036b8    0x74  stm32f10x_spi.o [1]
-  .text                  ro code  0x0800372c     0xe  SpiDriver.o [1]
-  .text                  ro code  0x0800373a     0xe  SpiDriver.o [1]
-  .text                  ro code  0x08003748     0x4  Test.o [1]
-  .text                  ro code  0x0800374c    0xa6  ABImemcpy.o [6]
-  .text                  ro code  0x080037f4    0x10  Screen.o [1]
-  .text                  ro code  0x08003804    0x34  Screen.o [1]
-  .text                  ro code  0x08003838    0x14  Time.o [1]
-  .text                  ro code  0x0800384c     0xe  Clock.o [1]
-  .text                  ro code  0x0800385a     0x4  Clock.o [1]
-  .text                  ro code  0x0800385e     0x4  Clock.o [1]
-  .text                  ro code  0x08003862     0x4  Clock.o [1]
-  .text                  ro code  0x08003866     0xa  MilliTime.o [1]
-  .text                  ro code  0x08003870     0x8  MilliTime.o [1]
-  .text                  ro code  0x08003878     0xa  Time.o [1]
-  .text                  ro code  0x08003882     0x8  Time.o [1]
-  .text                  ro code  0x0800388c    0x10  SysTickTimer.o [1]
-  .text                  ro code  0x0800389c   0x2dc  stm32f10x_rcc.o [1]
-  .text                  ro code  0x08003b78    0xd6  FltAdd.o [5]
-  .text                  ro code  0x08003c4e     0xc  I2CDriver.o [1]
-  .rodata                const    0x08003c5c   0x1e0  Nokia5110LCD.o [1]
-  .text                  ro code  0x08003e3c   0x158  system_stm32f10x.o [1]
-  .text                  ro code  0x08003f94    0x9c  main.o [1]
-  .text                  ro code  0x08004030    0x84  HwButtonIntr.o [1]
-  .text                  ro code  0x080040b4    0x74  ClockManager.o [1]
-  .rodata                const    0x08004128    0x58  Test.o [1]
-  .rodata                const    0x08004180    0x58  Test.o [1]
-  .rodata                const    0x080041d8    0x40  GpioInput.o [1]
-  .rodata                const    0x08004218    0x40  GpioOutput.o [1]
-  .rodata                const    0x08004258    0x40  HwButtonIntr.o [1]
-  .rodata                const    0x08004298    0x40  I2CDriver.o [1]
-  .rodata                const    0x080042d8    0x40  Led.o [1]
-  .rodata                const    0x08004318    0x40  SpiDriver.o [1]
-  .text                  ro code  0x08004358    0x40  zero_init3.o [6]
-  .text                  ro code  0x08004398    0x3a  Peripheral.o [1]
-  .text                  ro code  0x080043d2     0x8  Peripheral.o [1]
-  .text                  ro code  0x080043da     0x8  Peripheral.o [1]
-  .text                  ro code  0x080043e2    0x2c  copy_init3.o [6]
-  .text                  ro code  0x08004410    0x28  data_init.o [6]
-  .iar.init_table        const    0x08004438    0x28  - Linker created -
-  .text                  ro code  0x08004460    0x20  cmain_call_ctors.o [6]
-  .text                  ro code  0x08004480    0x1e  cmain.o [6]
-  .text                  ro code  0x0800449e     0x4  low_level_init.o [3]
-  .text                  ro code  0x080044a2     0x4  exit.o [3]
-  .text                  ro code  0x080044a8     0xe  cexit.o [6]
-  .text                  ro code  0x080044b8    0x14  exit.o [7]
-  .rodata                const    0x080044cc    0x1c  ControlScreen.o [1]
-  .rodata                const    0x080044e8    0x1c  Screen.o [1]
-  .text                  ro code  0x08004504    0x1c  Test.o [1]
-  .text                  ro code  0x08004520    0x16  Test.o [1]
-  Initializer bytes      const    0x08004538    0x18  <for P2-1>
-  .rodata                const    0x08004550    0x10  INA219.o [1]
-  .rodata                const    0x08004560    0x10  Nokia5110LCD.o [1]
-  .rodata                const    0x08004570    0x10  UI.o [1]
-  .text                  ro code  0x08004580    0x10  startup_stm32f10x_md.o [1]
-  .text                  ro code  0x08004590    0x10  stm32f10x_it.o [1]
-  .text                  ro code  0x080045a0     0xc  cstartup_M.o [6]
-  .text                  ro code  0x080045ac     0xa  ControlScreen.o [1]
-  .rodata                const    0x080045b8     0x8  Test.o [1]
-  .rodata                const    0x080045c0     0x8  Test.o [1]
-  .rodata                const    0x080045c8     0x8  Test.o [1]
-  .text                  ro code  0x080045d0     0x4  startup_stm32f10x_md.o [1]
-  .text                  ro code  0x080045d4     0x4  startup_stm32f10x_md.o [1]
-  .text                  ro code  0x080045d8     0x4  startup_stm32f10x_md.o [1]
-  .text                  ro code  0x080045dc     0x4  startup_stm32f10x_md.o [1]
-  .text                  ro code  0x080045e0     0x4  startup_stm32f10x_md.o [1]
-  .text                  ro code  0x080045e4     0x4  startup_stm32f10x_md.o [1]
-  .text                  ro code  0x080045e8     0x4  startup_stm32f10x_md.o [1]
-  .text                  ro code  0x080045ec     0x4  startup_stm32f10x_md.o [1]
-  .text                  ro code  0x080045f0     0x4  startup_stm32f10x_md.o [1]
-  .text                  ro code  0x080045f4     0x4  startup_stm32f10x_md.o [1]
-  .text                  ro code  0x080045f8     0x4  startup_stm32f10x_md.o [1]
-  .text                  ro code  0x080045fc     0x4  startup_stm32f10x_md.o [1]
-  .text                  ro code  0x08004600     0x4  startup_stm32f10x_md.o [1]
-  .text                  ro code  0x08004604     0x4  startup_stm32f10x_md.o [1]
-  .text                  ro code  0x08004608     0x4  startup_stm32f10x_md.o [1]
-  .text                  ro code  0x0800460c     0x4  startup_stm32f10x_md.o [1]
-  .text                  ro code  0x08004610     0x4  startup_stm32f10x_md.o [1]
-  .text                  ro code  0x08004614     0x4  startup_stm32f10x_md.o [1]
-  .text                  ro code  0x08004618     0x4  startup_stm32f10x_md.o [1]
-  .text                  ro code  0x0800461c     0x4  startup_stm32f10x_md.o [1]
-  .text                  ro code  0x08004620     0x4  startup_stm32f10x_md.o [1]
-  .text                  ro code  0x08004624     0x4  startup_stm32f10x_md.o [1]
-  .text                  ro code  0x08004628     0x4  startup_stm32f10x_md.o [1]
-  .text                  ro code  0x0800462c     0x4  startup_stm32f10x_md.o [1]
-  .text                  ro code  0x08004630     0x4  startup_stm32f10x_md.o [1]
-  .text                  ro code  0x08004634     0x4  startup_stm32f10x_md.o [1]
-  .text                  ro code  0x08004638     0x4  startup_stm32f10x_md.o [1]
-  .text                  ro code  0x0800463c     0x4  startup_stm32f10x_md.o [1]
-  .text                  ro code  0x08004640     0x4  startup_stm32f10x_md.o [1]
-  .text                  ro code  0x08004644     0x4  startup_stm32f10x_md.o [1]
-  .text                  ro code  0x08004648     0x4  startup_stm32f10x_md.o [1]
-  .text                  ro code  0x0800464c     0x4  startup_stm32f10x_md.o [1]
-  .text                  ro code  0x08004650     0x4  startup_stm32f10x_md.o [1]
-  .text                  ro code  0x08004654     0x4  startup_stm32f10x_md.o [1]
-  .text                  ro code  0x08004658     0x4  startup_stm32f10x_md.o [1]
-  .text                  ro code  0x0800465c     0x4  startup_stm32f10x_md.o [1]
-  SHT$$PREINIT_ARRAY              0x08004660     0x0  <Block>
-  SHT$$INIT_ARRAY                 0x08004660     0x4  <Block>
-    .init_array          const    0x08004660     0x4  Test.o [1]
-  __iar_tls$$INIT_ARRAY           0x08004664     0x0  <Block>
-  .text                  ro code  0x08004664     0x0  cstart_call_dtors.o [6]
-  .rodata                const    0x08004664     0x0  zero_init3.o [6]
-  .rodata                const    0x08004664     0x0  copy_init3.o [6]
-                                - 0x08004664  0x4578
+"P1":                                         0x4da2
+  .text                  ro code  0x080000ec   0x842  DS3231.o [1]
+  .text                  ro code  0x0800092e     0x2  Test.o [1]
+  .text                  ro code  0x08000930    0xa6  ABImemcpy.o [6]
+  .text                  ro code  0x080009d6     0xc  memcpy.o [6]
+  .rodata                const    0x080009e2     0x1  unwind_debug.o [7]
+  .text                  ro code  0x080009e4    0x1c  U32ToFlt.o [5]
+  .text                  ro code  0x08000a00    0xd8  FltMul.o [5]
+  .text                  ro code  0x08000ad8    0xe2  FltAdd.o [5]
+  .text                  ro code  0x08000bbc   0x470  I2CDriver.o [1]
+  .text                  ro code  0x0800102c    0x80  FltSub.o [5]
+  .text                  ro code  0x080010ac    0x66  ABImemset.o [6]
+  .text                  ro code  0x08001114   0x1e6  stm32f10x_i2c.o [1]
+  .text                  ro code  0x080012fc    0x48  I2CDriver.o [1]
+  .text                  ro code  0x08001344   0x144  stm32f10x_gpio.o [1]
+  .text                  ro code  0x08001488    0x68  I2CDriver.o [1]
+  .text                  ro code  0x080014f0    0x44  I2CDriver.o [1]
+  .text                  ro code  0x08001534    0x44  I2CDriver.o [1]
+  .text                  ro code  0x08001578   0x2dc  stm32f10x_rcc.o [1]
+  .text                  ro code  0x08001854     0xc  I2CDriver.o [1]
+  .text                  ro code  0x08001860   0x744  InterruptManager.o [1]
+  .text                  ro code  0x08001fa4    0xb8  misc.o [1]
+  .text                  ro code  0x0800205c    0xc0  stm32f10x_exti.o [1]
+  .text                  ro code  0x0800211c   0x6c8  Test.o [1]
+  .text                  ro code  0x080027e4   0x338  GpioInput.o [1]
+  .text                  ro code  0x08002b1c    0x20  Led.o [1]
+  .text                  ro code  0x08002b3c   0x26a  HwButtonIntr.o [1]
+  .text                  ro code  0x08002da6    0x58  cxxabi.o [4]
+  .text                  ro code  0x08002e00   0x19e  INA219.o [1]
+  .text                  ro code  0x08002fa0   0x280  SpiDriver.o [1]
+  .text                  ro code  0x08003220    0xea  GpioOutput.o [1]
+  .text                  ro code  0x0800330c   0x208  Nokia5110LCD.o [1]
+  .text                  ro code  0x08003514    0xe8  UI.o [1]
+  .text                  ro code  0x080035fc   0x1da  ControlScreen.o [1]
+  .text                  ro code  0x080037d8    0xa4  Screen.o [1]
+  .text                  ro code  0x0800387c    0x20  Test.o [1]
+  .text                  ro code  0x0800389c     0xe  Test.o [1]
+  .text                  ro code  0x080038aa     0x8  Test.o [1]
+  .text                  ro code  0x080038b2     0x8  Test.o [1]
+  .text                  ro code  0x080038bc    0x24  Time.o [1]
+  .text                  ro code  0x080038e0    0x96  Clock.o [1]
+  .text                  ro code  0x08003976    0x18  Test.o [1]
+  .text                  ro code  0x0800398e    0x26  Test.o [1]
+  .text                  ro code  0x080039b4    0x18  Test.o [1]
+  .text                  ro code  0x080039cc     0xc  Test.o [1]
+  .text                  ro code  0x080039d8     0x6  Test.o [1]
+  .text                  ro code  0x080039e0    0xc4  SysTickTimer.o [1]
+  .text                  ro code  0x08003aa4    0x2a  FltToS32.o [5]
+  .text                  ro code  0x08003ad0    0x24  S32ToFlt.o [5]
+  .text                  ro code  0x08003af4   0x1a2  DblMul.o [5]
+  .text                  ro code  0x08003c98    0x20  DblCmpEq.o [5]
+  .text                  ro code  0x08003cb8   0x246  DblDiv.o [5]
+  .text                  ro code  0x08003f00    0x48  FltToDbl.o [5]
+  .text                  ro code  0x08003f48    0x68  DblToFlt.o [5]
+  .text                  ro code  0x08003fb0     0xc  Time.o [1]
+  .text                  ro code  0x08003fbc    0x18  Time.o [1]
+  .text                  ro code  0x08003fd4     0xe  HwButtonIntr.o [1]
+  .text                  ro code  0x08003fe2    0x10  HwButtonIntr.o [1]
+  .text                  ro code  0x08003ff4    0xa0  cppinit.o [3]
+  .text                  ro code  0x08004094    0x24  FltCmpLe.o [5]
+  .text                  ro code  0x080040b8    0x22  S32ToDbl.o [5]
+  .text                  ro code  0x080040dc    0xfc  FltDiv.o [5]
+  .text                  ro code  0x080041d8    0x74  stm32f10x_spi.o [1]
+  .text                  ro code  0x0800424c     0xe  SpiDriver.o [1]
+  .text                  ro code  0x0800425a     0xe  SpiDriver.o [1]
+  .text                  ro code  0x08004268     0x4  Test.o [1]
+  .text                  ro code  0x0800426c    0x10  Screen.o [1]
+  .text                  ro code  0x0800427c    0x34  Screen.o [1]
+  .text                  ro code  0x080042b0    0x14  Time.o [1]
+  .text                  ro code  0x080042c4    0x10  SysTickTimer.o [1]
+  .rodata                const    0x080042d4   0x1e0  Nokia5110LCD.o [1]
+  .text                  ro code  0x080044b4   0x158  system_stm32f10x.o [1]
+  .text                  ro code  0x0800460c    0x9c  main.o [1]
+  .text                  ro code  0x080046a8    0x84  HwButtonIntr.o [1]
+  .text                  ro code  0x0800472c    0x74  ClockManager.o [1]
+  .rodata                const    0x080047a0    0x58  Test.o [1]
+  .rodata                const    0x080047f8    0x58  Test.o [1]
+  .rodata                const    0x08004850    0x40  GpioInput.o [1]
+  .rodata                const    0x08004890    0x40  GpioOutput.o [1]
+  .rodata                const    0x080048d0    0x40  HwButtonIntr.o [1]
+  .rodata                const    0x08004910    0x40  I2CDriver.o [1]
+  .rodata                const    0x08004950    0x40  Led.o [1]
+  .rodata                const    0x08004990    0x40  SpiDriver.o [1]
+  .text                  ro code  0x080049d0    0x40  zero_init3.o [6]
+  .text                  ro code  0x08004a10    0x3a  Peripheral.o [1]
+  .text                  ro code  0x08004a4a     0x8  Peripheral.o [1]
+  .text                  ro code  0x08004a52     0x8  Peripheral.o [1]
+  .text                  ro code  0x08004a5a    0x38  packbits_init_single.o [6]
+  .rodata                const    0x08004a94    0x30  DS3231.o [1]
+  .rodata                const    0x08004ac4    0x30  DS3231.o [1]
+  .text                  ro code  0x08004af4    0x28  data_init.o [6]
+  .iar.init_table        const    0x08004b1c    0x24  - Linker created -
+  .text                  ro code  0x08004b40    0x20  cmain_call_ctors.o [6]
+  .text                  ro code  0x08004b60    0x1e  cmain.o [6]
+  .text                  ro code  0x08004b7e     0x4  low_level_init.o [3]
+  .text                  ro code  0x08004b82     0x4  exit.o [3]
+  .text                  ro code  0x08004b88     0xe  cexit.o [6]
+  .text                  ro code  0x08004b98    0x14  exit.o [7]
+  .rodata                const    0x08004bac    0x1c  ControlScreen.o [1]
+  .rodata                const    0x08004bc8    0x1c  DS3231.o [1]
+  .rodata                const    0x08004be4    0x1c  DS3231.o [1]
+  .rodata                const    0x08004c00    0x1c  Screen.o [1]
+  .text                  ro code  0x08004c1c    0x1c  Test.o [1]
+  .text                  ro code  0x08004c38    0x16  Test.o [1]
+  .rodata                const    0x08004c50    0x10  INA219.o [1]
+  .rodata                const    0x08004c60    0x10  Nokia5110LCD.o [1]
+  .rodata                const    0x08004c70    0x10  UI.o [1]
+  .text                  ro code  0x08004c80    0x10  startup_stm32f10x_md.o [1]
+  .text                  ro code  0x08004c90    0x10  stm32f10x_it.o [1]
+  .rodata                const    0x08004ca0     0xc  DS3231.o [1]
+  .rodata                const    0x08004cac     0xc  DS3231.o [1]
+  .rodata                const    0x08004cb8     0xc  DS3231.o [1]
+  .rodata                const    0x08004cc4     0xc  DS3231.o [1]
+  .rodata                const    0x08004cd0     0xc  DS3231.o [1]
+  .rodata                const    0x08004cdc     0xc  DS3231.o [1]
+  .rodata                const    0x08004ce8     0xc  DS3231.o [1]
+  .rodata                const    0x08004cf4     0xc  DS3231.o [1]
+  .rodata                const    0x08004d00     0xc  DS3231.o [1]
+  .text                  ro code  0x08004d0c     0xc  cstartup_M.o [6]
+  .text                  ro code  0x08004d18     0xa  ControlScreen.o [1]
+  .rodata                const    0x08004d24     0x8  DS3231.o [1]
+  .rodata                const    0x08004d2c     0x8  DS3231.o [1]
+  .rodata                const    0x08004d34     0x8  DS3231.o [1]
+  .rodata                const    0x08004d3c     0x8  DS3231.o [1]
+  .rodata                const    0x08004d44     0x8  DS3231.o [1]
+  .rodata                const    0x08004d4c     0x8  DS3231.o [1]
+  .rodata                const    0x08004d54     0x8  DS3231.o [1]
+  .rodata                const    0x08004d5c     0x8  DS3231.o [1]
+  .rodata                const    0x08004d64     0x8  DS3231.o [1]
+  .rodata                const    0x08004d6c     0x8  DS3231.o [1]
+  .rodata                const    0x08004d74     0x8  DS3231.o [1]
+  .rodata                const    0x08004d7c     0x8  Test.o [1]
+  .rodata                const    0x08004d84     0x8  Test.o [1]
+  .rodata                const    0x08004d8c     0x8  Test.o [1]
+  .rodata                const    0x08004d94     0x4  DS3231.o [1]
+  .rodata                const    0x08004d98     0x4  DS3231.o [1]
+  .rodata                const    0x08004d9c     0x4  DS3231.o [1]
+  .rodata                const    0x08004da0     0x4  DS3231.o [1]
+  .rodata                const    0x08004da4     0x4  DS3231.o [1]
+  .rodata                const    0x08004da8     0x4  DS3231.o [1]
+  .rodata                const    0x08004dac     0x4  DS3231.o [1]
+  .rodata                const    0x08004db0     0x4  DS3231.o [1]
+  .rodata                const    0x08004db4     0x4  DS3231.o [1]
+  .rodata                const    0x08004db8     0x4  DS3231.o [1]
+  .rodata                const    0x08004dbc     0x4  DS3231.o [1]
+  .rodata                const    0x08004dc0     0x4  DS3231.o [1]
+  .rodata                const    0x08004dc4     0x4  DS3231.o [1]
+  .rodata                const    0x08004dc8     0x4  DS3231.o [1]
+  .rodata                const    0x08004dcc     0x4  DS3231.o [1]
+  .rodata                const    0x08004dd0     0x4  DS3231.o [1]
+  .rodata                const    0x08004dd4     0x4  DS3231.o [1]
+  .rodata                const    0x08004dd8     0x4  DS3231.o [1]
+  .rodata                const    0x08004ddc     0x4  DS3231.o [1]
+  .text                  ro code  0x08004de0     0x4  startup_stm32f10x_md.o [1]
+  .text                  ro code  0x08004de4     0x4  startup_stm32f10x_md.o [1]
+  .text                  ro code  0x08004de8     0x4  startup_stm32f10x_md.o [1]
+  .text                  ro code  0x08004dec     0x4  startup_stm32f10x_md.o [1]
+  .text                  ro code  0x08004df0     0x4  startup_stm32f10x_md.o [1]
+  .text                  ro code  0x08004df4     0x4  startup_stm32f10x_md.o [1]
+  .text                  ro code  0x08004df8     0x4  startup_stm32f10x_md.o [1]
+  .text                  ro code  0x08004dfc     0x4  startup_stm32f10x_md.o [1]
+  .text                  ro code  0x08004e00     0x4  startup_stm32f10x_md.o [1]
+  .text                  ro code  0x08004e04     0x4  startup_stm32f10x_md.o [1]
+  .text                  ro code  0x08004e08     0x4  startup_stm32f10x_md.o [1]
+  .text                  ro code  0x08004e0c     0x4  startup_stm32f10x_md.o [1]
+  .text                  ro code  0x08004e10     0x4  startup_stm32f10x_md.o [1]
+  .text                  ro code  0x08004e14     0x4  startup_stm32f10x_md.o [1]
+  .text                  ro code  0x08004e18     0x4  startup_stm32f10x_md.o [1]
+  .text                  ro code  0x08004e1c     0x4  startup_stm32f10x_md.o [1]
+  .text                  ro code  0x08004e20     0x4  startup_stm32f10x_md.o [1]
+  .text                  ro code  0x08004e24     0x4  startup_stm32f10x_md.o [1]
+  .text                  ro code  0x08004e28     0x4  startup_stm32f10x_md.o [1]
+  .text                  ro code  0x08004e2c     0x4  startup_stm32f10x_md.o [1]
+  .text                  ro code  0x08004e30     0x4  startup_stm32f10x_md.o [1]
+  .text                  ro code  0x08004e34     0x4  startup_stm32f10x_md.o [1]
+  .text                  ro code  0x08004e38     0x4  startup_stm32f10x_md.o [1]
+  .text                  ro code  0x08004e3c     0x4  startup_stm32f10x_md.o [1]
+  .text                  ro code  0x08004e40     0x4  startup_stm32f10x_md.o [1]
+  .text                  ro code  0x08004e44     0x4  startup_stm32f10x_md.o [1]
+  .text                  ro code  0x08004e48     0x4  startup_stm32f10x_md.o [1]
+  .text                  ro code  0x08004e4c     0x4  startup_stm32f10x_md.o [1]
+  .text                  ro code  0x08004e50     0x4  startup_stm32f10x_md.o [1]
+  .text                  ro code  0x08004e54     0x4  startup_stm32f10x_md.o [1]
+  .text                  ro code  0x08004e58     0x4  startup_stm32f10x_md.o [1]
+  .text                  ro code  0x08004e5c     0x4  startup_stm32f10x_md.o [1]
+  .text                  ro code  0x08004e60     0x4  startup_stm32f10x_md.o [1]
+  .text                  ro code  0x08004e64     0x4  startup_stm32f10x_md.o [1]
+  .text                  ro code  0x08004e68     0x4  startup_stm32f10x_md.o [1]
+  .text                  ro code  0x08004e6c     0x4  startup_stm32f10x_md.o [1]
+  SHT$$PREINIT_ARRAY              0x08004e70     0x0  <Block>
+  SHT$$INIT_ARRAY                 0x08004e70     0x4  <Block>
+    .init_array          const    0x08004e70     0x4  Test.o [1]
+  __iar_tls$$INIT_ARRAY           0x08004e74     0x0  <Block>
+  .text                  ro code  0x08004e74     0x0  cstart_call_dtors.o [6]
+  .rodata                const    0x08004e74     0x0  zero_init3.o [6]
+  .rodata                const    0x08004e74     0x0  packbits_init_single.o [6]
+  Initializer bytes      const    0x08004e74    0x1a  <for P2-1>
+                                - 0x08004e8e  0x4da2
 
-"P2", part 1 of 3:                              0x18
-  P2-1                            0x20000000    0x15  <Init block>
-    .data                inited   0x20000000    0x10  stm32f10x_rcc.o [1]
-    .data                inited   0x20000010     0x4  stm32f10x_rcc.o [1]
-    .data                inited   0x20000014     0x1  Test.o [1]
-                                - 0x20000015    0x15
+"P2", part 1 of 3:                              0x2d
+  P2-1                            0x20000000    0x2d  <Init block>
+    .data                inited   0x20000000     0xc  DS3231.o [1]
+    .data                inited   0x2000000c     0xc  DS3231.o [1]
+    .data                inited   0x20000018    0x10  stm32f10x_rcc.o [1]
+    .data                inited   0x20000028     0x4  stm32f10x_rcc.o [1]
+    .data                inited   0x2000002c     0x1  Test.o [1]
+                                - 0x2000002d    0x2d
 
-"P2", part 2 of 3:                             0x5f4
-  .bss                   zero     0x20000018   0x17c  Test.o [1]
-  .bss                   zero     0x20000194    0xe8  Test.o [1]
-  .bss                   zero     0x2000027c    0x94  Test.o [1]
-  .bss                   zero     0x20000310    0x58  Test.o [1]
-  .bss                   zero     0x20000368    0x44  Test.o [1]
-  .bss                   zero     0x200003ac    0x30  Test.o [1]
-  .bss                   zero     0x200003dc    0x20  Test.o [1]
-  .bss                   zero     0x200003fc    0x18  Test.o [1]
+"P2", part 2 of 3:                             0x614
+  .bss                   zero     0x20000030   0x17c  Test.o [1]
+  .bss                   zero     0x200001ac    0xe8  Test.o [1]
+  .bss                   zero     0x20000294    0x94  Test.o [1]
+  .bss                   zero     0x20000328    0x58  Test.o [1]
+  .bss                   zero     0x20000380    0x44  Test.o [1]
+  .bss                   zero     0x200003c4    0x30  Test.o [1]
+  .bss                   zero     0x200003f4    0x20  Test.o [1]
   .bss                   zero     0x20000414    0x18  Test.o [1]
-  .bss                   zero     0x2000042c    0x14  SpiDriver.o [1]
-  .bss                   zero     0x20000440    0x14  Test.o [1]
-  .bss                   zero     0x20000454    0x14  Test.o [1]
-  .bss                   zero     0x20000468    0x14  Test.o [1]
-  .bss                   zero     0x2000047c    0x14  Test.o [1]
-  .bss                   zero     0x20000490    0x10  Test.o [1]
-  .bss                   zero     0x200004a0     0xc  Test.o [1]
-  .bss                   zero     0x200004ac     0xc  Test.o [1]
-  .bss                   zero     0x200004b8     0xc  Test.o [1]
-  .bss                   zero     0x200004c4     0xc  Test.o [1]
-  .bss                   zero     0x200004d0     0xc  Test.o [1]
-  .bss                   zero     0x200004dc     0x4  ClockManager.o [1]
-  .bss                   zero     0x200004e0     0x4  HwButtonIntr.o [1]
-  .bss                   zero     0x200004e4     0x4  HwButtonIntr.o [1]
-  .bss                   zero     0x200004e8     0x4  HwButtonIntr.o [1]
-  .bss                   zero     0x200004ec     0x4  I2CDriver.o [1]
-  .bss                   zero     0x200004f0     0x4  InterruptManager.o [1]
-  .bss                   zero     0x200004f4     0x4  InterruptManager.o [1]
-  .bss                   zero     0x200004f8     0x4  InterruptManager.o [1]
-  .bss                   zero     0x200004fc     0x4  InterruptManager.o [1]
-  .bss                   zero     0x20000500     0x4  InterruptManager.o [1]
-  .bss                   zero     0x20000504     0x4  InterruptManager.o [1]
-  .bss                   zero     0x20000508     0x4  InterruptManager.o [1]
-  .bss                   zero     0x2000050c     0x4  InterruptManager.o [1]
-  .bss                   zero     0x20000510     0x4  InterruptManager.o [1]
-  .bss                   zero     0x20000514     0x4  InterruptManager.o [1]
-  .bss                   zero     0x20000518     0x4  InterruptManager.o [1]
-  .bss                   zero     0x2000051c     0x4  InterruptManager.o [1]
-  .bss                   zero     0x20000520     0x4  InterruptManager.o [1]
-  .bss                   zero     0x20000524     0x4  InterruptManager.o [1]
-  .bss                   zero     0x20000528     0x4  InterruptManager.o [1]
+  .bss                   zero     0x2000042c    0x18  Test.o [1]
+  .bss                   zero     0x20000444    0x14  SpiDriver.o [1]
+  .bss                   zero     0x20000458    0x14  Test.o [1]
+  .bss                   zero     0x2000046c    0x14  Test.o [1]
+  .bss                   zero     0x20000480    0x14  Test.o [1]
+  .bss                   zero     0x20000494    0x14  Test.o [1]
+  .bss                   zero     0x200004a8    0x14  Test.o [1]
+  .bss                   zero     0x200004bc    0x10  Test.o [1]
+  .bss                   zero     0x200004cc    0x10  Test.o [1]
+  .bss                   zero     0x200004dc     0xc  Test.o [1]
+  .bss                   zero     0x200004e8     0xc  Test.o [1]
+  .bss                   zero     0x200004f4     0xc  Test.o [1]
+  .bss                   zero     0x20000500     0xc  Test.o [1]
+  .bss                   zero     0x2000050c     0xc  Test.o [1]
+  .bss                   zero     0x20000518     0x4  ClockManager.o [1]
+  .bss                   zero     0x2000051c     0x4  HwButtonIntr.o [1]
+  .bss                   zero     0x20000520     0x4  HwButtonIntr.o [1]
+  .bss                   zero     0x20000524     0x4  HwButtonIntr.o [1]
+  .bss                   zero     0x20000528     0x4  I2CDriver.o [1]
   .bss                   zero     0x2000052c     0x4  InterruptManager.o [1]
   .bss                   zero     0x20000530     0x4  InterruptManager.o [1]
   .bss                   zero     0x20000534     0x4  InterruptManager.o [1]
@@ -371,32 +397,46 @@ initialize by copy { rw };
   .bss                   zero     0x200005dc     0x4  InterruptManager.o [1]
   .bss                   zero     0x200005e0     0x4  InterruptManager.o [1]
   .bss                   zero     0x200005e4     0x4  InterruptManager.o [1]
-  .bss                   zero     0x200005e8     0x4  SysTickTimer.o [1]
-  .bss                   zero     0x200005ec     0x4  Test.o [1]
-  .bss                   zero     0x200005f0     0x4  Test.o [1]
-  .bss                   zero     0x200005f4     0x4  Time.o [1]
-  .bss                   zero     0x200005f8     0x4  cppinit.o [3]
-  .bss                   zero     0x200005fc     0x4  cppinit.o [3]
-  .bss                   zero     0x20000600     0x2  HwButtonIntr.o [1]
-  .bss                   zero     0x20000602     0x1  ClockManager.o [1]
-  .bss                   zero     0x20000603     0x1  HwButtonIntr.o [1]
-  .bss                   zero     0x20000604     0x1  InterruptManager.o [1]
-  .bss                   zero     0x20000605     0x1  InterruptManager.o [1]
-  .bss                   zero     0x20000606     0x1  SpiDriver.o [1]
-  .bss                   zero     0x20000607     0x1  Test.o [1]
-  .bss                   zero     0x20000608     0x1  Test.o [1]
-  .bss                   zero     0x20000609     0x1  UI.o [1]
-  .bss                   zero     0x2000060a     0x1  UI.o [1]
-  .bss                   zero     0x2000060b     0x1  UI.o [1]
-                                - 0x2000060c   0x5f4
+  .bss                   zero     0x200005e8     0x4  InterruptManager.o [1]
+  .bss                   zero     0x200005ec     0x4  InterruptManager.o [1]
+  .bss                   zero     0x200005f0     0x4  InterruptManager.o [1]
+  .bss                   zero     0x200005f4     0x4  InterruptManager.o [1]
+  .bss                   zero     0x200005f8     0x4  InterruptManager.o [1]
+  .bss                   zero     0x200005fc     0x4  InterruptManager.o [1]
+  .bss                   zero     0x20000600     0x4  InterruptManager.o [1]
+  .bss                   zero     0x20000604     0x4  InterruptManager.o [1]
+  .bss                   zero     0x20000608     0x4  InterruptManager.o [1]
+  .bss                   zero     0x2000060c     0x4  InterruptManager.o [1]
+  .bss                   zero     0x20000610     0x4  InterruptManager.o [1]
+  .bss                   zero     0x20000614     0x4  InterruptManager.o [1]
+  .bss                   zero     0x20000618     0x4  InterruptManager.o [1]
+  .bss                   zero     0x2000061c     0x4  InterruptManager.o [1]
+  .bss                   zero     0x20000620     0x4  InterruptManager.o [1]
+  .bss                   zero     0x20000624     0x4  SysTickTimer.o [1]
+  .bss                   zero     0x20000628     0x4  Test.o [1]
+  .bss                   zero     0x2000062c     0x4  Test.o [1]
+  .bss                   zero     0x20000630     0x4  cppinit.o [3]
+  .bss                   zero     0x20000634     0x4  cppinit.o [3]
+  .bss                   zero     0x20000638     0x2  HwButtonIntr.o [1]
+  .bss                   zero     0x2000063a     0x1  ClockManager.o [1]
+  .bss                   zero     0x2000063b     0x1  HwButtonIntr.o [1]
+  .bss                   zero     0x2000063c     0x1  InterruptManager.o [1]
+  .bss                   zero     0x2000063d     0x1  InterruptManager.o [1]
+  .bss                   zero     0x2000063e     0x1  SpiDriver.o [1]
+  .bss                   zero     0x2000063f     0x1  Test.o [1]
+  .bss                   zero     0x20000640     0x1  Test.o [1]
+  .bss                   zero     0x20000641     0x1  UI.o [1]
+  .bss                   zero     0x20000642     0x1  UI.o [1]
+  .bss                   zero     0x20000643     0x1  UI.o [1]
+                                - 0x20000644   0x614
 
 "P2", part 3 of 3:                             0x9bc
-  .iar.dynexit                    0x2000060c   0x1bc  <Block>
-    .iar.dynexit         uninit   0x2000060c     0xc  cppinit.o [3]
-    .iar.dynexit         uninit   0x20000618   0x1b0  <Block tail>
-  CSTACK                          0x200007c8   0x800  <Block>
-    CSTACK               uninit   0x200007c8   0x800  <Block tail>
-                                - 0x20000fc8   0x9bc
+  .iar.dynexit                    0x20000644   0x1bc  <Block>
+    .iar.dynexit         uninit   0x20000644     0xc  cppinit.o [3]
+    .iar.dynexit         uninit   0x20000650   0x1b0  <Block tail>
+  CSTACK                          0x20000800   0x800  <Block>
+    CSTACK               uninit   0x20000800   0x800  <Block tail>
+                                - 0x20001000   0x9bc
 
 
 *******************************************************************************
@@ -406,14 +446,14 @@ initialize by copy { rw };
           Address     Size
           -------     ----
 Zero (__iar_zero_init3)
-    1 destination range, total size 0x5f4:
-          0x20000018  0x5f4
+    1 destination range, total size 0x614:
+          0x20000030  0x614
 
-Copy (__iar_copy_init3)
-    1 source range, total size 0x18 (114% of destination):
-          0x08004538   0x18
-    1 destination range, total size 0x15:
-          0x20000000   0x15
+Copy/packbits (__iar_packbits_init_single3)
+    1 source range, total size 0x1a (57% of destination):
+          0x08004e74   0x1a
+    1 destination range, total size 0x2d:
+          0x20000000   0x2d
 
 Extra (__iar_cstart_call_ctors)
 
@@ -426,9 +466,10 @@ Extra (__iar_cstart_call_ctors)
     Module                  ro code  ro data  rw data
     ------                  -------  -------  -------
 C:\Amit Caudhary\STM32_IAR\Projects\CppFirmware\Debug\Obj: [1]
-    Clock.o                     560
+    Clock.o                     150
     ClockManager.o              116                 5
     ControlScreen.o             484       28
+    DS3231.o                  2 114      437       24
     GpioInput.o                 824       64
     GpioOutput.o                234       64
     HwButtonIntr.o              780       64       15
@@ -436,14 +477,13 @@ C:\Amit Caudhary\STM32_IAR\Projects\CppFirmware\Debug\Obj: [1]
     INA219.o                    414       16
     InterruptManager.o        1 860               250
     Led.o                        32       64
-    MilliTime.o                 190
     Nokia5110LCD.o              520      496
     Peripheral.o                 74
     Screen.o                    232       28
     SpiDriver.o                 668       64       21
     SysTickTimer.o              212                 4
-    Test.o                    1 718      205    1 211
-    Time.o                      430                 4
+    Test.o                    1 958      204    1 247
+    Time.o                       92
     UI.o                        232       16        3
     main.o                      156
     misc.o                      184
@@ -452,11 +492,11 @@ C:\Amit Caudhary\STM32_IAR\Projects\CppFirmware\Debug\Obj: [1]
     stm32f10x_gpio.o            324
     stm32f10x_i2c.o             486
     stm32f10x_it.o               16
-    stm32f10x_rcc.o             732       20       20
+    stm32f10x_rcc.o             732       12       20
     stm32f10x_spi.o             116
     system_stm32f10x.o          344
     -------------------------------------------------
-    Total:                   13 986    1 193    1 537
+    Total:                   15 402    1 621    1 593
 
 command line: [2]
     -------------------------------------------------
@@ -479,9 +519,10 @@ m7M_tl.a: [5]
     DblDiv.o                    582
     DblMul.o                    418
     DblToFlt.o                  104
-    FltAdd.o                    214
+    FltAdd.o                    226
     FltCmpLe.o                   36
     FltDiv.o                    252
+    FltMul.o                    216
     FltSub.o                    128
     FltToDbl.o                   72
     FltToS32.o                   42
@@ -489,7 +530,7 @@ m7M_tl.a: [5]
     S32ToFlt.o                   36
     U32ToFlt.o                   28
     -------------------------------------------------
-    Total:                    1 978
+    Total:                    2 206
 
 rt7M_tl.a: [6]
     ABImemcpy.o                 166
@@ -497,13 +538,14 @@ rt7M_tl.a: [6]
     cexit.o                      14
     cmain.o                      30
     cmain_call_ctors.o           32
-    copy_init3.o                 44
     cstart_call_dtors.o
     cstartup_M.o                 12
     data_init.o                  40
+    memcpy.o                     12
+    packbits_init_single.o       56
     zero_init3.o                 64
     -------------------------------------------------
-    Total:                      504
+    Total:                      528
 
 shb_l.a: [7]
     exit.o                       20
@@ -511,10 +553,10 @@ shb_l.a: [7]
     -------------------------------------------------
     Total:                       20        1
 
-    Gaps                         33        4
-    Linker created                        45    2 480
+    Gaps                         33        6
+    Linker created                        37    2 480
 -----------------------------------------------------
-    Grand Total:             16 777    1 243    4 037
+    Grand Total:             18 445    1 665    4 093
 
 
 *******************************************************************************
@@ -523,636 +565,635 @@ shb_l.a: [7]
 
 Entry                      Address   Size  Type      Object
 -----                      -------   ----  ----      ------
-.iar.dynexit$$Base      0x2000060c          --   Gb  - Linker created -
-.iar.dynexit$$Limit     0x200007c8          --   Gb  - Linker created -
-.iar.init_table$$Base   0x08004438          --   Gb  - Linker created -
-.iar.init_table$$Limit  0x08004460          --   Gb  - Linker created -
-?main                   0x08004481         Code  Gb  cmain.o [6]
-ADCPrescTable           0x20000010    0x4  Data  Lc  stm32f10x_rcc.o [1]
-APBAHBPrescTable        0x20000000   0x10  Data  Lc  stm32f10x_rcc.o [1]
+.iar.dynexit$$Base      0x20000644          --   Gb  - Linker created -
+.iar.dynexit$$Limit     0x20000800          --   Gb  - Linker created -
+.iar.init_table$$Base   0x08004b1c          --   Gb  - Linker created -
+.iar.init_table$$Limit  0x08004b40          --   Gb  - Linker created -
+?main                   0x08004b61         Code  Gb  cmain.o [6]
+ADCPrescTable           0x20000028    0x4  Data  Lc  stm32f10x_rcc.o [1]
+APBAHBPrescTable        0x20000018   0x10  Data  Lc  stm32f10x_rcc.o [1]
 App::Nokia5110LCD::Clear()
-                        0x08001feb   0x26  Code  Gb  Nokia5110LCD.o [1]
+                        0x080033e7   0x26  Code  Gb  Nokia5110LCD.o [1]
 App::Nokia5110LCD::DisplayInit()
-                        0x08001f57   0x5e  Code  Gb  Nokia5110LCD.o [1]
+                        0x08003353   0x5e  Code  Gb  Nokia5110LCD.o [1]
 App::Nokia5110LCD::DrawBuffer(char *)
-                        0x080020f5   0x24  Code  Gb  Nokia5110LCD.o [1]
+                        0x080034f1   0x24  Code  Gb  Nokia5110LCD.o [1]
 App::Nokia5110LCD::DrawLine(unsigned char, unsigned char, char const *)
-                        0x0800208d   0x60  Code  Gb  Nokia5110LCD.o [1]
+                        0x08003489   0x60  Code  Gb  Nokia5110LCD.o [1]
 App::Nokia5110LCD::DrawString(char const *)
-                        0x08002073   0x1a  Code  Gb  Nokia5110LCD.o [1]
+                        0x0800346f   0x1a  Code  Gb  Nokia5110LCD.o [1]
 App::Nokia5110LCD::GoToXY(int, int)
-                        0x08002011   0x28  Code  Gb  Nokia5110LCD.o [1]
+                        0x0800340d   0x28  Code  Gb  Nokia5110LCD.o [1]
 App::Nokia5110LCD::HwInit()
-                        0x08001f21   0x36  Code  Gb  Nokia5110LCD.o [1]
+                        0x0800331d   0x36  Code  Gb  Nokia5110LCD.o [1]
 App::Nokia5110LCD::LCDCharacter(char)
-                        0x08002039   0x3a  Code  Gb  Nokia5110LCD.o [1]
+                        0x08003435   0x3a  Code  Gb  Nokia5110LCD.o [1]
 App::Nokia5110LCD::Nokia5110LCD(Bsp::SpiDriver *, Bsp::GpioOutput *, Bsp::GpioOutput *, Bsp::GpioOutput *)
-                        0x08001f11   0x10  Code  Gb  Nokia5110LCD.o [1]
+                        0x0800330d   0x10  Code  Gb  Nokia5110LCD.o [1]
 App::Nokia5110LCD::Write(App::Nokia5110LCD::DC_t, unsigned char)
-                        0x08001fb5   0x36  Code  Gb  Nokia5110LCD.o [1]
-App::UI::ActiveScreen   0x20000609    0x1  Data  Gb  UI.o [1]
+                        0x080033b1   0x36  Code  Gb  Nokia5110LCD.o [1]
+App::UI::ActiveScreen   0x20000641    0x1  Data  Gb  UI.o [1]
 App::UI::AddScreen(Bsp::Screen *)
-                        0x08002905   0x26  Code  Gb  Test.o [1]
+                        0x0800398f   0x26  Code  Gb  Test.o [1]
 App::UI::DisplayScreen()
-                        0x0800218f   0x68  Code  Gb  UI.o [1]
+                        0x0800358b   0x68  Code  Gb  UI.o [1]
 App::UI::EventHamdler(Bsp::Screen::Event_t &)
-                        0x08002151   0x3e  Code  Gb  UI.o [1]
+                        0x0800354d   0x3e  Code  Gb  UI.o [1]
 App::UI::GoToNextScreen()
-                        0x08003805   0x34  Code  Gb  Screen.o [1]
+                        0x0800427d   0x34  Code  Gb  Screen.o [1]
 App::UI::GoToPreviousScreen()
-                        0x080037f5   0x10  Code  Gb  Screen.o [1]
-App::UI::Init()         0x0800211d   0x34  Code  Gb  UI.o [1]
+                        0x0800426d   0x10  Code  Gb  Screen.o [1]
+App::UI::Init()         0x08003519   0x34  Code  Gb  UI.o [1]
 App::UI::PreviousActiveScreen
-                        0x2000060b    0x1  Data  Gb  UI.o [1]
-App::UI::Run()          0x080024af    0x8  Code  Gb  Test.o [1]
+                        0x20000643    0x1  Data  Gb  UI.o [1]
+App::UI::Run()          0x080038ab    0x8  Code  Gb  Test.o [1]
 App::UI::SetActiveScreen(unsigned char)
-                        0x0800292d   0x18  Code  Gb  Test.o [1]
+                        0x080039b5   0x18  Code  Gb  Test.o [1]
 App::UI::TotalRegisteredScreens
-                        0x2000060a    0x1  Data  Gb  UI.o [1]
+                        0x20000642    0x1  Data  Gb  UI.o [1]
 App::UI::UI(App::Nokia5110LCD *)
-                        0x08002119    0x4  Code  Gb  UI.o [1]
-BackLightGpio           0x2000047c   0x14  Data  Lc  Test.o [1]
+                        0x08003515    0x4  Code  Gb  UI.o [1]
+BackLightGpio           0x20000494   0x14  Data  Lc  Test.o [1]
 Bsp::ClockManager::GetInstance()
-                        0x080040b5   0x14  Code  Gb  ClockManager.o [1]
+                        0x0800472d   0x14  Code  Gb  ClockManager.o [1]
 Bsp::ClockManager::GetInstance(){1}::ClockManager_Instance
-                        0x20000602    0x1  Data  Lc  ClockManager.o [1]
+                        0x2000063a    0x1  Data  Lc  ClockManager.o [1]
 Bsp::ClockManager::PeripheralClockEnable(Bsp::PeripheralBase::Peripheral_t)
-                        0x080040d1   0x58  Code  Gb  ClockManager.o [1]
+                        0x08004749   0x58  Code  Gb  ClockManager.o [1]
 Bsp::ClockManager::m_pClockManager
-                        0x200004dc    0x4  Data  Gb  ClockManager.o [1]
+                        0x20000518    0x4  Data  Gb  ClockManager.o [1]
 Bsp::ControlScreen::AddHandler(unsigned char, void (*)(), void (*)())
-                        0x08002261   0x30  Code  Gb  ControlScreen.o [1]
+                        0x0800365d   0x30  Code  Gb  ControlScreen.o [1]
 Bsp::ControlScreen::AddText(char *)
-                        0x080028ed   0x18  Code  Gb  Test.o [1]
+                        0x08003977   0x18  Code  Gb  Test.o [1]
 Bsp::ControlScreen::ControlScreen()
-                        0x08002201   0x40  Code  Gb  ControlScreen.o [1]
+                        0x080035fd   0x40  Code  Gb  ControlScreen.o [1]
 Bsp::ControlScreen::EventHandler(Bsp::Screen::Event_t)
-                        0x080022f9   0x60  Code  Gb  ControlScreen.o [1]
+                        0x080036f5   0x60  Code  Gb  ControlScreen.o [1]
 Bsp::ControlScreen::GetActiveLine() const
-                        0x08002951    0x6  Code  Gb  Test.o [1]
+                        0x080039d9    0x6  Code  Gb  Test.o [1]
 Bsp::ControlScreen::GetScreenTextArray()
-                        0x080045ad    0xa  Code  Gb  ControlScreen.o [1]
+                        0x08004d19    0xa  Code  Gb  ControlScreen.o [1]
 Bsp::ControlScreen::MovePointer(Bsp::ControlScreen::Direction_t)
-                        0x08002359   0x82  Code  Gb  ControlScreen.o [1]
+                        0x08003755   0x82  Code  Gb  ControlScreen.o [1]
 Bsp::ControlScreen::SetText(unsigned char, unsigned char, char const *, unsigned char)
-                        0x08002291   0x68  Code  Gb  ControlScreen.o [1]
+                        0x0800368d   0x68  Code  Gb  ControlScreen.o [1]
 Bsp::ControlScreen::~ControlScreen()
-                        0x08002241   0x1a  Code  Gb  ControlScreen.o [1]
+                        0x0800363d   0x1a  Code  Gb  ControlScreen.o [1]
 Bsp::GpioInput::ConfigureInterrupt()
-                        0x080011d3   0x3e  Code  Gb  GpioInput.o [1]
+                        0x08002a3f   0x3e  Code  Gb  GpioInput.o [1]
 Bsp::GpioInput::ExtLineInterruptConfig()
-                        0x08001211   0x80  Code  Gb  GpioInput.o [1]
+                        0x08002a7d   0x80  Code  Gb  GpioInput.o [1]
 Bsp::GpioInput::GpioInput(GPIO_TypeDef *, unsigned short)
-                        0x08000f8f   0x18  Code  Gb  GpioInput.o [1]
+                        0x080027fb   0x18  Code  Gb  GpioInput.o [1]
 Bsp::GpioInput::GpioInput(GPIO_TypeDef *, unsigned short, void (*)(), Bsp::Gpio::IntOnWhichEdge)
-                        0x08000fa7   0x1a  Code  Gb  GpioInput.o [1]
+                        0x08002813   0x1a  Code  Gb  GpioInput.o [1]
 Bsp::GpioInput::GpioInput(GPIO_TypeDef *, unsigned short, void (*)(), Bsp::Gpio::IntOnWhichEdge, Bsp::Gpio::EXTIMode)
-                        0x08000fc1   0x1a  Code  Gb  GpioInput.o [1]
+                        0x0800282d   0x1a  Code  Gb  GpioInput.o [1]
 Bsp::GpioInput::GpioInput(GPIO_TypeDef *, unsigned short, void (*)(), Bsp::Gpio::IntOnWhichEdge, Bsp::Gpio::EXTIMode) [subobject]
-                        0x08000f79   0x16  Code  Gb  GpioInput.o [1]
+                        0x080027e5   0x16  Code  Gb  GpioInput.o [1]
 Bsp::GpioInput::HwInit()
-                        0x08001147   0x8c  Code  Gb  GpioInput.o [1]
+                        0x080029b3   0x8c  Code  Gb  GpioInput.o [1]
 Bsp::GpioInput::MapPin2ExtLine()
-                        0x08000fdb   0xb6  Code  Gb  GpioInput.o [1]
+                        0x08002847   0xb6  Code  Gb  GpioInput.o [1]
 Bsp::GpioInput::MapPin2PinSource()
-                        0x08001091   0xb6  Code  Gb  GpioInput.o [1]
+                        0x080028fd   0xb6  Code  Gb  GpioInput.o [1]
 Bsp::GpioOutput::ClearOutput()
-                        0x0800373b    0xe  Code  Gb  SpiDriver.o [1]
+                        0x0800425b    0xe  Code  Gb  SpiDriver.o [1]
 Bsp::GpioOutput::GpioOutput(GPIO_TypeDef *, unsigned short)
-                        0x08001e2f    0xe  Code  Gb  GpioOutput.o [1]
+                        0x0800322b    0xe  Code  Gb  GpioOutput.o [1]
 Bsp::GpioOutput::GpioOutput(GPIO_TypeDef *, unsigned short) [subobject]
-                        0x08001e25    0xa  Code  Gb  GpioOutput.o [1]
+                        0x08003221    0xa  Code  Gb  GpioOutput.o [1]
 Bsp::GpioOutput::HwInit()
-                        0x08001e3d   0x8a  Code  Gb  GpioOutput.o [1]
+                        0x08003239   0x8a  Code  Gb  GpioOutput.o [1]
 Bsp::GpioOutput::ReadOutputValue()
-                        0x08002945    0xc  Code  Gb  Test.o [1]
+                        0x080039cd    0xc  Code  Gb  Test.o [1]
 Bsp::GpioOutput::SetOutput()
-                        0x0800372d    0xe  Code  Gb  SpiDriver.o [1]
+                        0x0800424d    0xe  Code  Gb  SpiDriver.o [1]
 Bsp::GpioOutput::ToggleOutput()
-                        0x08001ee5   0x2a  Code  Gb  GpioOutput.o [1]
+                        0x080032e1   0x2a  Code  Gb  GpioOutput.o [1]
 Bsp::HwButtonIntr::ClearEvent(Bsp::HwButtonIntr::BtnEvent_t)
-                        0x0800311f   0x10  Code  Gb  HwButtonIntr.o [1]
+                        0x08003fe3   0x10  Code  Gb  HwButtonIntr.o [1]
 Bsp::HwButtonIntr::EventHandler()
-                        0x0800146d   0xa6  Code  Gb  HwButtonIntr.o [1]
+                        0x08002cd9   0xa6  Code  Gb  HwButtonIntr.o [1]
 Bsp::HwButtonIntr::HwButtonIntr(GPIO_TypeDef *, unsigned short, Bsp::Gpio::IntOnWhichEdge, Bsp::Gpio::EXTIMode)
-                        0x080012d1   0x5c  Code  Gb  HwButtonIntr.o [1]
+                        0x08002b3d   0x5c  Code  Gb  HwButtonIntr.o [1]
 Bsp::HwButtonIntr::HwInit()
-                        0x0800132d    0xa  Code  Gb  HwButtonIntr.o [1]
+                        0x08002b99    0xa  Code  Gb  HwButtonIntr.o [1]
 Bsp::HwButtonIntr::ISR()
-                        0x08004031   0x84  Code  Gb  HwButtonIntr.o [1]
+                        0x080046a9   0x84  Code  Gb  HwButtonIntr.o [1]
 Bsp::HwButtonIntr::RegisterEventHandler(Bsp::HwButtonIntr::BtnEvent_t, void (*)())
-                        0x08001513   0x28  Code  Gb  HwButtonIntr.o [1]
+                        0x08002d7f   0x28  Code  Gb  HwButtonIntr.o [1]
 Bsp::HwButtonIntr::RunStateMachine()
-                        0x08001337  0x116  Code  Gb  HwButtonIntr.o [1]
+                        0x08002ba3  0x116  Code  Gb  HwButtonIntr.o [1]
 Bsp::HwButtonIntr::RunStateMachine()::ElapsedTime
-                        0x200004e0    0x4  Data  Lc  HwButtonIntr.o [1]
+                        0x2000051c    0x4  Data  Lc  HwButtonIntr.o [1]
 Bsp::HwButtonIntr::RunStateMachine(){1}{10}::LastClickStateEntered
-                        0x200004e4    0x4  Data  Lc  HwButtonIntr.o [1]
+                        0x20000520    0x4  Data  Lc  HwButtonIntr.o [1]
 Bsp::HwButtonIntr::RunStateMachine(){1}{10}::temp
-                        0x200004e8    0x4  Data  Lc  HwButtonIntr.o [1]
+                        0x20000524    0x4  Data  Lc  HwButtonIntr.o [1]
 Bsp::HwButtonIntr::SetEvent(Bsp::HwButtonIntr::BtnEvent_t)
-                        0x08003111    0xe  Code  Gb  HwButtonIntr.o [1]
+                        0x08003fd5    0xe  Code  Gb  HwButtonIntr.o [1]
 Bsp::HwButtonIntr::m_CurrentState
-                        0x20000603    0x1  Data  Gb  HwButtonIntr.o [1]
+                        0x2000063b    0x1  Data  Gb  HwButtonIntr.o [1]
 Bsp::HwButtonIntr::m_Pin
-                        0x20000600    0x2  Data  Gb  HwButtonIntr.o [1]
+                        0x20000638    0x2  Data  Gb  HwButtonIntr.o [1]
 Bsp::I2CDriver::HwInit()
-                        0x080015e7   0xe4  Code  Gb  I2CDriver.o [1]
+                        0x08000c67   0xe4  Code  Gb  I2CDriver.o [1]
 Bsp::I2CDriver::HwReset()
-                        0x08003381   0x48  Code  Gb  I2CDriver.o [1]
+                        0x080012fd   0x48  Code  Gb  I2CDriver.o [1]
 Bsp::I2CDriver::HwSendAddressWithDirection(unsigned char, Bsp::I2CDriver::I2CDir_t)
-                        0x0800156b   0x7a  Code  Gb  I2CDriver.o [1]
+                        0x08000beb   0x7a  Code  Gb  I2CDriver.o [1]
 Bsp::I2CDriver::HwStart()
-                        0x080033c9   0x68  Code  Gb  I2CDriver.o [1]
+                        0x08001489   0x68  Code  Gb  I2CDriver.o [1]
 Bsp::I2CDriver::HwStop()
-                        0x08003475   0x44  Code  Gb  I2CDriver.o [1]
+                        0x08001535   0x44  Code  Gb  I2CDriver.o [1]
 Bsp::I2CDriver::HwWriteDataRegistor(unsigned char)
-                        0x08003c4f    0xc  Code  Gb  I2CDriver.o [1]
+                        0x08001855    0xc  Code  Gb  I2CDriver.o [1]
 Bsp::I2CDriver::I2CDriver(Bsp::I2CDriver::I2CInstance_t, void (*)(), Bsp::I2CDriver::I2CMode_t, Bsp::I2CDriver::I2CBaudRate_t)
-                        0x0800153d   0x2e  Code  Gb  I2CDriver.o [1]
+                        0x08000bbd   0x2e  Code  Gb  I2CDriver.o [1]
 Bsp::I2CDriver::Receive(u8, u8 *, u32)::Timeout
-                        0x200004ec    0x4  Data  Lc  I2CDriver.o [1]
+                        0x20000528    0x4  Data  Lc  I2CDriver.o [1]
 Bsp::I2CDriver::Receive(unsigned char, unsigned char *, unsigned int)
-                        0x08001735  0x244  Code  Gb  I2CDriver.o [1]
+                        0x08000db5  0x244  Code  Gb  I2CDriver.o [1]
 Bsp::I2CDriver::Send(unsigned char, unsigned char *, unsigned int)
-                        0x080016cb   0x6a  Code  Gb  I2CDriver.o [1]
+                        0x08000d4b   0x6a  Code  Gb  I2CDriver.o [1]
 Bsp::I2CDriver::Transmit(unsigned char)
-                        0x08003431   0x44  Code  Gb  I2CDriver.o [1]
+                        0x080014f1   0x44  Code  Gb  I2CDriver.o [1]
 Bsp::I2CDriver::~I2CDriver()
-                        0x080015e5    0x2  Code  Gb  I2CDriver.o [1]
+                        0x08000c65    0x2  Code  Gb  I2CDriver.o [1]
 Bsp::INA219::GetBusVoltage_V()
-                        0x08001b21   0x1a  Code  Gb  INA219.o [1]
+                        0x08002f1d   0x1a  Code  Gb  INA219.o [1]
 Bsp::INA219::GetBusVoltage_raw()
-                        0x08001ae5   0x1a  Code  Gb  INA219.o [1]
+                        0x08002ee1   0x1a  Code  Gb  INA219.o [1]
 Bsp::INA219::GetCurrent_mA()
-                        0x08001b4d   0x20  Code  Gb  INA219.o [1]
+                        0x08002f49   0x20  Code  Gb  INA219.o [1]
 Bsp::INA219::GetCurrent_raw()
-                        0x08001aff   0x22  Code  Gb  INA219.o [1]
+                        0x08002efb   0x22  Code  Gb  INA219.o [1]
 Bsp::INA219::GetPower_mW()
-                        0x08001b6d   0x36  Code  Gb  INA219.o [1]
+                        0x08002f69   0x36  Code  Gb  INA219.o [1]
 Bsp::INA219::INA219(Bsp::I2CDriver *, unsigned char)
-                        0x08001a05    0xa  Code  Gb  INA219.o [1]
+                        0x08002e01    0xa  Code  Gb  INA219.o [1]
 Bsp::INA219::ReadRegister(unsigned char, unsigned short *)
-                        0x08001a7b   0x3a  Code  Gb  INA219.o [1]
+                        0x08002e77   0x3a  Code  Gb  INA219.o [1]
 Bsp::INA219::Run(Bsp::INA219::Power_t *)
-                        0x08001a11   0x46  Code  Gb  INA219.o [1]
+                        0x08002e0d   0x46  Code  Gb  INA219.o [1]
 Bsp::INA219::SetCalibration_32V_2A()
-                        0x08001ab5   0x30  Code  Gb  INA219.o [1]
+                        0x08002eb1   0x30  Code  Gb  INA219.o [1]
 Bsp::INA219::WriteRegister(unsigned char, unsigned short)
-                        0x08001a57   0x24  Code  Gb  INA219.o [1]
-Bsp::INA219::~INA219()  0x08001a0f    0x2  Code  Gb  INA219.o [1]
+                        0x08002e53   0x24  Code  Gb  INA219.o [1]
+Bsp::INA219::~INA219()  0x08002e0b    0x2  Code  Gb  INA219.o [1]
 Bsp::InterruptManager::EnableInterrupt(Bsp::InterruptManager::IRQn)
-                        0x080004bb   0x36  Code  Gb  InterruptManager.o [1]
+                        0x08001c2f   0x36  Code  Gb  InterruptManager.o [1]
 Bsp::InterruptManager::GetInstance()
-                        0x0800048d   0x2e  Code  Gb  InterruptManager.o [1]
+                        0x08001c01   0x2e  Code  Gb  InterruptManager.o [1]
 Bsp::InterruptManager::GetInstance(){1}::InterruptManager_Instance
-                        0x20000605    0x1  Data  Lc  InterruptManager.o [1]
+                        0x2000063d    0x1  Data  Lc  InterruptManager.o [1]
 Bsp::InterruptManager::GetInstance(){1}::static guard for InterruptManager_Instance
-                        0x20000604    0x1  Data  Lc  InterruptManager.o [1]
+                        0x2000063c    0x1  Data  Lc  InterruptManager.o [1]
 Bsp::InterruptManager::NVICConfig(Bsp::InterruptManager::IRQn, unsigned char, unsigned char)
-                        0x080004f1   0x3e  Code  Gb  InterruptManager.o [1]
+                        0x08001c65   0x3e  Code  Gb  InterruptManager.o [1]
 Bsp::InterruptManager::RegisterInterrupt(void (*)(), Bsp::InterruptManager::IRQn)
-                        0x080000ed  0x3a0  Code  Gb  InterruptManager.o [1]
+                        0x08001861  0x3a0  Code  Gb  InterruptManager.o [1]
 Bsp::InterruptManager::m_ADC1_2_IRQHandler
-                        0x2000055c    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_BusFault_Handler
-                        0x20000500    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_CAN1_RX1_IRQHandler
-                        0x20000568    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_CAN1_SCE_IRQHandler
-                        0x2000056c    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_DMA1_Channel1_IRQHandler
-                        0x20000544    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_DMA1_Channel2_IRQHandler
-                        0x20000548    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_DMA1_Channel4_IRQHandler
-                        0x2000054c    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_DMA1_Channel5_IRQHandler
-                        0x20000550    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_DMA1_Channel6_IRQHandler
-                        0x20000554    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_DMA1_Channel7_IRQHandler
-                        0x20000558    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_DebugMon_Handler
-                        0x2000050c    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_EXTI0_IRQHandler
-                        0x20000530    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_EXTI10_IRQHandler
-                        0x200005d0    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_EXTI11_IRQHandler
-                        0x200005d4    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_EXTI12_IRQHandler
-                        0x200005d8    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_EXTI13_IRQHandler
-                        0x200005dc    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_EXTI14_IRQHandler
-                        0x200005e0    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_EXTI15_10_IRQHandler
-                        0x200005b0    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_EXTI15_IRQHandler
-                        0x200005e4    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_EXTI1_IRQHandler
-                        0x20000534    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_EXTI2_IRQHandler
-                        0x20000538    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_EXTI3_IRQHandler
-                        0x2000053c    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_EXTI4_IRQHandler
-                        0x20000540    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_EXTI5_IRQHandler
-                        0x200005bc    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_EXTI6_IRQHandler
-                        0x200005c0    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_EXTI7_IRQHandler
-                        0x200005c4    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_EXTI8_IRQHandler
-                        0x200005c8    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_EXTI9_5_IRQHandler
-                        0x20000570    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_EXTI9_IRQHandler
-                        0x200005cc    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_FLASH_IRQHandler
-                        0x20000528    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_HardFault_Handler
-                        0x200004f8    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_I2C1_ER_IRQHandler
-                        0x20000590    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_I2C2_ER_IRQHandler
                         0x20000598    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_I2C2_EV_IRQHandler
-                        0x20000594    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_MemManage_Handler
-                        0x200004fc    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_NMI_Handler
-                        0x200004f4    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_PVD_IRQHandler
-                        0x2000051c    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_PendSV_Handler
-                        0x20000510    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_RCC_IRQHandler
-                        0x2000052c    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_RTCAlarm_IRQHandler
-                        0x200005b4    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_RTC_IRQHandler
-                        0x20000524    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_SPI1_IRQHandler
-                        0x2000059c    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_SPI2_IRQHandler
-                        0x200005a0    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_SVC_Handler
-                        0x20000508    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_SysTick_Handler
-                        0x20000514    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_TAMPER_IRQHandler
-                        0x20000520    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_TIM1_BRK_IRQHandler
-                        0x20000574    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_TIM1_CC_IRQHandler
-                        0x20000580    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_TIM1_TRG_COM_IRQHandler
-                        0x2000057c    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_TIM1_UP_IRQHandler
-                        0x20000578    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_TIM2_IRQHandler
-                        0x20000584    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_TIM3_IRQHandler
-                        0x20000588    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_TIM4_IRQHandler
-                        0x2000058c    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_USART1_IRQHandler
+Bsp::InterruptManager::m_BusFault_Handler
+                        0x2000053c    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_CAN1_RX1_IRQHandler
                         0x200005a4    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_USART2_IRQHandler
+Bsp::InterruptManager::m_CAN1_SCE_IRQHandler
                         0x200005a8    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_USART3_IRQHandler
+Bsp::InterruptManager::m_DMA1_Channel1_IRQHandler
+                        0x20000580    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_DMA1_Channel2_IRQHandler
+                        0x20000584    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_DMA1_Channel4_IRQHandler
+                        0x20000588    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_DMA1_Channel5_IRQHandler
+                        0x2000058c    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_DMA1_Channel6_IRQHandler
+                        0x20000590    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_DMA1_Channel7_IRQHandler
+                        0x20000594    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_DebugMon_Handler
+                        0x20000548    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_EXTI0_IRQHandler
+                        0x2000056c    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_EXTI10_IRQHandler
+                        0x2000060c    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_EXTI11_IRQHandler
+                        0x20000610    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_EXTI12_IRQHandler
+                        0x20000614    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_EXTI13_IRQHandler
+                        0x20000618    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_EXTI14_IRQHandler
+                        0x2000061c    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_EXTI15_10_IRQHandler
+                        0x200005ec    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_EXTI15_IRQHandler
+                        0x20000620    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_EXTI1_IRQHandler
+                        0x20000570    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_EXTI2_IRQHandler
+                        0x20000574    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_EXTI3_IRQHandler
+                        0x20000578    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_EXTI4_IRQHandler
+                        0x2000057c    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_EXTI5_IRQHandler
+                        0x200005f8    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_EXTI6_IRQHandler
+                        0x200005fc    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_EXTI7_IRQHandler
+                        0x20000600    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_EXTI8_IRQHandler
+                        0x20000604    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_EXTI9_5_IRQHandler
                         0x200005ac    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_USBWakeUp_IRQHandler
-                        0x200005b8    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_USB_HP_CAN1_TX_IRQHandler
-                        0x20000560    0x4  Data  Gb  InterruptManager.o [1]
-Bsp::InterruptManager::m_USB_LP_CAN1_RX0_IRQHandler
+Bsp::InterruptManager::m_EXTI9_IRQHandler
+                        0x20000608    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_FLASH_IRQHandler
                         0x20000564    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_HardFault_Handler
+                        0x20000534    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_I2C1_ER_IRQHandler
+                        0x200005cc    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_I2C2_ER_IRQHandler
+                        0x200005d4    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_I2C2_EV_IRQHandler
+                        0x200005d0    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_MemManage_Handler
+                        0x20000538    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_NMI_Handler
+                        0x20000530    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_PVD_IRQHandler
+                        0x20000558    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_PendSV_Handler
+                        0x2000054c    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_RCC_IRQHandler
+                        0x20000568    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_RTCAlarm_IRQHandler
+                        0x200005f0    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_RTC_IRQHandler
+                        0x20000560    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_SPI1_IRQHandler
+                        0x200005d8    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_SPI2_IRQHandler
+                        0x200005dc    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_SVC_Handler
+                        0x20000544    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_SysTick_Handler
+                        0x20000550    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_TAMPER_IRQHandler
+                        0x2000055c    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_TIM1_BRK_IRQHandler
+                        0x200005b0    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_TIM1_CC_IRQHandler
+                        0x200005bc    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_TIM1_TRG_COM_IRQHandler
+                        0x200005b8    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_TIM1_UP_IRQHandler
+                        0x200005b4    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_TIM2_IRQHandler
+                        0x200005c0    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_TIM3_IRQHandler
+                        0x200005c4    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_TIM4_IRQHandler
+                        0x200005c8    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_USART1_IRQHandler
+                        0x200005e0    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_USART2_IRQHandler
+                        0x200005e4    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_USART3_IRQHandler
+                        0x200005e8    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_USBWakeUp_IRQHandler
+                        0x200005f4    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_USB_HP_CAN1_TX_IRQHandler
+                        0x2000059c    0x4  Data  Gb  InterruptManager.o [1]
+Bsp::InterruptManager::m_USB_LP_CAN1_RX0_IRQHandler
+                        0x200005a0    0x4  Data  Gb  InterruptManager.o [1]
 Bsp::InterruptManager::m_UsageFault_Handler
-                        0x20000504    0x4  Data  Gb  InterruptManager.o [1]
+                        0x20000540    0x4  Data  Gb  InterruptManager.o [1]
 Bsp::InterruptManager::m_WWDG_IRQHandler
-                        0x20000518    0x4  Data  Gb  InterruptManager.o [1]
+                        0x20000554    0x4  Data  Gb  InterruptManager.o [1]
 Bsp::InterruptManager::m_pInterruptManager
-                        0x200004f0    0x4  Data  Gb  InterruptManager.o [1]
+                        0x2000052c    0x4  Data  Gb  InterruptManager.o [1]
 Bsp::Peripheral::GetClockManager()
-                        0x080043d3    0x8  Code  Gb  Peripheral.o [1]
+                        0x08004a4b    0x8  Code  Gb  Peripheral.o [1]
 Bsp::Peripheral::GetInterruptManager()
-                        0x080043db    0x8  Code  Gb  Peripheral.o [1]
+                        0x08004a53    0x8  Code  Gb  Peripheral.o [1]
 Bsp::Peripheral::HwClockEnable(Bsp::PeripheralBase::Peripheral_t)
-                        0x08004399   0x12  Code  Gb  Peripheral.o [1]
+                        0x08004a11   0x12  Code  Gb  Peripheral.o [1]
 Bsp::Peripheral::HwEnableInterrupt(Bsp::PeripheralBase::IRQn)
-                        0x080043c1   0x12  Code  Gb  Peripheral.o [1]
+                        0x08004a39   0x12  Code  Gb  Peripheral.o [1]
 Bsp::Peripheral::RegisterInterrupt(void (*)(), Bsp::PeripheralBase::IRQn, unsigned char)
-                        0x080043ab   0x16  Code  Gb  Peripheral.o [1]
+                        0x08004a23   0x16  Code  Gb  Peripheral.o [1]
 Bsp::Screen::AddText(char *)
-                        0x0800240f    0xe  Code  Gb  Screen.o [1]
+                        0x0800380b    0xe  Code  Gb  Screen.o [1]
 Bsp::Screen::EventHandler(Bsp::Screen::Event_t)
-                        0x08002465   0x1c  Code  Gb  Screen.o [1]
+                        0x08003861   0x1c  Code  Gb  Screen.o [1]
 Bsp::Screen::GetScreenTextArray()
-                        0x08003749    0x4  Code  Gb  Test.o [1]
-Bsp::Screen::Screen()   0x080023ed   0x18  Code  Gb  Screen.o [1]
+                        0x08004269    0x4  Code  Gb  Test.o [1]
+Bsp::Screen::Screen()   0x080037e9   0x18  Code  Gb  Screen.o [1]
 Bsp::Screen::Screen() [subobject]
-                        0x080023dd    0x8  Code  Gb  Screen.o [1]
+                        0x080037d9    0x8  Code  Gb  Screen.o [1]
 Bsp::Screen::SetText(unsigned char, unsigned char, char const *, unsigned char)
-                        0x0800241d   0x48  Code  Gb  Screen.o [1]
-Bsp::Screen::~Screen()  0x0800240d    0x2  Code  Gb  Screen.o [1]
+                        0x08003819   0x48  Code  Gb  Screen.o [1]
+Bsp::Screen::~Screen()  0x08003809    0x2  Code  Gb  Screen.o [1]
 Bsp::Screen::~Screen() [subobject]
-                        0x080023e5    0x8  Code  Gb  Screen.o [1]
+                        0x080037e1    0x8  Code  Gb  Screen.o [1]
 Bsp::SpiDriver::ChipSelect(Bsp::SpiDriver::ChipSelect_t)
-                        0x08001dd9   0x18  Code  Gb  SpiDriver.o [1]
+                        0x080031d5   0x18  Code  Gb  SpiDriver.o [1]
 Bsp::SpiDriver::HwInit()
-                        0x08001bc9  0x1ee  Code  Gb  SpiDriver.o [1]
+                        0x08002fc5  0x1ee  Code  Gb  SpiDriver.o [1]
 Bsp::SpiDriver::HwInit()::ChipSelectObj
-                        0x2000042c   0x14  Data  Lc  SpiDriver.o [1]
+                        0x20000444   0x14  Data  Lc  SpiDriver.o [1]
 Bsp::SpiDriver::HwInit()::static guard for ChipSelectObj
-                        0x20000606    0x1  Data  Lc  SpiDriver.o [1]
+                        0x2000063e    0x1  Data  Lc  SpiDriver.o [1]
 Bsp::SpiDriver::SendByte(unsigned char)
-                        0x08001df1   0x34  Code  Gb  SpiDriver.o [1]
+                        0x080031ed   0x34  Code  Gb  SpiDriver.o [1]
 Bsp::SpiDriver::SpiDriver(Bsp::SpiDriver::SpiInstance_t, void (*)(), Bsp::SpiDriver::SpiMode_t, Bsp::SpiDriver::SpiBaudRate_t)
-                        0x08001ba5   0x24  Code  Gb  SpiDriver.o [1]
+                        0x08002fa1   0x24  Code  Gb  SpiDriver.o [1]
 Bsp::SysTickTimer::DelayTicks(unsigned int)
-                        0x080029e9   0x34  Code  Gb  SysTickTimer.o [1]
+                        0x08003a71   0x34  Code  Gb  SysTickTimer.o [1]
 Bsp::SysTickTimer::GetTicks()
-                        0x080030ed    0xc  Code  Gb  Time.o [1]
+                        0x08003fb1    0xc  Code  Gb  Time.o [1]
 Bsp::SysTickTimer::GetTicksSince(unsigned int)
-                        0x080030f9   0x18  Code  Gb  Time.o [1]
+                        0x08003fbd   0x18  Code  Gb  Time.o [1]
 Bsp::SysTickTimer::HwInit(unsigned int)
-                        0x080029c5   0x24  Code  Gb  SysTickTimer.o [1]
+                        0x08003a4d   0x24  Code  Gb  SysTickTimer.o [1]
 Bsp::SysTickTimer::IncrementTicks()
-                        0x0800388d   0x10  Code  Gb  SysTickTimer.o [1]
+                        0x080042c5   0x10  Code  Gb  SysTickTimer.o [1]
 Bsp::SysTickTimer::m_ticks
-                        0x200005e8    0x4  Data  Gb  SysTickTimer.o [1]
-BusFault_Handler        0x08004597    0x2  Code  Gb  stm32f10x_it.o [1]
-CSTACK$$Base            0x200007c8          --   Gb  - Linker created -
-CSTACK$$Limit           0x20000fc8          --   Gb  - Linker created -
-ClickEvent()            0x08000d09    0x8  Code  Gb  Test.o [1]
-CreateUI()              0x08000cc1   0x46  Code  Gb  Test.o [1]
-Create_Alarm_Clock()    0x08000c77   0x4a  Code  Gb  Test.o [1]
+                        0x20000624    0x4  Data  Gb  SysTickTimer.o [1]
+BusFault_Handler        0x08004c97    0x2  Code  Gb  stm32f10x_it.o [1]
+CSTACK$$Base            0x20000800          --   Gb  - Linker created -
+CSTACK$$Limit           0x20001000          --   Gb  - Linker created -
+ClickEvent()            0x0800256d    0x8  Code  Gb  Test.o [1]
+CreateUI()              0x08002525   0x46  Code  Gb  Test.o [1]
+Create_Alarm_Clock()    0x080024db   0x4a  Code  Gb  Test.o [1]
 Create_Alarm_Clock()::static guard for time
-                        0x20000608    0x1  Data  Lc  Test.o [1]
+                        0x20000640    0x1  Data  Lc  Test.o [1]
 Create_Alarm_Clock()::time
-                        0x200004d0    0xc  Data  Lc  Test.o [1]
-DataCommandSelectGpio   0x20000454   0x14  Data  Lc  Test.o [1]
-DebugMon_Handler        0x0800459d    0x2  Code  Gb  stm32f10x_it.o [1]
-DtorRecArray            0x2000060c    0xc  Data  Lc  cppinit.o [3]
-EXTI0_IRQHandler        0x080006b3   0x18  Code  Gb  InterruptManager.o [1]
-EXTI15_10_IRQHandler    0x080005d9   0xda  Code  Gb  InterruptManager.o [1]
-EXTI1_IRQHandler        0x080006cb   0x18  Code  Gb  InterruptManager.o [1]
-EXTI2_IRQHandler        0x080006e3   0x18  Code  Gb  InterruptManager.o [1]
-EXTI3_IRQHandler        0x080006fb   0x18  Code  Gb  InterruptManager.o [1]
-EXTI4_IRQHandler        0x08000713   0x18  Code  Gb  InterruptManager.o [1]
-EXTI9_5_IRQHandler      0x0800052f   0xaa  Code  Gb  InterruptManager.o [1]
-EXTI_ClearITPendingBit  0x0800098d    0x6  Code  Gb  stm32f10x_exti.o [1]
-EXTI_GetITStatus        0x0800096d   0x20  Code  Gb  stm32f10x_exti.o [1]
-EXTI_Init               0x080008e9   0x84  Code  Gb  stm32f10x_exti.o [1]
-GPIO_EXTILineConfig     0x08003093   0x56  Code  Gb  stm32f10x_gpio.o [1]
-GPIO_Init               0x08002fa9   0xc4  Code  Gb  stm32f10x_gpio.o [1]
-GPIO_ReadOutputDataBit  0x0800306d   0x14  Code  Gb  stm32f10x_gpio.o [1]
-GPIO_WriteBit           0x08003081   0x12  Code  Gb  stm32f10x_gpio.o [1]
-GpioInput_ISR()         0x08000b35   0x10  Code  Gb  Test.o [1]
-GpioInput_ISR()::i      0x200005ec    0x4  Data  Lc  Test.o [1]
-HardFault_Handler       0x08004593    0x2  Code  Gb  stm32f10x_it.o [1]
-HwButton_A2             0x2000027c   0x94  Data  Lc  Test.o [1]
-I2C_AcknowledgeConfig   0x080032bd   0x1c  Code  Gb  stm32f10x_i2c.o [1]
-I2C_CheckEvent          0x08003319   0x24  Code  Gb  stm32f10x_i2c.o [1]
-I2C_Cmd                 0x08003269   0x1c  Code  Gb  stm32f10x_i2c.o [1]
-I2C_GenerateSTART       0x08003285   0x1c  Code  Gb  stm32f10x_i2c.o [1]
-I2C_GenerateSTOP        0x080032a1   0x1c  Code  Gb  stm32f10x_i2c.o [1]
-I2C_GetFlagStatus       0x0800333d   0x42  Code  Gb  stm32f10x_i2c.o [1]
-I2C_Init                0x08003199   0xc4  Code  Gb  stm32f10x_i2c.o [1]
-I2C_PECPositionConfig   0x080032fb   0x1e  Code  Gb  stm32f10x_i2c.o [1]
-I2C_ReceiveData         0x080032df    0x6  Code  Gb  stm32f10x_i2c.o [1]
-I2C_Send7bitAddress     0x080032e5   0x16  Code  Gb  stm32f10x_i2c.o [1]
-I2C_SendData            0x080032d9    0x6  Code  Gb  stm32f10x_i2c.o [1]
-INA219_I2C              0x20000368   0x44  Data  Lc  Test.o [1]
-INA219_Obj              0x20000414   0x18  Data  Lc  Test.o [1]
-Init_Tests()            0x08000abb   0x7a  Code  Gb  Test.o [1]
+                        0x2000050c    0xc  Data  Lc  Test.o [1]
+DS3231::DS3231(Bsp::I2CDriver *, unsigned char)
+                        0x0800010d    0x6  Code  Gb  DS3231.o [1]
+DS3231::_burstRead()    0x0800090b   0x24  Code  Gb  DS3231.o [1]
+DS3231::_decode(unsigned char)
+                        0x0800083d   0x1c  Code  Gb  DS3231.o [1]
+DS3231::_decodeH(unsigned char)
+                        0x08000859   0x2e  Code  Gb  DS3231.o [1]
+DS3231::_decodeY(unsigned char)
+                        0x08000887   0x18  Code  Gb  DS3231.o [1]
+DS3231::_encode(unsigned char)
+                        0x0800089f   0x1e  Code  Gb  DS3231.o [1]
+DS3231::_readRegister(unsigned char)
+                        0x080008d5   0x26  Code  Gb  DS3231.o [1]
+DS3231::_writeRegister(unsigned char, unsigned char)
+                        0x080008bd   0x18  Code  Gb  DS3231.o [1]
+DS3231::begin()         0x080008fb   0x10  Code  Gb  DS3231.o [1]
+DS3231::getDOWStr(unsigned char)
+                        0x0800070d   0x68  Code  Gb  DS3231.o [1]
+DS3231::getDateStr(uint8_t, uint8_t, char)::output
+                        0x2000000c    0xc  Data  Lc  DS3231.o [1]
+DS3231::getDateStr(unsigned char, unsigned char, char)
+                        0x08000373  0x39a  Code  Gb  DS3231.o [1]
+DS3231::getMonthStr(unsigned char)
+                        0x08000775   0x68  Code  Gb  DS3231.o [1]
+DS3231::getTemp()       0x080007fd   0x40  Code  Gb  DS3231.o [1]
+DS3231::getTime()       0x08000113   0x70  Code  Gb  DS3231.o [1]
+DS3231::getTimeStr(uint8_t)::output
+                        0x20000000    0xc  Data  Lc  DS3231.o [1]
+DS3231::getTimeStr(unsigned char)
+                        0x0800026b  0x108  Code  Gb  DS3231.o [1]
+DS3231::setDOW(unsigned char)
+                        0x08000251   0x1a  Code  Gb  DS3231.o [1]
+DS3231::setDate(unsigned char, unsigned char, unsigned short)
+                        0x080001df   0x72  Code  Gb  DS3231.o [1]
+DS3231::setTime(unsigned char, unsigned char, unsigned char)
+                        0x08000183   0x5c  Code  Gb  DS3231.o [1]
+DataCommandSelectGpio   0x2000046c   0x14  Data  Lc  Test.o [1]
+DateNTime::DateNTime()  0x080000ed   0x20  Code  Gb  DS3231.o [1]
+DebugMon_Handler        0x08004c9d    0x2  Code  Gb  stm32f10x_it.o [1]
+DtorRecArray            0x20000644    0xc  Data  Lc  cppinit.o [3]
+EXTI0_IRQHandler        0x08001e27   0x18  Code  Gb  InterruptManager.o [1]
+EXTI15_10_IRQHandler    0x08001d4d   0xda  Code  Gb  InterruptManager.o [1]
+EXTI1_IRQHandler        0x08001e3f   0x18  Code  Gb  InterruptManager.o [1]
+EXTI2_IRQHandler        0x08001e57   0x18  Code  Gb  InterruptManager.o [1]
+EXTI3_IRQHandler        0x08001e6f   0x18  Code  Gb  InterruptManager.o [1]
+EXTI4_IRQHandler        0x08001e87   0x18  Code  Gb  InterruptManager.o [1]
+EXTI9_5_IRQHandler      0x08001ca3   0xaa  Code  Gb  InterruptManager.o [1]
+EXTI_ClearITPendingBit  0x08002101    0x6  Code  Gb  stm32f10x_exti.o [1]
+EXTI_GetITStatus        0x080020e1   0x20  Code  Gb  stm32f10x_exti.o [1]
+EXTI_Init               0x0800205d   0x84  Code  Gb  stm32f10x_exti.o [1]
+GPIO_EXTILineConfig     0x0800142f   0x56  Code  Gb  stm32f10x_gpio.o [1]
+GPIO_Init               0x08001345   0xc4  Code  Gb  stm32f10x_gpio.o [1]
+GPIO_ReadOutputDataBit  0x08001409   0x14  Code  Gb  stm32f10x_gpio.o [1]
+GPIO_WriteBit           0x0800141d   0x12  Code  Gb  stm32f10x_gpio.o [1]
+GpioInput_ISR()         0x080022f1   0x10  Code  Gb  Test.o [1]
+GpioInput_ISR()::i      0x20000628    0x4  Data  Lc  Test.o [1]
+HardFault_Handler       0x08004c93    0x2  Code  Gb  stm32f10x_it.o [1]
+HwButton_A2             0x20000294   0x94  Data  Lc  Test.o [1]
+I2C_AcknowledgeConfig   0x08001239   0x1c  Code  Gb  stm32f10x_i2c.o [1]
+I2C_CheckEvent          0x08001295   0x24  Code  Gb  stm32f10x_i2c.o [1]
+I2C_Cmd                 0x080011e5   0x1c  Code  Gb  stm32f10x_i2c.o [1]
+I2C_GenerateSTART       0x08001201   0x1c  Code  Gb  stm32f10x_i2c.o [1]
+I2C_GenerateSTOP        0x0800121d   0x1c  Code  Gb  stm32f10x_i2c.o [1]
+I2C_GetFlagStatus       0x080012b9   0x42  Code  Gb  stm32f10x_i2c.o [1]
+I2C_Init                0x08001115   0xc4  Code  Gb  stm32f10x_i2c.o [1]
+I2C_PECPositionConfig   0x08001277   0x1e  Code  Gb  stm32f10x_i2c.o [1]
+I2C_ReceiveData         0x0800125b    0x6  Code  Gb  stm32f10x_i2c.o [1]
+I2C_Send7bitAddress     0x08001261   0x16  Code  Gb  stm32f10x_i2c.o [1]
+I2C_SendData            0x08001255    0x6  Code  Gb  stm32f10x_i2c.o [1]
+INA219_I2C              0x20000380   0x44  Data  Lc  Test.o [1]
+INA219_Obj              0x2000042c   0x18  Data  Lc  Test.o [1]
+Init_Tests()            0x08002245   0xaa  Code  Gb  Test.o [1]
 Led::Led(GPIO_TypeDef *, unsigned short)
-                        0x080012b1   0x1a  Code  Gb  Led.o [1]
-Led::Toggle()           0x08002781    0x8  Code  Gb  Test.o [1]
-Led_PC13                0x200003fc   0x18  Data  Lc  Test.o [1]
+                        0x08002b1d   0x1a  Code  Gb  Led.o [1]
+Led::Toggle()           0x080038b3    0x8  Code  Gb  Test.o [1]
+Led_PC13                0x20000414   0x18  Data  Lc  Test.o [1]
 Line0Menu0LongLongTouchHandler()
-                        0x08000d75   0x16  Code  Gb  Test.o [1]
+                        0x080025d9   0x16  Code  Gb  Test.o [1]
 Line0Menu0LongTouchHandler()
-                        0x08000d21    0xa  Code  Gb  Test.o [1]
-LongLongPressEvent()    0x08000d19    0x8  Code  Gb  Test.o [1]
-LongPressEvent()        0x08000d11    0x8  Code  Gb  Test.o [1]
+                        0x08002585    0xa  Code  Gb  Test.o [1]
+LongLongPressEvent()    0x0800257d    0x8  Code  Gb  Test.o [1]
+LongPressEvent()        0x08002575    0x8  Code  Gb  Test.o [1]
 LongTouchBackLightHandler()
-                        0x08000d2d   0x46  Code  Gb  Test.o [1]
-MemManage_Handler       0x08004595    0x2  Code  Gb  stm32f10x_it.o [1]
-MilliSecTimer           0x200004c4    0xc  Data  Gb  Test.o [1]
-MyUI                    0x200003ac   0x30  Data  Gb  Test.o [1]
-NMI_Handler             0x08004591    0x2  Code  Gb  stm32f10x_it.o [1]
-NVIC_Init               0x0800083b   0x60  Code  Gb  misc.o [1]
+                        0x08002591   0x46  Code  Gb  Test.o [1]
+MemManage_Handler       0x08004c95    0x2  Code  Gb  stm32f10x_it.o [1]
+MilliSecTimer           0x200004f4    0xc  Data  Gb  Test.o [1]
+MyUI                    0x200003c4   0x30  Data  Gb  Test.o [1]
+NMI_Handler             0x08004c91    0x2  Code  Gb  stm32f10x_it.o [1]
+NVIC_Init               0x08001faf   0x60  Code  Gb  misc.o [1]
 NVIC_PriorityGroupConfig
-                        0x08000831    0xa  Code  Gb  misc.o [1]
-NVIC_SetVectorTable     0x0800089b    0xc  Code  Gb  misc.o [1]
-NokiaLCD                0x20000490   0x10  Data  Gb  Test.o [1]
-OneSecondHandler()      0x08000c6d    0xa  Code  Gb  Test.o [1]
-PendSV_Handler          0x0800459f    0x2  Code  Gb  stm32f10x_it.o [1]
-Power                   0x200004a0    0xc  Data  Lc  Test.o [1]
-PowerMonitorScreen      0x20000310   0x58  Data  Lc  Test.o [1]
-RCC_AHBPeriphClockCmd   0x08003a7b   0x20  Code  Gb  stm32f10x_rcc.o [1]
-RCC_APB1PeriphClockCmd  0x08003abb   0x20  Code  Gb  stm32f10x_rcc.o [1]
-RCC_APB1PeriphResetCmd  0x08003adb   0x20  Code  Gb  stm32f10x_rcc.o [1]
-RCC_APB2PeriphClockCmd  0x08003a9b   0x20  Code  Gb  stm32f10x_rcc.o [1]
-RCC_DeInit              0x0800389d   0x60  Code  Gb  stm32f10x_rcc.o [1]
-RCC_GetClocksFreq       0x080039c1   0xba  Code  Gb  stm32f10x_rcc.o [1]
-RCC_GetFlagStatus       0x08003afb   0x3c  Code  Gb  stm32f10x_rcc.o [1]
-RCC_GetSYSCLKSource     0x0800397f    0xa  Code  Gb  stm32f10x_rcc.o [1]
-RCC_HCLKConfig          0x08003989   0x12  Code  Gb  stm32f10x_rcc.o [1]
-RCC_HSEConfig           0x080038fd   0x54  Code  Gb  stm32f10x_rcc.o [1]
-RCC_PCLK1Config         0x0800399b   0x12  Code  Gb  stm32f10x_rcc.o [1]
-RCC_PCLK2Config         0x080039ad   0x14  Code  Gb  stm32f10x_rcc.o [1]
-RCC_PLLCmd              0x08003965    0x8  Code  Gb  stm32f10x_rcc.o [1]
-RCC_PLLConfig           0x08003951   0x14  Code  Gb  stm32f10x_rcc.o [1]
-RCC_SYSCLKConfig        0x0800396d   0x12  Code  Gb  stm32f10x_rcc.o [1]
-Region$$Table$$Base     0x08004438          --   Gb  - Linker created -
-Region$$Table$$Limit    0x08004460          --   Gb  - Linker created -
-ResetPinGpio            0x20000468   0x14  Data  Lc  Test.o [1]
-RunTests()              0x08000b45  0x128  Code  Gb  Test.o [1]
-SHT$$INIT_ARRAY$$Base   0x08004660          --   Gb  - Linker created -
-SHT$$INIT_ARRAY$$Limit  0x08004664          --   Gb  - Linker created -
+                        0x08001fa5    0xa  Code  Gb  misc.o [1]
+NVIC_SetVectorTable     0x0800200f    0xc  Code  Gb  misc.o [1]
+NokiaLCD                0x200004bc   0x10  Data  Gb  Test.o [1]
+OneSecondHandler()      0x080024d1    0xa  Code  Gb  Test.o [1]
+PendSV_Handler          0x08004c9f    0x2  Code  Gb  stm32f10x_it.o [1]
+Power                   0x200004dc    0xc  Data  Lc  Test.o [1]
+PowerMonitorScreen      0x20000328   0x58  Data  Lc  Test.o [1]
+RCC_AHBPeriphClockCmd   0x08001757   0x20  Code  Gb  stm32f10x_rcc.o [1]
+RCC_APB1PeriphClockCmd  0x08001797   0x20  Code  Gb  stm32f10x_rcc.o [1]
+RCC_APB1PeriphResetCmd  0x080017b7   0x20  Code  Gb  stm32f10x_rcc.o [1]
+RCC_APB2PeriphClockCmd  0x08001777   0x20  Code  Gb  stm32f10x_rcc.o [1]
+RCC_DeInit              0x08001579   0x60  Code  Gb  stm32f10x_rcc.o [1]
+RCC_GetClocksFreq       0x0800169d   0xba  Code  Gb  stm32f10x_rcc.o [1]
+RCC_GetFlagStatus       0x080017d7   0x3c  Code  Gb  stm32f10x_rcc.o [1]
+RCC_GetSYSCLKSource     0x0800165b    0xa  Code  Gb  stm32f10x_rcc.o [1]
+RCC_HCLKConfig          0x08001665   0x12  Code  Gb  stm32f10x_rcc.o [1]
+RCC_HSEConfig           0x080015d9   0x54  Code  Gb  stm32f10x_rcc.o [1]
+RCC_PCLK1Config         0x08001677   0x12  Code  Gb  stm32f10x_rcc.o [1]
+RCC_PCLK2Config         0x08001689   0x14  Code  Gb  stm32f10x_rcc.o [1]
+RCC_PLLCmd              0x08001641    0x8  Code  Gb  stm32f10x_rcc.o [1]
+RCC_PLLConfig           0x0800162d   0x14  Code  Gb  stm32f10x_rcc.o [1]
+RCC_SYSCLKConfig        0x08001649   0x12  Code  Gb  stm32f10x_rcc.o [1]
+Region$$Table$$Base     0x08004b1c          --   Gb  - Linker created -
+Region$$Table$$Limit    0x08004b40          --   Gb  - Linker created -
+ResetPinGpio            0x20000480   0x14  Data  Lc  Test.o [1]
+RunTests()              0x08002301  0x1c6  Code  Gb  Test.o [1]
+SHT$$INIT_ARRAY$$Base   0x08004e70          --   Gb  - Linker created -
+SHT$$INIT_ARRAY$$Limit  0x08004e74          --   Gb  - Linker created -
 SHT$$PREINIT_ARRAY$$Base
-                        0x08004660          --   Gb  - Linker created -
+                        0x08004e70          --   Gb  - Linker created -
 SHT$$PREINIT_ARRAY$$Limit
-                        0x08004660          --   Gb  - Linker created -
-SPI_Cmd                 0x080036f7   0x1c  Code  Gb  stm32f10x_spi.o [1]
-SPI_I2S_GetFlagStatus   0x0800371b   0x12  Code  Gb  stm32f10x_spi.o [1]
-SPI_I2S_ReceiveData     0x08003717    0x4  Code  Gb  stm32f10x_spi.o [1]
-SPI_I2S_SendData        0x08003713    0x4  Code  Gb  stm32f10x_spi.o [1]
-SPI_Init                0x080036b9   0x3e  Code  Gb  stm32f10x_spi.o [1]
-SVC_Handler             0x0800459b    0x2  Code  Gb  stm32f10x_it.o [1]
-SpiDriverLCD            0x200003dc   0x20  Data  Lc  Test.o [1]
+                        0x08004e70          --   Gb  - Linker created -
+SPI_Cmd                 0x08004217   0x1c  Code  Gb  stm32f10x_spi.o [1]
+SPI_I2S_GetFlagStatus   0x0800423b   0x12  Code  Gb  stm32f10x_spi.o [1]
+SPI_I2S_ReceiveData     0x08004237    0x4  Code  Gb  stm32f10x_spi.o [1]
+SPI_I2S_SendData        0x08004233    0x4  Code  Gb  stm32f10x_spi.o [1]
+SPI_Init                0x080041d9   0x3e  Code  Gb  stm32f10x_spi.o [1]
+SVC_Handler             0x08004c9b    0x2  Code  Gb  stm32f10x_it.o [1]
+SpiDriverLCD            0x200003f4   0x20  Data  Lc  Test.o [1]
 SysTick_CLKSourceConfig
-                        0x080008a7   0x20  Code  Gb  misc.o [1]
-SysTick_Handler         0x080029bd    0x8  Code  Gb  SysTickTimer.o [1]
-SystemInit              0x08003e3d   0x54  Code  Gb  system_stm32f10x.o [1]
+                        0x0800201b   0x20  Code  Gb  misc.o [1]
+SysTick_Handler         0x08003a45    0x8  Code  Gb  SysTickTimer.o [1]
+SystemInit              0x080044b5   0x54  Code  Gb  system_stm32f10x.o [1]
 TestGpio_WithoutInterrupt
-                        0x20000440   0x14  Data  Lc  Test.o [1]
-UsageFault_Handler      0x08004599    0x2  Code  Gb  stm32f10x_it.o [1]
+                        0x20000458   0x14  Data  Lc  Test.o [1]
+UsageFault_Handler      0x08004c99    0x2  Code  Gb  stm32f10x_it.o [1]
 Utility::Clock::Alarm_t::Alarm_t()
-                        0x08004521   0x16  Code  Gb  Test.o [1]
+                        0x08004c39   0x16  Code  Gb  Test.o [1]
 Utility::Clock::Alarm_t::~Alarm_t()
-                        0x0800153b    0x2  Code  Gb  Test.o [1]
+                        0x0800092f    0x2  Code  Gb  Test.o [1]
 Utility::Clock::Clock()
-                        0x08002481   0x20  Code  Gb  Test.o [1]
+                        0x0800387d   0x20  Code  Gb  Test.o [1]
 Utility::Clock::CreateAlarm(Utility::Clock::AlarmType_t, Utility::Time, void (*)())
-                        0x080024b7   0x7e  Code  Gb  Clock.o [1]
-Utility::Clock::GetCurrentTime()
-                        0x0800384d    0xe  Code  Gb  Clock.o [1]
-Utility::Clock::GetCurrentTimeString(char *)
-                        0x08002779    0x8  Code  Gb  Test.o [1]
-Utility::Clock::ReloadAlarmTime(unsigned int)
-                        0x0800254d   0x5e  Code  Gb  Clock.o [1]
-Utility::Clock::Run()   0x08002639   0x16  Code  Gb  Clock.o [1]
-Utility::Clock::RunAlarmHandler()
-                        0x0800264f   0x7e  Code  Gb  Clock.o [1]
+                        0x080038e1   0x7e  Code  Gb  Clock.o [1]
 Utility::Clock::StartAlarm(unsigned int)
-                        0x08002535   0x18  Code  Gb  Clock.o [1]
-Utility::Clock::UpdateAlarms()
-                        0x080025ab   0x8e  Code  Gb  Clock.o [1]
+                        0x0800395f   0x18  Code  Gb  Clock.o [1]
 Utility::Clock::~Clock()
-                        0x08004505   0x1c  Code  Gb  Test.o [1]
-Utility::MilliTime::AddMillis(unsigned int)
-                        0x080026cd   0x42  Code  Gb  MilliTime.o [1]
-Utility::MilliTime::Get(char *)
-                        0x0800270f   0x40  Code  Gb  MilliTime.o [1]
-Utility::MilliTime::GetRawMiliSecTicksSince(unsigned int)
-                        0x08003867    0xa  Code  Gb  MilliTime.o [1]
-Utility::MilliTime::GetRawMilliSecTicks()
-                        0x08003871    0x8  Code  Gb  MilliTime.o [1]
+                        0x08004c1d   0x1c  Code  Gb  Test.o [1]
 Utility::MilliTime::MilliTime()
-                        0x080024a1    0xe  Code  Gb  Test.o [1]
-Utility::MilliTime::Run()
-                        0x0800274f   0x2a  Code  Gb  MilliTime.o [1]
-Utility::Time::Get(char *)
-                        0x08002831   0x30  Code  Gb  Time.o [1]
-Utility::Time::GetHrs()
-                        0x0800385b    0x4  Code  Gb  Clock.o [1]
-Utility::Time::GetMin()
-                        0x0800385f    0x4  Code  Gb  Clock.o [1]
-Utility::Time::GetRawMiliSecTicksSince(unsigned int)
-                        0x08003879    0xa  Code  Gb  Time.o [1]
-Utility::Time::GetRawMilliSecTicks()
-                        0x08003883    0x8  Code  Gb  Time.o [1]
-Utility::Time::GetSec()
-                        0x08003863    0x4  Code  Gb  Clock.o [1]
-Utility::Time::IncrementTime()
-                        0x08002861    0xe  Code  Gb  Time.o [1]
-Utility::Time::Run()    0x080028b1   0x3c  Code  Gb  Time.o [1]
-Utility::Time::Time()   0x08003839   0x14  Code  Gb  Time.o [1]
+                        0x0800389d    0xe  Code  Gb  Test.o [1]
+Utility::Time::Time()   0x080042b1   0x14  Code  Gb  Time.o [1]
 Utility::Time::Time(unsigned char, unsigned char, unsigned char, unsigned int)
-                        0x08002789   0x24  Code  Gb  Time.o [1]
-Utility::Time::Update()
-                        0x0800286f   0x3c  Code  Gb  Time.o [1]
-Utility::Time::Update()::TickDifference
-                        0x200005f4    0x4  Data  Lc  Time.o [1]
-Utility::Time::operator +(Utility::Time)
-                        0x080027ad   0x4c  Code  Gb  Time.o [1]
-Utility::Time::operator ++(int)
-                        0x080027f9   0x38  Code  Gb  Time.o [1]
+                        0x080038bd   0x24  Code  Gb  Time.o [1]
 Virtual function table for Bsp::ControlScreen
-                        0x080044cc   0x1c  Data  Gb  ControlScreen.o [1]
+                        0x08004bac   0x1c  Data  Gb  ControlScreen.o [1]
 Virtual function table for Bsp::GpioInput
-                        0x080041d8   0x40  Data  Gb  GpioInput.o [1]
+                        0x08004850   0x40  Data  Gb  GpioInput.o [1]
 Virtual function table for Bsp::GpioOutput
-                        0x08004218   0x40  Data  Gb  GpioOutput.o [1]
+                        0x08004890   0x40  Data  Gb  GpioOutput.o [1]
 Virtual function table for Bsp::HwButtonIntr
-                        0x08004258   0x40  Data  Gb  HwButtonIntr.o [1]
+                        0x080048d0   0x40  Data  Gb  HwButtonIntr.o [1]
 Virtual function table for Bsp::I2CDriver
-                        0x08004298   0x40  Data  Gb  I2CDriver.o [1]
+                        0x08004910   0x40  Data  Gb  I2CDriver.o [1]
 Virtual function table for Bsp::INA219
-                        0x08004550   0x10  Data  Gb  INA219.o [1]
+                        0x08004c50   0x10  Data  Gb  INA219.o [1]
 Virtual function table for Bsp::Screen
-                        0x080044e8   0x1c  Data  Gb  Screen.o [1]
+                        0x08004c00   0x1c  Data  Gb  Screen.o [1]
 Virtual function table for Bsp::SpiDriver
-                        0x08004318   0x40  Data  Gb  SpiDriver.o [1]
+                        0x08004990   0x40  Data  Gb  SpiDriver.o [1]
 Virtual function table for Led
-                        0x080042d8   0x40  Data  Gb  Led.o [1]
+                        0x08004950   0x40  Data  Gb  Led.o [1]
 [local to Nokia5110LCD_cpp]::App::ASCII
-                        0x08003c5c  0x1e0  Data  Lc  Nokia5110LCD.o [1]
+                        0x080042d4  0x1e0  Data  Lc  Nokia5110LCD.o [1]
 [local to SysTickTimer_cpp]::NVIC_SetPriority(IRQn, unsigned int)
-                        0x08002959   0x22  Code  Lc  SysTickTimer.o [1]
+                        0x080039e1   0x22  Code  Lc  SysTickTimer.o [1]
 [local to SysTickTimer_cpp]::SysTick_Config(unsigned int)
-                        0x0800297b   0x2e  Code  Lc  SysTickTimer.o [1]
+                        0x08003a03   0x2e  Code  Lc  SysTickTimer.o [1]
 [local to main_cpp]::prvSetupHardware()
-                        0x08003fad   0x7e  Code  Lc  main.o [1]
+                        0x08004625   0x7e  Code  Lc  main.o [1]
 [local to system_stm32f10x_c]::SetSysClock()
-                        0x08003e91    0x8  Code  Lc  system_stm32f10x.o [1]
+                        0x08004509    0x8  Code  Lc  system_stm32f10x.o [1]
 [local to system_stm32f10x_c]::SetSysClockTo72()
-                        0x08003e99   0xe0  Code  Lc  system_stm32f10x.o [1]
-__aeabi_atexit          0x080019fb    0xa  Code  Gb  cxxabi.o [4]
-__aeabi_cdcmpeq         0x08002c91         Code  Gb  DblCmpEq.o [5]
-__aeabi_cfcmple         0x08003559         Code  Gb  FltCmpLe.o [5]
-__aeabi_d2f             0x08002f41         Code  Gb  DblToFlt.o [5]
-__aeabi_ddiv            0x08002cb1         Code  Gb  DblDiv.o [5]
-__aeabi_dmul            0x08002aed         Code  Gb  DblMul.o [5]
-__aeabi_f2d             0x08002ef9         Code  Gb  FltToDbl.o [5]
-__aeabi_f2iz            0x08002a1d         Code  Gb  FltToS32.o [5]
-__aeabi_fdiv            0x080035bd         Code  Gb  FltDiv.o [5]
-__aeabi_fsub            0x08002a6d         Code  Gb  FltSub.o [5]
-__aeabi_i2d             0x0800357d         Code  Gb  S32ToDbl.o [5]
-__aeabi_i2f             0x08002a49         Code  Gb  S32ToFlt.o [5]
-__aeabi_memcpy          0x0800374d         Code  Gb  ABImemcpy.o [6]
-__aeabi_memcpy4         0x0800376d         Code  Gb  ABImemcpy.o [6]
-__aeabi_memcpy8         0x0800376d         Code  Gb  ABImemcpy.o [6]
-__aeabi_memset          0x08003131         Code  Gb  ABImemset.o [6]
-__aeabi_ui2f            0x080035a1         Code  Gb  U32ToFlt.o [5]
+                        0x08004511   0xe0  Code  Lc  system_stm32f10x.o [1]
+__aeabi_atexit          0x08002df5    0xa  Code  Gb  cxxabi.o [4]
+__aeabi_cdcmpeq         0x08003c99         Code  Gb  DblCmpEq.o [5]
+__aeabi_cfcmple         0x08004095         Code  Gb  FltCmpLe.o [5]
+__aeabi_d2f             0x08003f49         Code  Gb  DblToFlt.o [5]
+__aeabi_ddiv            0x08003cb9         Code  Gb  DblDiv.o [5]
+__aeabi_dmul            0x08003af5         Code  Gb  DblMul.o [5]
+__aeabi_f2d             0x08003f01         Code  Gb  FltToDbl.o [5]
+__aeabi_f2iz            0x08003aa5         Code  Gb  FltToS32.o [5]
+__aeabi_fadd            0x08000ad9         Code  Gb  FltAdd.o [5]
+__aeabi_fdiv            0x080040dd         Code  Gb  FltDiv.o [5]
+__aeabi_fmul            0x08000a01         Code  Gb  FltMul.o [5]
+__aeabi_fsub            0x0800102d         Code  Gb  FltSub.o [5]
+__aeabi_i2d             0x080040b9         Code  Gb  S32ToDbl.o [5]
+__aeabi_i2f             0x08003ad1         Code  Gb  S32ToFlt.o [5]
+__aeabi_memcpy          0x08000931         Code  Gb  ABImemcpy.o [6]
+__aeabi_memcpy4         0x08000951         Code  Gb  ABImemcpy.o [6]
+__aeabi_memcpy8         0x08000951         Code  Gb  ABImemcpy.o [6]
+__aeabi_memset          0x080010ad         Code  Gb  ABImemset.o [6]
+__aeabi_ui2f            0x080009e5         Code  Gb  U32ToFlt.o [5]
 __aeabi_vec_ctor_nocookie_nodtor
-                        0x080019ad   0x28  Code  Gb  cxxabi.o [4]
-__aeabi_vec_dtor        0x080019d5   0x26  Code  Gb  cxxabi.o [4]
-__call_ctors            0x080034b9   0x18  Code  Gb  cppinit.o [3]
-__call_dtors            0x08003507    0xc  Code  Gb  cppinit.o [3]
-__call_dtors0           0x08003513   0x36  Code  Gb  cppinit.o [3]
-__cexit_call_dtors      0x080044ab         Code  Gb  cexit.o [6]
-__cmain                 0x08004481         Code  Gb  cmain.o [6]
-__cstart_call_dtors     0x08004664         Data  Gb  cstart_call_dtors.o [6]
-__cxa_atexit            0x080034d1   0x36  Code  Gb  cppinit.o [3]
-__dso_handle            0x200005fc    0x4  Data  Gb  cppinit.o [3]
-__exit                  0x080044b9   0x14  Code  Gb  exit.o [7]
-__iar_Memset            0x08003131         Code  Gb  ABImemset.o [6]
-__iar_Memset_word       0x08003139         Code  Gb  ABImemset.o [6]
-__iar_copy_init3        0x080043e3   0x2c  Code  Gb  copy_init3.o [6]
+                        0x08002da7   0x28  Code  Gb  cxxabi.o [4]
+__aeabi_vec_dtor        0x08002dcf   0x26  Code  Gb  cxxabi.o [4]
+__call_ctors            0x08003ff5   0x18  Code  Gb  cppinit.o [3]
+__call_dtors            0x08004043    0xc  Code  Gb  cppinit.o [3]
+__call_dtors0           0x0800404f   0x36  Code  Gb  cppinit.o [3]
+__cexit_call_dtors      0x08004b8b         Code  Gb  cexit.o [6]
+__cmain                 0x08004b61         Code  Gb  cmain.o [6]
+__cstart_call_dtors     0x08004e74         Data  Gb  cstart_call_dtors.o [6]
+__cxa_atexit            0x0800400d   0x36  Code  Gb  cppinit.o [3]
+__dso_handle            0x20000634    0x4  Data  Gb  cppinit.o [3]
+__exit                  0x08004b99   0x14  Code  Gb  exit.o [7]
+__iar_Memset            0x080010ad         Code  Gb  ABImemset.o [6]
+__iar_Memset_word       0x080010b5         Code  Gb  ABImemset.o [6]
 __iar_cstart_call_ctors
-                        0x08004461   0x20  Code  Gb  cmain_call_ctors.o [6]
-__iar_data_init3        0x08004411   0x28  Code  Gb  data_init.o [6]
-__iar_debug_exceptions  0x08001ba2    0x1  Data  Gb  unwind_debug.o [7]
-__iar_fadd              0x08002a79         Code  Gb  FltSub.o [5]
-__iar_fsub              0x08003b79         Code  Gb  FltAdd.o [5]
-__iar_fsubStart         0x08003b89         Code  Gb  FltAdd.o [5]
-__iar_program_start     0x080045a1         Code  Gb  cstartup_M.o [6]
+                        0x08004b41   0x20  Code  Gb  cmain_call_ctors.o [6]
+__iar_data_init3        0x08004af5   0x28  Code  Gb  data_init.o [6]
+__iar_debug_exceptions  0x080009e2    0x1  Data  Gb  unwind_debug.o [7]
+__iar_fadd              0x08001039         Code  Gb  FltSub.o [5]
+__iar_fsub              0x08000ae5         Code  Gb  FltAdd.o [5]
+__iar_fsubStart         0x08000af5         Code  Gb  FltAdd.o [5]
+__iar_packbits_init_single3
+                        0x08004a5b   0x38  Code  Gb  packbits_init_single.o [6]
+__iar_program_start     0x08004d0d         Code  Gb  cstartup_M.o [6]
 __iar_systems$$module {Abs}
                         0x00000001         Data  Gb  command line/config [2]
 __iar_tls$$INIT_ARRAY$$Base
-                        0x08004664          --   Gb  - Linker created -
+                        0x08004e74          --   Gb  - Linker created -
 __iar_tls$$INIT_ARRAY$$Limit
-                        0x08004664          --   Gb  - Linker created -
-__iar_zero_init3        0x08004359   0x40  Code  Gb  zero_init3.o [6]
-__low_level_init        0x0800449f    0x4  Code  Gb  low_level_init.o [3]
-__sti__routine          0x080009a9  0x112  Code  Lc  Test.o [1]
+                        0x08004e74          --   Gb  - Linker created -
+__iar_zero_init3        0x080049d1   0x40  Code  Gb  zero_init3.o [6]
+__low_level_init        0x08004b7f    0x4  Code  Gb  low_level_init.o [3]
+__sti__routine          0x0800211d  0x128  Code  Lc  Test.o [1]
 __vector_table          0x08000000         Data  Gb  startup_stm32f10x_md.o [1]
-_call_main              0x0800448d         Code  Gb  cmain.o [6]
-_exit                   0x080044a9         Code  Gb  cexit.o [6]
-_main                   0x0800449b         Code  Gb  cmain.o [6]
-aCurrent                0x200004ac    0xc  Data  Gb  Test.o [1]
-aVoltage                0x200004b8    0xc  Data  Gb  Test.o [1]
-exit                    0x080044a3    0x4  Code  Gb  exit.o [3]
+_call_main              0x08004b6d         Code  Gb  cmain.o [6]
+_exit                   0x08004b89         Code  Gb  cexit.o [6]
+_main                   0x08004b7b         Code  Gb  cmain.o [6]
+aCurrent                0x200004a8   0x14  Data  Gb  Test.o [1]
+aVoltage                0x200004e8    0xc  Data  Gb  Test.o [1]
+exit                    0x08004b83    0x4  Code  Gb  exit.o [3]
 ftoa(float, char *, int)
-                        0x08000de5   0xde  Code  Gb  Test.o [1]
-gEvent                  0x20000014    0x1  Data  Gb  Test.o [1]
+                        0x08002649   0xde  Code  Gb  Test.o [1]
+gEvent                  0x2000002c    0x1  Data  Gb  Test.o [1]
 intToStr(int, char *, int)
-                        0x08000da7   0x3e  Code  Gb  Test.o [1]
-main                    0x08003f95   0x18  Code  Gb  main.o [1]
-myControlScreen         0x20000194   0xe8  Data  Lc  Test.o [1]
-myControlScreenHandle   0x20000607    0x1  Data  Lc  Test.o [1]
-nClock                  0x20000018  0x17c  Data  Gb  Test.o [1]
-nClockHandle            0x200005f0    0x4  Data  Lc  Test.o [1]
-next_abi_dtor_rec       0x200005f8    0x4  Data  Lc  cppinit.o [3]
-reverse(char *, int)    0x08000d8b   0x1c  Code  Gb  Test.o [1]
+                        0x0800260b   0x3e  Code  Gb  Test.o [1]
+main                    0x0800460d   0x18  Code  Gb  main.o [1]
+memcpy                  0x080009d7    0xc  Code  Gb  memcpy.o [6]
+myControlScreen         0x200001ac   0xe8  Data  Lc  Test.o [1]
+myControlScreenHandle   0x2000063f    0x1  Data  Lc  Test.o [1]
+nClock                  0x20000030  0x17c  Data  Gb  Test.o [1]
+nClockHandle            0x2000062c    0x4  Data  Lc  Test.o [1]
+next_abi_dtor_rec       0x20000630    0x4  Data  Lc  cppinit.o [3]
+reverse(char *, int)    0x080025ef   0x1c  Code  Gb  Test.o [1]
+rtc                     0x200004cc   0x10  Data  Lc  Test.o [1]
+t                       0x20000500    0xc  Data  Gb  Test.o [1]
 
 
 [1] = C:\Amit Caudhary\STM32_IAR\Projects\CppFirmware\Debug\Obj
@@ -1163,9 +1204,9 @@ reverse(char *, int)    0x08000d8b   0x1c  Code  Gb  Test.o [1]
 [6] = rt7M_tl.a
 [7] = shb_l.a
 
-  16 777 bytes of readonly  code memory
-   1 243 bytes of readonly  data memory
-   4 037 bytes of readwrite data memory
+  18 445 bytes of readonly  code memory
+   1 665 bytes of readonly  data memory
+   4 093 bytes of readwrite data memory
 
 Errors: none
 Warnings: none
