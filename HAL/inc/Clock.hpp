@@ -14,6 +14,7 @@
 #include "Time.hpp"
 #include "SysTickTimer.hpp"
 #include "Test.h"
+#include "DS3231.h"
 
 namespace Utility
 {
@@ -49,9 +50,9 @@ public:
         AlarmState_t   State;
     }Alarm_t;
 
-    Clock(){};
+    Clock(DS3231* p_1_Sec_Timer ):m_p_1_Sec_Timer(p_1_Sec_Timer){};
     ~Clock(){};
-    Time GetCurrentTime(){return m_CurrentTime;}
+    Time* GetCurrentTime(){return m_CurrentTime.GetTime();}
     char * GetCurrentTimeString(char* pBuffer){return m_CurrentTime.Get(pBuffer);}
     unsigned char GetCurrentSec(){return m_CurrentTime.GetSec();}
     unsigned char GetCurrentMin(){return m_CurrentTime.GetMin();}
@@ -73,11 +74,12 @@ private:
     unsigned int GetRawMiliSecTicksSince(unsigned int LastTicks){return Bsp::SysTickTimer::GetTicksSince(LastTicks);}
     bool ReloadAlarmTime(AlarmHandle_t nAlarmHandle);
     void UpdateAlarms();
-
-    Time           m_CurrentTime;
-    unsigned int   m_Previous_Millis;
-    unsigned char  m_CurrentAlarms;
-    Alarm_t        m_Alarms[MAX_ALARMS];
+    unsigned char    _GetSeconds(){};
+    DS3231*          m_p_1_Sec_Timer;
+    Time             m_CurrentTime;
+    unsigned int     m_Previous_Millis;
+    unsigned char    m_CurrentAlarms;
+    Alarm_t          m_Alarms[MAX_ALARMS];
 
 };
 

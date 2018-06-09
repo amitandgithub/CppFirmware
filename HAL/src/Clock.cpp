@@ -5,6 +5,12 @@
 namespace Utility
 {
 
+
+unsigned char Clock::_GetSeconds()
+{
+   return m_p_1_Sec_Timer->getSec();
+}
+
 Clock::AlarmHandle_t Clock::CreateAlarm(Alarm_t nAlarm)
 {
     // Search in the array of Alarms and return
@@ -92,7 +98,7 @@ bool Clock::ReloadAlarmTime(AlarmHandle_t nAlarmHandle)
 {
     if(nAlarmHandle < MAX_ALARMS )
     {
-        m_Alarms[nAlarmHandle].ReloadTime = GetCurrentTime() +  m_Alarms[nAlarmHandle].time;
+        m_Alarms[nAlarmHandle].ReloadTime = *(GetCurrentTime())+  m_Alarms[nAlarmHandle].time;
         m_Alarms[nAlarmHandle].State = ALARM_ACTIVE;
         return true;
     }
@@ -111,16 +117,26 @@ void Clock::UpdateAlarms()
             {
                m_Alarms[i].State =  ALARM_EXPIRED;
             }
-
         }
     }
 }
 
 void Clock::Run()
 {
+    unsigned char CurrentSeconds;
+    static unsigned char Previous_Seconds = _GetSeconds();
+
+    CurrentSeconds = _GetSeconds();
+    if(Previous_Seconds != CurrentSeconds )
+    {
+        UpdateAlarms();
+        Previous_Seconds = CurrentSeconds;
+        return true;
+    }
+
    if( m_CurrentTime.Run() == true )
    {
-       // Time has been updated , so update
+       // Time has been updated ,So update
        // the alarms too
         UpdateAlarms();
    }

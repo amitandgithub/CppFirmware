@@ -17,7 +17,7 @@ int main(void)
     prvSetupHardware();
 
     // Start SysTick Timer for 1ms (1000 us) tick resolution
-    SysTickTimer::HwInit(1000UL-1UL);
+    SysTickTimer::HwInit(1000UL);
 
     Init_Tests();
 

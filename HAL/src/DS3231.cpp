@@ -19,6 +19,8 @@
   The license applies to all part of the library including the
   examples and tools supplied with the library.
 */
+#include <time.h>
+#include <stdio.h>
 #include "DS3231.h"
 #include "Test.h"
 
@@ -37,6 +39,11 @@ DateNTime::DateNTime()
 	this->dow  = 5;
 }
 
+unsigned char DS3231::getSec()
+{
+    DateNTime t = getTime();
+    return t.sec;
+}
 DS3231::DS3231(Bsp::I2CDriver* pI2CDrv, uint8_t Address)
 {
     m_pI2CDrv        = pI2CDrv;
@@ -65,6 +72,26 @@ void DS3231::setTime(uint8_t hour, uint8_t min, uint8_t sec)
 		_writeRegister(REG_MIN, _encode(min));
 		_writeRegister(REG_SEC, _encode(sec));
 	}
+}
+
+void DS3231::setLocalTime()
+{
+    //uint8_t date, uint8_t mon, uint16_t year;
+    time_t mytime;
+    mytime = time(NULL);
+    struct tm *loc_time;
+    loc_time = localtime (&mytime);
+    uint8_t WOD = ( loc_time->tm_wday ) == 0 ? SUNDAY :
+                  ( loc_time->tm_wday ) == 1 ? MONDAY :
+                  ( loc_time->tm_wday ) == 2 ? TUESDAY :
+                  ( loc_time->tm_wday ) == 3 ? WEDNESDAY :
+                  ( loc_time->tm_wday ) == 4 ? THURSDAY :
+                  ( loc_time->tm_wday ) == 5 ? FRIDAY :
+                  ( loc_time->tm_wday ) == 6 ? SATURDAY : 0;
+
+    setDate(loc_time->tm_mday,loc_time->tm_mon + 1,loc_time->tm_year + 1900);
+    setTime((loc_time->tm_hour+6)%24,(loc_time->tm_min - 30 > 0? loc_time->tm_min - 30 : loc_time->tm_min - 30 + 60),loc_time->tm_sec);
+    setDOW(WOD);
 }
 
 void DS3231::setDate(uint8_t date, uint8_t mon, uint16_t year)

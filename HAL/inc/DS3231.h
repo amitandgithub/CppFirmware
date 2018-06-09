@@ -52,11 +52,13 @@ class DS3231
 		DS3231(Bsp::I2CDriver* pI2CDrv, uint8_t Address);
 		void	begin();
 		DateNTime	getTime();
+        unsigned char getSec();
         char*	getTimeStr(char* pBuffer);
 		void	setTime(uint8_t hour, uint8_t min, uint8_t sec);
 		void	setDate(uint8_t date, uint8_t mon, uint16_t year);
 		void	setDOW();
 		void	setDOW(uint8_t dow);
+        void    setLocalTime();
 
 		char	*getTimeStr(uint8_t format=FORMAT_LONG);
 		char	*getDateStr(uint8_t slformat=FORMAT_LONG, uint8_t eformat=FORMAT_LITTLEENDIAN, char divider='.');
@@ -127,6 +129,6 @@ public:
         static const uint8_t REG_TEMPM	 = 0x11;
         static const uint8_t REG_TEMPL	 = 0x12;
 
-        static const uint8_t SEC_1970_TO_2000  = 946684800;
+        static const uint32_t SEC_1970_TO_2000  = 946684800;
 };
 #endif

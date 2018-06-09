@@ -12,15 +12,15 @@
         <ByteLimit>50</ByteLimit>
     </Stack>
     <StLinkDriver>
-        <CStepIntDis>_ 0</CStepIntDis>
-        <LeaveTargetRunning>_ 0</LeaveTargetRunning>
-        <stlinkResetStyle>0</stlinkResetStyle>
-        <stlinkResetStrategy>1</stlinkResetStrategy>
         <stlinkserialNo>22201487</stlinkserialNo>
         <stlinkfoundProbes />
+        <stlinkResetStyle>0</stlinkResetStyle>
+        <stlinkResetStrategy>1</stlinkResetStrategy>
+        <CStepIntDis>_ 0</CStepIntDis>
+        <LeaveTargetRunning>_ 0</LeaveTargetRunning>
     </StLinkDriver>
     <DebugChecksum>
-        <Checksum>1646161487</Checksum>
+        <Checksum>1778890309</Checksum>
     </DebugChecksum>
     <Exceptions>
         <StopOnUncaught>_ 0</StopOnUncaught>
@@ -65,12 +65,23 @@
         <Fmt3>class TimeFormat-min	3	0</Fmt3>
         <Fmt4>class TimeFormat-mon	3	0</Fmt4>
         <Fmt5>class TimeFormat-sec	3	0</Fmt5>
-        <Fmt6>class Utility::MilliTime-Sec	3	0</Fmt6>
-        <Fmt7>class Utility::Time-Hrs	3	0</Fmt7>
-        <Fmt8>class Utility::Time-Min	3	0</Fmt8>
-        <Fmt9>class Utility::Time-Sec	3	0</Fmt9>
-        <Fmt10>class Utility::Time-m_Previous_Millis	3	0</Fmt10>
+        <Fmt6>class Utility::HwStopWatch-Hrs	3	0</Fmt6>
+        <Fmt7>class Utility::HwStopWatch-Min	3	0</Fmt7>
+        <Fmt8>class Utility::HwStopWatch-Sec	3	0</Fmt8>
+        <Fmt9>class Utility::HwStopWatch-m_Previous_Seconds	3	0</Fmt9>
+        <Fmt10>class Utility::MilliTime-Sec	3	0</Fmt10>
+        <Fmt11>class Utility::Time-Hrs	3	0</Fmt11>
+        <Fmt12>class Utility::Time-Min	3	0</Fmt12>
+        <Fmt13>class Utility::Time-Sec	3	0</Fmt13>
+        <Fmt14>class Utility::Time-m_Previous_Millis	3	0</Fmt14>
     </struct_types>
+    <array_types>
+        <Fmt0>uint8_t[7]	3	0</Fmt0>
+    </array_types>
+    <watch_formats>
+        <Fmt0>{W}42:CurrentSeconds	3	0</Fmt0>
+        <Fmt1>{W}42:ElapsedSeconds	3	0</Fmt1>
+    </watch_formats>
     <Trace2>
         <Enabled>0</Enabled>
         <ShowSource>0</ShowSource>
@@ -116,22 +127,15 @@
         <ShowTimeSum>1</ShowTimeSum>
         <SumSortOrder>0</SumSortOrder>
     </EventLog>
-    <DisassembleMode>
-        <mode>0</mode>
-    </DisassembleMode>
-    <Breakpoints2>
-        <Bp0>_ 0 "EMUL_CODE" "{$PROJ_DIR$\Test\src}.30.2" 0 0 1 "" 0 "" 0</Bp0>
-        <Count>1</Count>
-    </Breakpoints2>
     <LogFile>
         <LoggingEnabled>_ 0</LoggingEnabled>
         <LogFile>_ ""</LogFile>
         <Category>_ 0</Category>
     </LogFile>
-    <Aliases>
-        <Count>0</Count>
-        <SuppressDialog>0</SuppressDialog>
-    </Aliases>
+    <TermIOLog>
+        <LoggingEnabled>_ 0</LoggingEnabled>
+        <LogFile>_ ""</LogFile>
+    </TermIOLog>
     <DriverProfiling>
         <Enabled>0</Enabled>
         <Mode>3</Mode>
@@ -145,8 +149,16 @@
     <CallStackStripe>
         <ShowTiming>1</ShowTiming>
     </CallStackStripe>
-    <TermIOLog>
-        <LoggingEnabled>_ 0</LoggingEnabled>
-        <LogFile>_ ""</LogFile>
-    </TermIOLog>
+    <DisassembleMode>
+        <mode>0</mode>
+    </DisassembleMode>
+    <Breakpoints2>
+        <Bp0>_ 0 "EMUL_CODE" "{$PROJ_DIR$\Test\src}.30.2" 0 0 1 "" 0 "" 0</Bp0>
+        <Bp1>_ 1 "EMUL_CODE" "{$PROJ_DIR$\HAL\src\Time.cpp}.124.5" 0 0 1 "" 0 "" 0</Bp1>
+        <Count>2</Count>
+    </Breakpoints2>
+    <Aliases>
+        <Count>0</Count>
+        <SuppressDialog>0</SuppressDialog>
+    </Aliases>
 </settings>

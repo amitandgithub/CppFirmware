@@ -10,7 +10,6 @@
 
 namespace Bsp
 {
-//SysTickTimer* SysTickTimer::m_pSysTickTimer = nullptr;
 volatile uint32_t SysTickTimer::m_ticks = 0;
 
 

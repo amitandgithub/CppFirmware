@@ -2104,18 +2104,6 @@
             </file>
         </group>
         <group>
-            <name>Clock</name>
-            <file>
-                <name>$PROJ_DIR$\HAL\src\Clock.cpp</name>
-            </file>
-        </group>
-        <group>
-            <name>DS3231</name>
-            <file>
-                <name>$PROJ_DIR$\HAL\src\DS3231.cpp</name>
-            </file>
-        </group>
-        <group>
             <name>INA219</name>
             <file>
                 <name>$PROJ_DIR$\HAL\src\INA219.cpp</name>
@@ -2135,8 +2123,20 @@
         </group>
         <group>
             <name>Time</name>
+            <group>
+                <name>Clock</name>
+                <file>
+                    <name>$PROJ_DIR$\HAL\src\Clock.cpp</name>
+                </file>
+            </group>
             <file>
-                <name>$PROJ_DIR$\HAL\src\MilliTime.cpp</name>
+                <name>$PROJ_DIR$\HAL\src\DS3231.cpp</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\HAL\src\HwStopWatch.cpp</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\HAL\src\StopWatch.cpp</name>
             </file>
             <file>
                 <name>$PROJ_DIR$\HAL\src\Time.cpp</name>

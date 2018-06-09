@@ -1,33 +1,27 @@
 //******************
-// CLASS: MilliTime
+// CLASS: Time
 //
 // DESCRIPTION:
-//  This class implements the MilliTime witn Milliseconds support
+//  This class implements the Time witn Milliseconds support
 //
 // CREATED: 19-01-2018, by Amit Chaudhary
 //
 // FILE: $FILE_FNAME$
 //
-#ifndef MILLITIME_HPP_
-#define MILLITIME_HPP_
+#ifndef TIME_HPP_
+#define TIME_HPP_
 
 #include "SysTickTimer.hpp"
 
 namespace Utility
 {
 
-class MilliTime
+class Time
 {
 public:
-    MilliTime():Sec(0),Min(0),Hrs(0){};
-    MilliTime(unsigned char hrs, unsigned char min, unsigned char sec, unsigned int millis);
-    ~MilliTime(){};
-    MilliTime operator+(MilliTime t);
-    MilliTime operator-(MilliTime t);
-    MilliTime operator++();
-    MilliTime operator++(int x);
-    MilliTime operator--();
-    void Get(unsigned char* hrs, unsigned char* min, unsigned char* sec, unsigned int* millis);
+    Time():Sec(0),Min(0),Hrs(0){};
+    Time(unsigned char hrs, unsigned char min, unsigned char sec, unsigned int millis);
+    ~Time(){};
     char* Get(char* pBuffer);
     unsigned int GetMillis(){return Millis;}
     unsigned char GetSec(){return Sec;}
@@ -41,7 +35,6 @@ public:
     void Set(unsigned char hrs, unsigned char min, unsigned char sec, unsigned int millis);
     bool Run();
 private:
-    void IncrementTime();
     unsigned int GetRawMilliSecTicks(){return Bsp::SysTickTimer::GetTicks();}
     unsigned int GetRawMiliSecTicksSince(unsigned int LastTicks){return Bsp::SysTickTimer::GetTicksSince(LastTicks);}
 
@@ -54,4 +47,4 @@ private:
 };
 
 }
-#endif // MILLITIME_HPP_
+#endif // TIME_HPP_

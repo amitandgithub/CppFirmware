@@ -1,12 +1,12 @@
 
 
-#include "MilliTime.hpp"
+#include "StopWatch.hpp"
 #include "Test.h"
 
 namespace Utility
 {
 
-void MilliTime::Set(unsigned char hrs, unsigned char min, unsigned char sec, unsigned int millis)
+void StopWatch::Set(unsigned char hrs, unsigned char min, unsigned char sec, unsigned int millis)
 {
     if(millis > 999)
     {
@@ -30,7 +30,7 @@ void MilliTime::Set(unsigned char hrs, unsigned char min, unsigned char sec, uns
     Hrs    = hrs;
 }
 
-MilliTime::MilliTime(unsigned char hrs, unsigned char min, unsigned char sec, unsigned int millis)
+StopWatch::StopWatch(unsigned char hrs, unsigned char min, unsigned char sec, unsigned int millis)
 {
     if(millis > 999)
     {
@@ -54,10 +54,10 @@ MilliTime::MilliTime(unsigned char hrs, unsigned char min, unsigned char sec, un
     Hrs    = hrs;
 }
 
-// Overload + for MilliTime.
-MilliTime MilliTime::operator+(MilliTime t)
+// Overload + for StopWatch.
+StopWatch StopWatch::operator+(StopWatch t)
 {
-    MilliTime temp;
+    StopWatch temp;
 
     temp.Millis = t.Millis + Millis;
     temp.Sec    = t.Sec + Sec;
@@ -84,10 +84,10 @@ MilliTime MilliTime::operator+(MilliTime t)
     return temp;
 }
 
-        // Overload - for MilliTime.
-MilliTime MilliTime::operator-(MilliTime t)
+        // Overload - for StopWatch.
+StopWatch StopWatch::operator-(StopWatch t)
 {
-    MilliTime temp;
+    StopWatch temp;
 
     if( (t.Millis - Millis) >= 0 )
     {
@@ -118,7 +118,7 @@ MilliTime MilliTime::operator-(MilliTime t)
     return temp;
 }
 
-MilliTime MilliTime::operator++()
+StopWatch StopWatch::operator++()
 {
     Millis++;
 
@@ -141,7 +141,7 @@ MilliTime MilliTime::operator++()
     return *this;
 }
 
-MilliTime MilliTime::operator++(int x)
+StopWatch StopWatch::operator++(int x)
 {
     Millis++;
 
@@ -164,7 +164,7 @@ MilliTime MilliTime::operator++(int x)
     return *this;
 }
 
-MilliTime MilliTime::operator--()
+StopWatch StopWatch::operator--()
 {
    unsigned char MillisCarry = 0;
    unsigned char SecCarry = 0;
@@ -204,30 +204,30 @@ MilliTime MilliTime::operator--()
     return *this;
 }
 
-void MilliTime::AddMillis(unsigned int millis)
+void StopWatch::AddMillis(unsigned int millis)
 {
     Millis = Millis + millis;
 
     if(Millis > 999)
     {
-        Millis = Millis - 999;
+        Millis = Millis - 1000;
         Sec++;
     }
     if(Sec > 59)
     {
-        Sec = Sec - 59;
+        Sec = Sec - 60;
         Min++;
     }
 
     if(Min > 59)
     {
-        Min = Min - 59;
+        Min = Min - 60;
         Hrs++;
     }
 
-
 }
-void MilliTime::Get(unsigned char* hrs, unsigned char* min, unsigned char* sec, unsigned int* millis)
+
+void StopWatch::Get(unsigned char* hrs, unsigned char* min, unsigned char* sec, unsigned int* millis)
 {
     *millis = Millis;
     *sec    = Sec;
@@ -235,7 +235,7 @@ void MilliTime::Get(unsigned char* hrs, unsigned char* min, unsigned char* sec, 
     *hrs    = Hrs;
 }
 
-char* MilliTime::Get(char* pBuffer)
+char* StopWatch::Get(char* pBuffer)
 {
     intToStr(Hrs, &pBuffer[0], 2);
     pBuffer[2] = ':';
@@ -247,18 +247,18 @@ char* MilliTime::Get(char* pBuffer)
     return pBuffer;
 }
 
-void MilliTime::IncrementTime()
+void StopWatch::IncrementTime()
 {
     (*this)++;
 }
 
-bool MilliTime::Run()
+bool StopWatch::Run()
 {
-    unsigned int ElapsedTicks;
+    static unsigned int ElapsedTicks = GetRawMilliSecTicks();
 
     ElapsedTicks = GetRawMiliSecTicksSince(m_Previous_Millis);
 
-    if( ElapsedTicks > 1)
+    if( ElapsedTicks >= 1)
     {
         m_Previous_Millis = GetRawMilliSecTicks();
         AddMillis(ElapsedTicks);
