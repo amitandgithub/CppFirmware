@@ -277,7 +277,7 @@
                 <option>
                     <name>CCAllowList</name>
                     <version>1</version>
-                    <state>00000000</state>
+                    <state>11111110</state>
                 </option>
                 <option>
                     <name>CCDebugInfo</name>
@@ -362,7 +362,7 @@
                 </option>
                 <option>
                     <name>CCOptLevel</name>
-                    <state>1</state>
+                    <state>3</state>
                 </option>
                 <option>
                     <name>CCOptStrategy</name>
@@ -371,7 +371,7 @@
                 </option>
                 <option>
                     <name>CCOptLevelSlave</name>
-                    <state>1</state>
+                    <state>3</state>
                 </option>
                 <option>
                     <name>CompilerMisraRules98</name>
@@ -2123,23 +2123,8 @@
         </group>
         <group>
             <name>Time</name>
-            <group>
-                <name>Clock</name>
-                <file>
-                    <name>$PROJ_DIR$\HAL\src\Clock.cpp</name>
-                </file>
-            </group>
             <file>
                 <name>$PROJ_DIR$\HAL\src\DS3231.cpp</name>
-            </file>
-            <file>
-                <name>$PROJ_DIR$\HAL\src\HwStopWatch.cpp</name>
-            </file>
-            <file>
-                <name>$PROJ_DIR$\HAL\src\StopWatch.cpp</name>
-            </file>
-            <file>
-                <name>$PROJ_DIR$\HAL\src\Time.cpp</name>
             </file>
         </group>
         <group>

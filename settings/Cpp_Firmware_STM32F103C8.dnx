@@ -20,7 +20,7 @@
         <LeaveTargetRunning>_ 0</LeaveTargetRunning>
     </StLinkDriver>
     <DebugChecksum>
-        <Checksum>1778890309</Checksum>
+        <Checksum>2140675038</Checksum>
     </DebugChecksum>
     <Exceptions>
         <StopOnUncaught>_ 0</StopOnUncaught>
@@ -58,23 +58,6 @@
         <Show>1 1</Show>
         <Sort>4 0</Sort>
     </SfrWindow>
-    <struct_types>
-        <Fmt0>class TimeFormat-date	3	0</Fmt0>
-        <Fmt1>class TimeFormat-dow	3	0</Fmt1>
-        <Fmt2>class TimeFormat-hour	3	0</Fmt2>
-        <Fmt3>class TimeFormat-min	3	0</Fmt3>
-        <Fmt4>class TimeFormat-mon	3	0</Fmt4>
-        <Fmt5>class TimeFormat-sec	3	0</Fmt5>
-        <Fmt6>class Utility::HwStopWatch-Hrs	3	0</Fmt6>
-        <Fmt7>class Utility::HwStopWatch-Min	3	0</Fmt7>
-        <Fmt8>class Utility::HwStopWatch-Sec	3	0</Fmt8>
-        <Fmt9>class Utility::HwStopWatch-m_Previous_Seconds	3	0</Fmt9>
-        <Fmt10>class Utility::MilliTime-Sec	3	0</Fmt10>
-        <Fmt11>class Utility::Time-Hrs	3	0</Fmt11>
-        <Fmt12>class Utility::Time-Min	3	0</Fmt12>
-        <Fmt13>class Utility::Time-Sec	3	0</Fmt13>
-        <Fmt14>class Utility::Time-m_Previous_Millis	3	0</Fmt14>
-    </struct_types>
     <array_types>
         <Fmt0>uint8_t[7]	3	0</Fmt0>
     </array_types>
@@ -154,7 +137,7 @@
     </DisassembleMode>
     <Breakpoints2>
         <Bp0>_ 0 "EMUL_CODE" "{$PROJ_DIR$\Test\src}.30.2" 0 0 1 "" 0 "" 0</Bp0>
-        <Bp1>_ 1 "EMUL_CODE" "{$PROJ_DIR$\HAL\src\Time.cpp}.124.5" 0 0 1 "" 0 "" 0</Bp1>
+        <Bp1>_ 0 "EMUL_CODE" "{$PROJ_DIR$\HAL\src\Time.cpp}.124.5" 0 0 1 "" 0 "" 0</Bp1>
         <Count>2</Count>
     </Breakpoints2>
     <Aliases>
